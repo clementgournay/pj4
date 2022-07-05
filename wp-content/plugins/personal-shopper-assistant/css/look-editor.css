@@ -1599,10 +1599,14 @@
     font-size: 40px;
     font-family: 'Montserrat';
     text-align: center;
+    width: 1200px;
+    margin: auto;
+    line-height: 1;
 }
 
 .look-editor .profiling .context p {
     display: inline-block;
+    margin: 0;
 }
 
 .look-editor .profiling .context select {
@@ -1612,6 +1616,9 @@
     width: auto;
     font-size: 40px;
     font-family: 'Montserrat';
+    margin: 0;
+    padding: 0;
+    min-width: 100px;
 }
 
 .look-editor .advanced-search {

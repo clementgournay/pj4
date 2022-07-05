@@ -298,7 +298,14 @@ get_header();
 
     <div class="profiling">
         <div class="context">
-            <p>Je cherche un vêtement ou un look pour aller</p>
+            <p>Je recherche </p>
+            <select>
+                <option>un vêtement</option>
+                <option>des chaussures</option>
+                <option>un sac</option>
+                <option>des accessoires</option>
+            </select>
+            <p>pour aller</p>
             <select>
                 <option>en ville</option>
                 <option>au travail</option>
@@ -306,7 +313,17 @@ get_header();
                 <option>à une fête</option>
                 <option>à un mariage</option>
             </select>
+            <p>et je mets du</p>
+            <select>
+                <option>34</option>
+                <option>36</option>
+                <option>38</option>
+                <option>40</option>
+                <option>42</option>
+                <option>44</option>
+            </select>
         </div>
+       
     </div>
 
     <input type="hidden" name="brand_id" value="<?php echo BRAND_ID; ?>">
@@ -334,27 +351,6 @@ get_header();
 
 
             <div class="wizard">
-                <!--
-                <div class="view active" data-view="main-categories">
-                    <div class="categories sp-active">
-                        <div class="category" data-category="clothes">
-                            <span class="drawing coat"></span>
-                            <span class="name">Vêtements</span>
-                        </div>
-                        <div class="category" data-category="shoes">
-                            <span class="drawing '.$category.'"></span>
-                            <span class="name">Chaussures</span>
-                        </div>
-                        <div class="category" data-category="bags">
-                            <span class="drawing accessory"></span>
-                            <span class="name">Sacs</span>
-                        </div>
-                        <div class="category" data-category="Accessoires">
-                            <span class="drawing '.$category.'"></span>
-                            <span class="name">Accessoires</span>
-                        </div>
-                    </div>
-                </div>-->
                 <div class="view active" data-view="selection">
                     <!--<div class="bar search-ref">
                         <div class="td field">
