@@ -14,7 +14,6 @@ $brands = [
 ];
 ?>
 
-
 <article class="page type-page status-publish hentry">
     <div class="entry-header">
         <h1>Choisissez une marque</h1>

@@ -142,163 +142,24 @@ get_header();
         <i class="fas fa-arrow-left"></i> Retour au choix des marques
     </a>
 
-    
-    <!--
-    <div class="advanced-search">
-
-        <div class="filter colors toggle-group">
-
-            <div class="mode">
-                <div class="toggle-btn selected" data-toggle="multicolor">Multicolore</div>
-                <div class="toggle-btn" data-toggle="total">Total look</div>
-            </div>
-
-            <div class="toggle-area selected" data-toggle="multicolor">
-                <select class="color-top">
-                    <option disabled selected>Couleur haut...</option>
-                    <option value="all">Tout</option>
-                    <option value="blue">Bleu</option>
-                    <option value="yellow">Jaune</option>
-                    <option value="green">Vert</option>
-                    <option value="pink">Rose</option>s
-                    <option value="white">Blanc</option>
-                    <option value="black">Noir</option>
-                    <option value="orange">Orange</option>
-                    <option value="purple">Violet</option>
-                    <option value="beige">Beige</option>
-                    <option value="brown">Marron</option>
-                </select>
-                <select class="color-bottom">
-                    <option disabled selected>Couleur bas...</option>
-                    <option value="all">Tout</option>
-                    <option value="blue">Bleu</option>
-                    <option value="yellow">Jaune</option>
-                    <option value="green">Vert</option>
-                    <option value="pink">Rose</option>
-                    <option value="white">Blanc</option>
-                    <option value="black">Noir</option>
-                    <option value="orange">Orange</option>
-                    <option value="purple">Violet</option>
-                    <option value="beige">Beige</option>
-                    <option value="brown">Marron</option>
-                </select>
-            </div>
-
-            <div class="toggle-area" data-toggle="total">
-                <select class="color-total">
-                    <option disabled selected>Couleur...</option>
-                    <option value="all">Tout</option>
-                    <option value="blue">Bleu</option>
-                    <option value="yellow">Jaune</option>
-                    <option value="green">Vert</option>
-                    <option value="pink">Rose</option>
-                    <option value="white">Blanc</option>
-                    <option value="black">Noir</option>
-                    <option value="orange">Orange</option>
-                    <option value="purple">Violet</option>
-                    <option value="beige">Beige</option>
-                    <option value="brown">Marron</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="filter size toggle-group">
-            <div class="mode">
-                <div class="toggle-btn selected" data-toggle="europe">EUR.</div>
-                <div class="toggle-btn" data-toggle="america">AMER.</div>
-            </div>
-            <div class="toggle-area selected" data-toggle="europe"> 
-                <select class="size-top">
-                    <option disabled selected>Taille haut...</option>
-                    <option value="all">Tout</option>
-                    <option value="34">34</option>
-                    <option value="34">36</option>
-                    <option value="38">38</option>
-                    <option value="40">40</option>
-                    <option value="42">42</option>
-                    <option value="44">44</option>
-                </select>
-                <select class="size-bottom">
-                    <option disabled selected>Taille bas...</option>
-                    <option value="all">Tout</option>
-                    <option value="34">34</option>
-                    <option value="34">36</option>
-                    <option value="38">38</option>
-                    <option value="40">40</option>
-                    <option value="42">42</option>
-                    <option value="44">44</option>
-                </select>
-            </div>
-            <div class="toggle-area" data-toggle="america"> 
-                <select class="size-top">
-                    <option disabled selected>Taille haut...</option>
-                    <option value="all">Tout</option>
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                </select>
-                <select class="size-bottom">
-                    <option disabled selected>Taille bas...</option>
-                    <option value="all">Tout</option>
-                    <option value="XS">XS</option>
-                    <option value="S">S</option>
-                    <option value="M">M</option>
-                    <option value="L">L</option>
-                    <option value="XL">XL</option>
-                    <option value="XXL">XXL</option>
-                </select>
-            </div>
-        </div>
-
-        <div class="filter">
-            <select class="context">
-                <option disabled selected>Contexte...</option>
-                <option value="all">Non défini</option>
-                <option value="casual">Casual</option>
-                <option value="wedding">Marriage</option>
-                <option value="nightclub">Sortie en boîte</option>
-                <option value="party">Fête</option>
-            </select>
-            <select class="composition">
-                <option disabled selected>Composition...</option>
-                <option value="all">Tout</option>
-                <option value="cotton">Cotton</option>
-                <option value="wool">Laine</option>
-                <option value="polyester">Polyester</option>
-                <option value="elastane">Elastane</option>
-            </select>
-        </div>
-
-
-        <div class="filter">
-            <select class="cut">
-                <option disabled selected>Coupe...</option>
-                <option value="all">Tout</option>
-                <option value="regular">Regular</option>
-                <option value="slim">Slim</option>
-                <option value="skinny">Skinny</option>
-                <option value="super-skinny">Super Skinny</option>
-            </select>
-            <div class="sale">
-                <input type="checkbox" id="sale"> 
-                <label for="sale">En solde</label>
-            </div>
-        </div>
-
-        <div class="filter actions">
-            <div class="search"><i class="fas fa-search"></i> Rechercher</div>
-            <div class="reset"><i class="fas fa-times"></i> Réinitialiser</div>
-        </div>
-    
-    </div>
-
-        -->
-
     <section class="profiling">
-        <p>Je recherche </p>
+        <p>Je suis</p>
+        <select class="nature">
+            <option value="women">une femme</option>
+            <option value="men">un homme</option>
+            <option value="girl">une fille</option>
+            <option value="boy">un garçon</option>
+        </select>
+        <p>qui met du</p>
+        <select class="size">
+            <option value="34">34</option>
+            <option value="36" selected>36</option>
+            <option value="38">38</option>
+            <option value="40">40</option>
+            <option value="42">42</option>
+            <option value="44">44</option>
+        </select><br>
+        <p>et je recherche </p>
         <select class="category">
             <option value="clothes">un vêtement</option>
             <option value="shoes">des chaussures</option>
@@ -312,16 +173,7 @@ get_header();
             <option value="beach">à la plage</option>
             <option value="party">à une fête</option>
             <option value="wedding">à un mariage</option>
-        </select>
-        <p>et je mets du</p>
-        <select class="size">
-            <option value="34">34</option>
-            <option value="36" selected>36</option>
-            <option value="38">38</option>
-            <option value="40">40</option>
-            <option value="42">42</option>
-            <option value="44">44</option>
-        </select>
+        </select>        
     </section>
 
     <input type="hidden" name="brand_id" value="<?php echo BRAND_ID; ?>">
@@ -333,9 +185,8 @@ get_header();
 
     <div class="editor">
 
-        <div class="user-products sp-active">
+        <div class="product-list sp-active">
             <h2 class="main-title">
-                <!--<span>Pièces du Retail Store (<span class="shop-count">52</span>)</span>-->
                 <span>Sélection du vêtement</span>
                 <div class="toggle-filter" data-filter="category">
                     <i class="fas fa-filter"></i>
@@ -346,7 +197,6 @@ get_header();
                 <div class="tool" data-view="must-have"><i class="fas fa-gem"></i> Incontournables</div>
                 <div class="tool" data-view="fashion"><i class="fas fa-fire"></i> Tendances</div>
             </div>
-
 
             <div class="wizard">
                 <div class="view active" data-view="selection">
@@ -372,9 +222,9 @@ get_header();
                         <div class="title"></div>
                     </div>
                     <div class="filters">
-                        <div class="filter">
+                        <div class="filter color">
                             <select>
-                                <option disabled selected>Color...</option>
+                                <option disabled selected>Couleur...</option>
                                 <option value="all">Tout</option>
                                 <option value="blue">Bleu</option>
                                 <option value="yellow">Jaune</option>
@@ -388,9 +238,9 @@ get_header();
                                 <option value="brown">Marron</option>
                             </select>
                         </div>
-                        <div class="filter">
+                        <div class="filter cut">
                             <select>
-                                <option disabled selected>Coupe</option>
+                                <option disabled selected>Coupe...</option>
                                 <option value="all">Tout</option>
                                 <option value="regular">Regular</option>
                                 <option value="slim">Slim</option>
@@ -398,9 +248,21 @@ get_header();
                                 <option value="super-skinny">Super Skinny</option>
                             </select>
                         </div>
-                        <div class="filter">
-                            
+                        <div class="filter composition">
+                            <select class="composition">
+                                <option disabled selected>Composition...</option>
+                                <option value="all">Tout</option>
+                                <option value="cotton">Cotton</option>
+                                <option value="wool">Laine</option>
+                                <option value="polyester">Polyester</option>
+                                <option value="elastane">Elastane</option>
+                            </select>
                         </div>
+                        <div class="filter sale">
+                            <input type="checkbox" id="sale"> 
+                            <label for="sale">En solde</label>
+                        </div>
+
                     </div>
                     <div class="products"></div>
                 </div>
@@ -1034,6 +896,22 @@ get_header();
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div class="character-wizard">
+        <div class="character">
+            <img src="<?php echo get_site_url(); ?>/wp-content/plugins/personal-shopper-assistant/images/look-editor/wizard.png" />
+        </div>
+        <div class="description">
+            <p>
+                Bonjour, je suis votre assistant.<br>
+                Cliquez sur moi afin que je vous montre par où commencer.
+            </p>
+            <p>
+                Voici la section pour définir vos besoins.
+                Cela me premettra de faire apparaître les produits qui vous correspondent.
+            </p>
         </div>
     </div>
 
