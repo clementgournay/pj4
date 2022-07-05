@@ -22,7 +22,8 @@ foreach($terms as $category) {
 
 define('CATEGORIES', $cat_slugs);
 define('CATEGORY_LABEL', $cat_labels);
-define('BRAND_ID', get_query_var('shop'));
+$shop = (get_query_var('shop') !== '') ? get_query_var('shop') : 'smart-personal-shopper';
+define('BRAND_ID', $shop);
 define('BRAND_LABEL', $brands[BRAND_ID]);
 
 
@@ -296,35 +297,32 @@ get_header();
 
         -->
 
-    <div class="profiling">
-        <div class="context">
-            <p>Je recherche </p>
-            <select>
-                <option>un vêtement</option>
-                <option>des chaussures</option>
-                <option>un sac</option>
-                <option>des accessoires</option>
-            </select>
-            <p>pour aller</p>
-            <select>
-                <option>en ville</option>
-                <option>au travail</option>
-                <option>à la plage</option>
-                <option>à une fête</option>
-                <option>à un mariage</option>
-            </select>
-            <p>et je mets du</p>
-            <select>
-                <option>34</option>
-                <option>36</option>
-                <option>38</option>
-                <option>40</option>
-                <option>42</option>
-                <option>44</option>
-            </select>
-        </div>
-       
-    </div>
+    <section class="profiling">
+        <p>Je recherche </p>
+        <select class="category">
+            <option value="clothes">un vêtement</option>
+            <option value="shoes">des chaussures</option>
+            <option value="bags">un sac</option>
+            <option value="accessories">des accessoires</option>
+        </select>
+        <p>pour aller</p>
+        <select class="context">
+            <option value="town">en ville</option>
+            <option value="work">au travail</option>
+            <option value="beach">à la plage</option>
+            <option value="party">à une fête</option>
+            <option value="wedding">à un mariage</option>
+        </select>
+        <p>et je mets du</p>
+        <select class="size">
+            <option value="34">34</option>
+            <option value="36" selected>36</option>
+            <option value="38">38</option>
+            <option value="40">40</option>
+            <option value="42">42</option>
+            <option value="44">44</option>
+        </select>
+    </section>
 
     <input type="hidden" name="brand_id" value="<?php echo BRAND_ID; ?>">
     <input type="hidden" name="seller_id" value="<?php echo get_current_user_id(); ?>">
@@ -352,21 +350,18 @@ get_header();
 
             <div class="wizard">
                 <div class="view active" data-view="selection">
-                    <!--<div class="bar search-ref">
-                        <div class="td field">
-                            <input type="text" placeholder="Rechercher par référence...">
-                        </div>
-                        <div class="td command">
-                            <button type="button" class="btn"><i class="fas fa-search"></i></button>
-                        </div>
-                    </div>-->
+                    <div class="bar">
+                        <div class="title">Vêtements</div>
+                    </div>
                     <div class="categories sp-active">
                         <?php 
                         foreach(CATEGORIES as $category) {
-                            echo '<div class="category" data-category="'.$category.'">
-                                <span class="drawing '.$category.'"></span>
-                                <span class="name">'.$cat_labels[$category].'</span>
-                            </div>';
+                            if ($category !== 'accessory') {
+                                echo '<div class="category" data-category="'.$category.'">
+                                    <span class="drawing '.$category.'"></span>
+                                    <span class="name">'.$cat_labels[$category].'</span>
+                                </div>';
+                            }
                         }
                         ?>
                     </div>
@@ -375,6 +370,37 @@ get_header();
                     <div class="bar">
                         <div class="back"><i class="fas fa-arrow-left"></i></div>
                         <div class="title"></div>
+                    </div>
+                    <div class="filters">
+                        <div class="filter">
+                            <select>
+                                <option disabled selected>Color...</option>
+                                <option value="all">Tout</option>
+                                <option value="blue">Bleu</option>
+                                <option value="yellow">Jaune</option>
+                                <option value="green">Vert</option>
+                                <option value="pink">Rose</option>s
+                                <option value="white">Blanc</option>
+                                <option value="black">Noir</option>
+                                <option value="orange">Orange</option>
+                                <option value="purple">Violet</option>
+                                <option value="beige">Beige</option>
+                                <option value="brown">Marron</option>
+                            </select>
+                        </div>
+                        <div class="filter">
+                            <select>
+                                <option disabled selected>Coupe</option>
+                                <option value="all">Tout</option>
+                                <option value="regular">Regular</option>
+                                <option value="slim">Slim</option>
+                                <option value="skinny">Skinny</option>
+                                <option value="super-skinny">Super Skinny</option>
+                            </select>
+                        </div>
+                        <div class="filter">
+                            
+                        </div>
                     </div>
                     <div class="products"></div>
                 </div>

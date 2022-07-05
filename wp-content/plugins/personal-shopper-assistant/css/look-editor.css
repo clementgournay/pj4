@@ -245,10 +245,9 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background: #fff4e5;
+    background: #f8f8f8;
     padding: 1rem;
-    height: 1134px;
-    box-shadow: 8px 8px 10px lightgrey;
+    height: 1060px;
     overflow: auto;
     border: 1px solid #b6b6b6;
     border-radius: 10px;
@@ -259,17 +258,17 @@
     display: block;
     position: relative;
     overflow: hidden;
-    background: #f6f6f8;
-    border: 1px solid #b6b6b6;
+    background: #f8f8f8;
+    border: none !important;
+    box-shadow: 5px 5px 8px lightgrey;
 }
 
 .look-editor .editor .bar {
     position: relative;
     width: calc(100% - 1rem);
     height: 35px;
-    background: #eaeaed;
+    background: #ececec;
     padding: 0.5rem;
-    box-shadow: 5px 4px 10px #5f5f5f;
     z-index: 20;
 }
 
@@ -310,15 +309,13 @@
     width: 150px;
     height: 150px;
     margin: 1rem;
-    border: 1px solid black;
+    border: 1px solid #dddddd;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s linear;
     background: white;
     overflow: hidden;
 }
 .look-editor .editor .wizard .categories .category:hover {
-    box-shadow: 0px 0px 6px #ffa705;
     border-color: orange;
 }
 
@@ -335,11 +332,8 @@
     line-height: 30px;
     font-size: 14px;
     font-weight: bold;
-    transition: all 0.3s linear;
 }
-.look-editor .editor .wizard .categories .category:hover .name {
-    color: orange;
-}
+
 
 .look-editor .editor .view {
     opacity: 0;
@@ -354,6 +348,14 @@
 .look-editor .editor .view.active {
     opacity: 1;
     z-index: 2;
+}
+
+.look-editor .editor .wizard .view .filters {
+    display: flex;
+}
+
+.look-editor .editor .wizard .view .filters .filter {
+    max-width: 150px;
 }
 
 .look-editor .editor .wizard [data-view="main-categories"] {
@@ -423,7 +425,7 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    height: calc(100% - 6rem);
+    height: calc(100% - 50px);
     overflow: auto;
     padding: 2rem 0;
 }
@@ -1595,7 +1597,7 @@
     margin: 0;
 }
 
-.look-editor .profiling .context {
+.look-editor .profiling {
     font-size: 40px;
     font-family: 'Montserrat';
     text-align: center;
@@ -1604,12 +1606,12 @@
     line-height: 1;
 }
 
-.look-editor .profiling .context p {
+.look-editor .profiling p {
     display: inline-block;
     margin: 0;
 }
 
-.look-editor .profiling .context select {
+.look-editor .profiling select {
     display: inline-block;
     color: orange;
     background-color: transparent;

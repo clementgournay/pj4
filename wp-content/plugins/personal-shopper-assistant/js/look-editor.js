@@ -12,7 +12,7 @@ function LookEditor(settings) {
     that.sellerID = $('[name=seller_id]').val();
     that.token = $('[name=token]').val();
     that.rootURL = $('[name=root_url]').val();
-    that.brandID = $('[name=brand_id]').val();
+    that.brandID = ($('[name=brand_id]').val() !== 'smart-personal-shopper') ? $('[name=brand_id]').val() : '';
     that.modelType = 1;
     that.modelSize = 36;
     that.apiURL = that.rootURL + '/wp-json/wp/v2';
@@ -95,6 +95,7 @@ function LookEditor(settings) {
         that.initModals();
         that.initUI();
         that.formatSceneRules();
+        that.profilingEvents();
         that.filterEvents();
         that.productEvents();
         that.lookEvents();
@@ -250,6 +251,37 @@ function LookEditor(settings) {
         });
     }
 
+    that.profilingEvents = function () {
+        $('.profiling .category').off('.profilingEvents');
+        $('.profiling .category').on('change.profilingEvents', function () {
+            var category = $(this).val();
+            switch(category) {
+                case 'clothes':
+                    $('.wizard .view').removeClass('active');
+                    $('.wizard .view[data-view="selection"]').addClass('active');
+                    break;
+                case 'shoes':
+                    $('.wizard .view[data-view="products"] .back').hide();
+                    that.showCategoryProducts('shoes', 'Chaussures');
+                    break;
+                case 'bags':
+                    $('.wizard .view[data-view="products"] .back').hide();
+                    that.showCategoryProducts('bag', 'Sacs');
+                    break;
+                case 'accessories':
+                    $('.wizard .view[data-view="products"] .back').hide();
+                    that.showCategoryProducts('accessory', 'Accessoires');
+                    break;
+            }
+        });
+
+        $('.profiling .size').off('.profilingEvents');
+        $('.profiling .size').on('change.profilingEvents', function () {
+            var size =　$(this).val();
+            console.log(size);
+            that.updateModelSize(size);
+        });
+    }
 
     that.initUI = function () {
         $('body').append('<div id="turn-device"><span>Veuillez mettre votre appareil en mode paysage</span></div>');
@@ -484,12 +516,7 @@ function LookEditor(settings) {
 
         that.$el.find('.toolbar .tool').off('.UIEvents');
         that.$el.find('.toolbar .tool').on('click.UIEvents', function () {
-            console.log('HERE')
-            that.$el.find('.toolbar .tool').removeClass('active');
-            $(this).addClass('active');
-            console.log('HERE')
-            that.switchView($(this).attr('data-view'))
-            console.log(that.view)
+
         })
 
         that.$el.find('.modal .close').off('.UIEvents');
@@ -760,10 +787,14 @@ function LookEditor(settings) {
                 $(this).removeClass('selected');
             }
         }); 
-
-
     
 
+    }
+
+    that.updateModelSize = function (size) {
+        var model = that.modelType + '-' + size;
+        console.log(model);
+        $('.model-cont .filter-btn[data-filter="' + model + '"]').click();
     }
 
     that.getSimilarProducts = function (targetProduct) {
@@ -1340,49 +1371,9 @@ function LookEditor(settings) {
         $('.wizard .category').off('.assistantEvents');
         $('.wizard .category').on('click.assistantEvents', function () {
             var category = $(this).attr('data-category');
-            var categoryLabel = $(this).find('.name').text();
-            $('.wizard .view').removeClass('active');
-            var $view = $('.wizard .view[data-view="products"]');
-            $view.addClass('active');
-            if (that.results['specific-' + category]) {
-                var clothes = that.results['specific-' + category];
-                that.clothes = clothes;
-                that.showAssistantProducts(clothes);
-                that.productEvents();
-            } else {
-                var data = {brand: that.brandID, category: category};
-                $view.addClass('loading');
-                $view.find('.products').html('');
-                $.ajax({
-                    method: 'GET',
-                    url: that.rootURL + '/wp-json/wp/v2/specific-clothes',
-                    headers: {
-                        'Authorization': 'Bearer ' + that.token,
-                        'Content-Type': 'application/json'
-                    },
-                    data: data,
-                    success: function (resp) {
-                        const clothes = resp.clothes;
-                        that.clothes = clothes;
-                        clothes.forEach(function (product) {
-                            if (!that.products[product.reference]) {
-                                that.products[product.reference] = product;
-                            }
-                        });
-                        that.results['specific-' + category] = clothes;
-                        var title = categoryLabel + ' (' + clothes.length + ')';
-                        $('.wizard [data-view="products"] .title').html(title);
-                        that.showAssistantProducts(clothes);
-                        that.productEvents();
-                    },
-                    error: function (xhr, statusText) {
-                        alert('Une erreur est survenue.');
-                    },
-                    complete: function () {
-                        $view.removeClass('loading');
-                    }
-                });
-            }
+            var label = $(this).find('.name').text();
+            $('.wizard [data-view="products"] .back').show();
+            that.showCategoryProducts(category, label);
         });
 
         $('.wizard .view .back').off('.assistantEvents');
@@ -1395,6 +1386,54 @@ function LookEditor(settings) {
         $('.model-cont .buy').on('click.assistantEvents', function () {
             that.modals.subscribe.open();
         });
+    }
+
+    that.showCategoryProducts = function (category, label) {
+        $('.wizard .view').removeClass('active');
+        var $view = $('.wizard .view[data-view="products"]');
+        $view.addClass('active');
+        $('.wizard [data-view="products"] .title').html(label);
+        if (that.results['specific-' + category]) {
+            var clothes = that.results['specific-' + category];
+            that.clothes = clothes;
+            that.showAssistantProducts(clothes);
+            that.productEvents();
+            var title = label + ' (' + clothes.length + ')';
+            $('.wizard [data-view="products"] .title').html(title);
+        } else {
+            var data = {brand: that.brandID, category: category};
+            $view.addClass('loading');
+            $view.find('.products').html('');
+            $.ajax({
+                method: 'GET',
+                url: that.rootURL + '/wp-json/wp/v2/specific-clothes',
+                headers: {
+                    'Authorization': 'Bearer ' + that.token,
+                    'Content-Type': 'application/json'
+                },
+                data: data,
+                success: function (resp) {
+                    var clothes = resp.clothes;
+                    that.clothes = clothes;
+                    clothes.forEach(function (product) {
+                        if (!that.products[product.reference]) {
+                            that.products[product.reference] = product;
+                        }
+                    });
+                    that.results['specific-' + category] = clothes;
+                    var title = label + ' (' + clothes.length + ')';
+                    $('.wizard [data-view="products"] .title').html(title);
+                    that.showAssistantProducts(clothes);
+                    that.productEvents();
+                },
+                error: function (xhr, statusText) {
+                    alert('Une erreur est survenue.');
+                },
+                complete: function () {
+                    $view.removeClass('loading');
+                }
+            });
+        }
     }
 
     that.showAssistantProducts = function (products) {
