@@ -1,0 +1,340 @@
+@import 'variables';
+@import 'core/media';
+@import 'core/icons';
+@import 'core/spacings';
+@import 'core/globals';
+
+/** === Editor Frame === */
+
+.block-editor-block-list__layout {
+
+    .block-list-appender.wp-block {
+        margin-bottom: 0;
+    }
+
+    // fixes the theme.json lack of support styles
+    .wp-block[data-align="left"],
+    .wp-block[data-align="right"] {
+        float: none !important;
+        margin: 0;
+    }
+
+    .wp-block[data-align="left"] > .block-editor-block-list__block {
+        display: inline;
+        float: left;
+        margin: $size__element-spacing $size__element-spacing $size__element-spacing 0;
+    }
+
+    .wp-block[data-align="right"] > .block-editor-block-list__block {
+        display: inline;
+        float: right;
+        margin: $size__element-spacing 0 $size__element-spacing $size__element-spacing;
+    }
+
+    > .wp-block[data-align="wide"],
+    > .block-editor-block-list__block[data-align="wide"] {
+        @include alignMarginTop();
+        @include alignMarginBottom();
+    }
+
+    > .wp-block[data-align="full"],
+    > .block-editor-block-list__block[data-align="full"] {
+        @include alignMarginTop();
+        @include alignMarginBottom();
+
+        > h1, > h2, > h3, > h4, > h5, > h6 {
+            &.block-editor-block-list__block {
+                @include alignPaddingLeft();
+                @include alignPaddingRight();
+            }
+        }
+    }
+}
+
+.editor-post-title .editor-post-title__input {
+    font-size: $global--font-size-title;
+    line-height: $global--line-height-heading;
+    font-weight: normal;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    &.block-editor-block-list__block {
+        font-weight: normal;
+        margin-top: 2*$size__element-spacing;
+        margin-bottom: 2*$size__element-spacing;
+    }
+}
+
+.block-editor-block-list__block {
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: normal;
+        margin-top: 2*$size__element-spacing;
+        margin-bottom: 2*$size__element-spacing;
+    }
+}
+
+ul[class*='wc-block'],
+ul.wp-block, ol.wp-block,
+ul.block-editor-block-list__block, ol.block-editor-block-list__block {
+    list-style-position: inside;
+    margin-bottom: $size__element-spacing;
+    padding: 0;
+
+    ul, ol, dl,
+    ul[class*='wc-block'] {
+        margin: $size__element-small-spacing 0 0 $size__element-spacing;
+    }
+
+    li {
+        padding: 0 0 $size__element-small-spacing 0;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.wc-block-product-categories select,
+.wp-block-categories__dropdown,
+.wp-block-archives-dropdown select,
+.wc-block-components-select,
+[class$='__select']:not([class^='components-']),
+.wp-block [class$='__select']:not([class^='components-']) {
+    @include icon_bg( $icon__arow-down, $size__icon-default-smaller, $size__icon-default-smaller, no-repeat );
+
+    -webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: $global--body-color-2-xlight;
+    background-size: $size__icon-default-smaller;
+    background-position: right $size__element-spacing center;
+	border: 0;
+    border-radius: 3px;
+	box-shadow: none;
+	color: $global--body-color-2;
+	display: block;
+	font-family: $global--font-family;
+	font-size: $global--font-size-base;
+	line-height: $global--line-height-body;
+	margin: 0;
+	max-width: 100%;
+	padding: calc( #{$size__element-spacing} - #{$size__element-xsmall-spacing} ) $size__element-spacing;
+	width: 100%;
+	text-align: left;
+    transition: $global--transition;
+
+	&::placeholder {
+		color: $global--body-color-2-medium;
+	}
+
+    svg {
+        display: none;
+    }
+}
+
+[class$='__label']:not([class^='components-']),
+.wp-block [class$='__label']:not([class^='components-']) {
+    display: block;
+    font-size: $global--font-size-base;
+    line-height: $global--line-height-body;
+    font-weight: 400;
+    margin: 0 0 .15rem 0;
+}
+
+[class$='__input']:not([class^='components-']):not(.editor-post-title__input),
+.wp-block [class$='__input']:not([class^='components-']):not(.editor-post-title__input),
+[class$='__select']:not([class^='components-']),
+.wp-block [class$='__select']:not([class^='components-']),
+.wc-block-product-categories select,
+.wc-block-product-search .wc-block-product-search__field .components-text-control__input,
+.wc-block-components-price-slider__controls .wc-block-components-price-slider__amount,
+.wc-block-components-text-input input {
+    &:not([type=radio]):not([type=checkbox]) {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: $global--body-color-2-xlight;
+        border: 0;
+        border-radius: 3px;
+        box-shadow: none;
+        color: $global--body-color-2;
+        display: block;
+        font-size: $global--font-size-base;
+        line-height: $global--line-height-body;
+        margin: 0;
+        max-width: 100%;
+        padding: calc( #{$size__element-spacing} - #{$size__element-xsmall-spacing} ) $size__element-spacing;
+        width: 100%;
+        transition: $global--transition;
+
+        &:hover {
+            border: 0;
+            color: $global--body-color-2;
+        }
+
+        &::placeholder {
+            color: $global--body-color-2-medium;
+        }
+    }
+}
+
+.wc-block-components-checkbox .wc-block-components-checkbox__input[type=checkbox],
+.wc-block-components-radio-control__input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+    background: $global--body-color-2-xlight;
+    border: 0;
+	position: relative;
+	display: inline-block;
+	margin: 0 $size__element-small-spacing 0 0;
+	width: 1.6rem;
+	min-width: 1.6rem;
+	height: 1.6rem;
+	box-shadow: none;
+    vertical-align: middle;
+    transition: $global--transition;
+
+    + .wc-block-components-checkbox__mark {
+        display: none;
+    }
+
+	&:before {
+		background: transparent;
+		content: '';
+		display: block;
+		margin: .4rem;
+		width: .8rem;
+		height: .8rem;
+		transition: $global--transition;
+	}
+
+    &:hover {
+        background: $global--body-color-2-light;
+    }
+
+    &:checked {
+        background: $global--body-color-2-xlight;
+        &:before {
+            background: $global--body-color-2;
+        }
+    }
+
+	+ label, + span {
+		vertical-align: middle;
+	}
+}
+
+.wc-block-components-checkbox .wc-block-components-checkbox__input[type=checkbox] {
+    border-radius: 3px;
+	&:before {
+		border-radius: 3px;
+	}
+}
+
+.wc-block-components-radio-control__input {
+    border-radius: 50%;
+	&:before {
+		border-radius: 50%;
+	}
+
+    &:checked {
+        &:hover {
+            background: $global--body-color-2-xlight;
+        }
+    }
+}
+
+p.wp-block {
+    min-height: 0 !important;
+    margin-bottom: $size__element-spacing;
+
+    &.has-text-color {
+        a {
+            color: currentColor;
+            font-size: inherit;
+
+            &:not(.no-underline) {
+                @include underlineLink(currentColor);
+            }
+        }
+    }
+
+    &.has-drop-cap {
+        &:first-letter,
+        &:not(:focus):first-letter {
+            font-size: $global--font-size-dropcap;
+            margin: $size__element-small-spacing $size__element-spacing $size__element-spacing 0;
+        }
+    }
+}
+
+.wp-block,
+[class*="wp-block"],
+.block-editor-block-list__block {
+    margin-top: 0;
+    margin-bottom: 2*$size__element-spacing;
+
+    &[data-align="wide"],
+    &[data-align="full"] {
+        @include alignMarginTop();
+        @include alignMarginBottom();
+    }
+
+    [class*='__inner-'] {
+        margin-bottom: 0;
+    }
+
+    figcaption {
+        color: $global--body-color-2;
+        display: block !important;
+        font-size: small;
+        font-style: normal;
+        margin-bottom: 0;
+        text-align: left;
+
+        a {
+            font-size: small !important;
+        }
+    }
+
+    &:not(.components-placeholder) > a,
+    > *:not(.components-placeholder) a {
+        text-decoration: none;
+        transition: $global--transition;
+
+        @include underlineLink( $global--body-color-2 );
+    }
+}
+
+@import 'admin/editor/layout';
+@import 'admin/editor/common';
+@import 'admin/editor/media';
+@import 'admin/editor/widgets';
+@import 'admin/editor/woocommerce';
+
+.wc-block-product-categories__button,
+.wp-block-file .wp-block-file__button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: $size__element-spacing 2 * $size__element-spacing;
+    margin: 0;
+    background-color: $global--body-color-2;
+    border: 0;
+    border-radius: 3px;
+    font-size: $global--font-size-base;
+    font-weight: normal;
+    cursor: pointer;
+    color: $global--body-color-1;
+    text-transform: none;
+    text-align: center;
+    transition: $global--transition;
+
+    &:hover {
+        background-color: $global--body-color-3;
+        color: $global--body-color-1;
+        transition: $global--transition;
+    }
+}
+
+p.wp-block,
+p.block-editor-block-list__block {
+    margin-bottom: $size__element-spacing !important;
+}

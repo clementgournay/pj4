@@ -1,0 +1,32 @@
+.woocommerce-store-notice.demo_store {
+    background-color: $global--body-color-1-dark;
+    box-shadow: none;
+    box-sizing: border-box;
+    border-bottom: 1px solid $global--body-color-2-xlight;
+    color: $global--body-color-2;
+    font-size: $global--font-size-base;
+    padding: $size__site-gutter-mobile $size__site-gutter-desktop;
+    position: relative;
+    top: 0;
+    text-align: center;
+    width: auto;
+    white-space: normal;
+    z-index: 1001;
+
+    @include media(medium, down) {
+        font-size: small;
+        padding: $size__element-small-spacing 3*$size__site-gutter-mobile;
+	}
+
+    @include media(xlarge, up) {
+        padding: $size__site-gutter-mobile $size__site-gutter-desktop-large;
+	}
+
+    .admin-bar & {
+        top: 0;
+    }
+
+    a.woocommerce-store-notice__dismiss-link {
+        display: none;
+    }
+}

@@ -1,0 +1,38 @@
+.entry-content,
+.entry-summary {
+
+    > *:first-child {
+        &[class*='wp-block-'],
+        &[class*='wc-block-'] {
+            margin-top: 0;
+        }
+    }
+
+    .alignwide,
+    .alignfull {
+        @include alignMarginBottom();
+        @include alignMarginTop();
+
+        + .alignwide,
+        + .alignfull {
+            margin-top: 0;
+        }
+    }
+
+    a:not(.no-underline) {
+        @include underlineLink( $global--body-color-2 );
+    }
+
+    a.no-underline,
+    a.wp-block-button__link {
+        text-decoration: none;
+
+        &:hover, &:focus, &:active {
+            text-decoration: none;
+        }
+    }
+}
+
+.attachment .entry-attachment {
+    text-align: center;
+}

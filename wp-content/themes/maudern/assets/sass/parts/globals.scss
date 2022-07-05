@@ -1,0 +1,334 @@
+html {
+    width: calc(100vw - (100vw - 100%));
+}
+
+body {
+    font-family: $global--font-family;
+    letter-spacing: $global--letter-spacing;
+    margin: 0;
+    overflow-x: hidden;
+    overflow-wrap: break-word;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+    transition: $global--transition;
+    width: calc(100vw - (100vw - 100%));
+
+    * {
+        box-sizing: border-box;
+    }
+
+    &:before {
+        content: '';
+        opacity: 0;
+        visibility: visible;
+        bottom: calc( #{$size__site-gutter-tablet} - #{$size__element-xsmall-spacing} );
+        right: $size__site-gutter-tablet;
+        transition: $global--transition;
+
+        @include media(xlarge, up) {
+            bottom: calc( #{$size__site-gutter-desktop} - #{$size__icon-default}/2 );
+            right: $size__site-gutter-desktop;
+    	}
+    }
+
+    &.fade {
+        .site-main,
+        #site-footer,
+        .wpml-ls-legacy-list-horizontal.wpml-ls-statics-footer {
+            opacity: 1;
+            transition-delay: .4s;
+        }
+
+        &:before {
+            opacity: 0;
+            visibility: hidden;
+        }
+    }
+}
+
+.noscroll{
+    @include media(medium, down) {
+        box-sizing: border-box;
+        overflow: hidden;
+        touch-action: none;
+        -ms-touch-action: none;
+    }
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    margin: 2*$size__element-spacing 0;
+
+    @include media(medium, down) {
+        line-height: $global--line-height-mobile;
+    }
+
+    &.alignfull {
+        @include alignPaddingLeft();
+        @include alignPaddingRight();
+    }
+}
+
+h1 {
+    @include media(medium, down) {
+        font-size: $global--font-size-h2;
+    }
+}
+
+h2 {
+    @include media(medium, down) {
+        font-size: $global--font-size-h3;
+    }
+}
+
+h3 {
+    @include media(medium, down) {
+        font-size: $global--font-size-h4;
+    }
+}
+
+h4 {
+    @include media(medium, down) {
+        font-size: $global--font-size-base;
+    }
+}
+
+h5 {
+    @include media(medium, down) {
+        font-size: $global--font-size-h5;
+    }
+}
+
+p {
+    &.has-drop-cap {
+        &:first-letter,
+        &:not(:focus):first-letter {
+            font-size: $global--font-size-dropcap;
+            margin: $size__element-small-spacing $size__element-spacing $size__element-spacing 0;
+        }
+    }
+
+    &.has-text-color {
+        a {
+            font-size: inherit;
+
+            &:not(.no-underline) {
+                @include underlineLink(currentColor);
+            }
+        }
+    }
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    transition: $global--transition;
+
+    &:not(.no-underline) {
+        @include globalLinkUnderline($global--body-color-2);
+    }
+
+    img {
+        @include imageHover();
+    }
+}
+
+blockquote {
+    margin: 0;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: $size__element-spacing;
+}
+
+figure {
+    margin: 0;
+}
+
+[class*='wp-block-'] {
+    box-sizing: border-box;
+}
+
+[class*='heading-size-'] * {
+    font-size: inherit;
+}
+
+img {
+    height: auto;
+    max-width: 100%;
+    transform: translateZ(0);
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+ul, ol, dl {
+    list-style-position: inside;
+    margin: 0 0 $size__element-spacing 0;
+    padding: 0;
+
+    ul, ol, dl {
+        margin: $size__element-small-spacing 0 0 0;
+        padding: 0 0 0 $size__element-spacing;
+    }
+}
+
+li {
+    padding: 0 0 $size__element-small-spacing 0;
+
+    &:last-child,
+    &:only-child {
+        padding-bottom: 0;
+    }
+}
+
+table {
+    border: 1px solid $global--body-color-2;
+    border-collapse: collapse;
+    width: 100%;
+
+    thead th {
+        border-bottom: 2px solid $global--body-color-2;
+    }
+
+    th, td {
+        border: 1px solid $global--body-color-2;
+        padding: $size__element-small-spacing;
+    }
+}
+
+del {
+    opacity: 1;
+}
+
+ins {
+    font-weight: normal;
+    text-decoration: none;
+}
+
+address {
+    border: 0;
+    font-style: normal;
+    padding: 0;
+}
+
+mark {
+    color: $global--body-color-2;
+    background-color: transparent;
+    font-weight: bold;
+}
+
+svg {
+    transition: $global--transition;
+}
+
+fieldset {
+    margin: 0 0 $size__element-spacing 0;
+    padding: $size__element-spacing;
+
+    legend {
+        padding: 0 $size__element-small-spacing;
+    }
+}
+
+.screen-reader-text {
+    border: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	-webkit-clip-path: inset(50%);
+	clip-path: inset(50%);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important;
+	word-break: normal;
+}
+
+.form-row,
+.woocommerce form .form-row {
+    position: relative;
+    padding: 0;
+    margin: 0 0 $size__element-spacing 0;
+}
+
+.wp-caption {
+	margin-bottom: $size__element-spacing;
+	text-align: left;
+}
+
+.wp-caption-text {
+    font-size: smaller;
+    line-height: $global--line-height-body;
+    margin: 0;
+}
+
+.gallery-caption {
+	text-align: left;
+}
+
+.tag-cloud-link {
+    font-size: $global--font-size-base !important;
+}
+
+.bypostauthor {
+    color: $global--body-color-2;
+}
+
+.sticky {
+    max-width: 100%;
+}
+
+.count,
+.tag-link-count {
+    color: $global--body-color-2-medium;
+    display: inline-block;
+    font-size: small;
+    font-weight: normal;
+    margin-top: -2px;
+    vertical-align: middle;
+}
+
+.tag-link-count {
+    margin-left: $size__element-xsmall-spacing;
+}
+
+.blockUI.blockOverlay {
+    background-color: $global--body-color-1 !important;
+    opacity: .75 !important;
+    transition: $global--transition;
+
+    &:before {
+        top: calc( 50% - #{$size__icon-default}/2 ) !important;
+        right: calc( 50% - #{$size__icon-default}/2 );
+        left: auto !important;
+    }
+}
+
+body:before,
+.blockUI.blockOverlay:before {
+    animation: rotate 1.0s infinite !important;
+    animation-timing-function: linear !important;
+    background: none !important;
+    border: solid 2px $global--body-color-2;
+    border-radius: 50%;
+    border-right-color: $global--body-color-2-light;
+    border-bottom-color: $global--body-color-2-light;
+    display: block;
+    opacity: 1;
+    margin: 0 !important;
+    position: fixed;
+    width: $size__icon-default-small !important;
+    height: $size__icon-default-small !important;
+    visibility: visible;
+    z-index: 101;
+}
+
+.widget .customize-partial-edit-shortcut,
+.customize-partial-edit-shortcut {
+    z-index: 999999 !important;
+}

@@ -1,0 +1,23 @@
+.edit-post-visual-editor .editor-styles-wrapper {
+    font-family: var(--global--font-primary);
+    letter-spacing: $global--letter-spacing;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    .editor-post-title {
+        .editor-post-title__input {
+            .post-type-post & {
+                text-align: center;
+            }
+        }
+
+        .post-type-page & {
+            max-width: 100%;
+
+            .editor-post-title__input {
+                @include alignPaddingLeft();
+                @include alignPaddingRight();
+            }
+        }
+    }
+}

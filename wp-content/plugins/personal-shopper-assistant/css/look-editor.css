@@ -1,0 +1,2969 @@
+
+::-webkit-scrollbar-track
+{
+	/*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);*/
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	/*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);*/
+	background-color: black;
+}
+
+.hidden {
+    display: none;
+}
+
+.look-editor h1 {
+    width: calc(100% - 8rem);
+}
+.look-editor h2 {
+    font-size: 1.8rem !important;
+}
+
+.look-editor h2 .shop-count {
+    color: grey;
+}
+
+.look-editor h2 .shop-code {
+    color: orange;  
+    float: right;
+}
+.look-editor .filters {
+    text-align: center;
+}
+
+.look-editor .toolbar {
+    width: 100%;
+    background-color: rgb(248 248 248);
+    box-shadow: 5px 5px 8px lightgrey;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.look-editor .toolbar .tool {
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.look-editor .toolbar .tool:hover {
+    background: #e8e8e8;
+}
+
+.look-editor .toolbar .tool.active {
+    background: orange;
+}
+
+.look-editor .tabs {
+    display: block;
+}
+
+.list-group {
+    list-style: none;
+    border: 1px solid #d1d1d1;
+    border-radius: 5px;
+}
+
+.list-group .option {
+    font-size: 1rem;
+    border-bottom: 1px solid #d1d1d1;
+    padding: 0;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.list-group .option:hover {
+    background: #ffce73;
+}
+
+.list-group .option.selected {
+    background: orange;
+}
+
+.list-group .option:last-child {
+    border-bottom: none;
+}
+
+#product-detail .type {
+    margin-bottom: 0.5rem;
+}
+
+#product-detail .list-group .line {
+    position: relative;
+    height: 40px;
+    line-height: 40px;
+}
+
+#product-detail .list-group .option .line:last-child {
+    height: 20px;
+    line-height: 20px;
+}
+
+#product-detail .list-group .name {
+    position: absolute;
+    left: 0;
+    top: 0%;
+    width: calc(100% - 80px);
+    height: 100%;
+    font-size: 1rem;
+    text-align: left;
+    padding-left: 0.5rem;
+    margin-bottom: 0;
+}
+
+#product-detail .list-group .distance {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    text-align: right;
+    padding-right: 0.5rem;
+    color: grey;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: pre;
+}
+
+#product-detail .list-group .actions {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    color: black;
+    padding-left: 0.5rem;
+    line-height: 20px;
+    font-size: 14px;
+}
+
+#product-detail .list-group .actions i:hover {
+    opacity: 0.7;
+}
+
+#product-detail .list-group .stock {
+    font-size: 0.8rem;
+    text-align: right;
+    padding-right: 0.5rem;
+    color: green;
+}
+
+#product-detail .delivery-delay {
+    display: none;
+    color: green;
+}
+
+.look-editor .related-looks .tabs {
+    display: flex;
+}
+
+.look-editor .tabs .tab {
+    float: left;
+    width: 20px;
+    height: 20px;
+    padding: 0.5rem;
+    border: 1px solid #b9b9b9;
+    border-radius: 5px 5px 0px 0px;
+    cursor: pointer;
+    background: #6c765f;
+    border-bottom: none;
+}
+.look-editor.client .tabs .tab {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+}
+
+.look-editor.client .related-looks .tabs .tab {
+    height: 40px;
+    line-height: 30px;
+}
+
+.look-editor .related-looks .tabs .tab {
+    float: none;
+}
+
+.look-editor .related-looks .tabs .tab {
+    width: 200px;
+}
+
+.look-editor .tabs .tab.active {
+    border-bottom: none;
+    background: #7c8e64;
+}
+
+.look-editor .tabs .tab[data-category="all"] {
+    font-size: 9px;
+    color: white;
+}
+
+.look-editor.client .tabs .tab[data-category="all"] { 
+    line-height: 25px;
+}
+
+.look-editor .tabs .tab .icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+
+.look-editor .filters .category-btn {
+    display: inline-block;
+    float: none;
+    vertical-align: top;
+    background: white;
+}
+
+.look-editor .editor {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.look-editor .editor .user-products,
+.look-editor .editor .related-products {
+    width: 25%;
+}
+
+.look-editor .editor .items,
+.look-editor .editor .wizard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: #fff4e5;
+    padding: 1rem;
+    height: 1134px;
+    box-shadow: 8px 8px 10px lightgrey;
+    overflow: auto;
+    border: 1px solid #b6b6b6;
+    border-radius: 10px;
+}
+
+
+.look-editor .editor .wizard {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background: #f6f6f8;
+    border: 1px solid #b6b6b6;
+}
+
+.look-editor .editor .bar {
+    position: relative;
+    width: calc(100% - 1rem);
+    height: 35px;
+    background: #eaeaed;
+    padding: 0.5rem;
+    box-shadow: 5px 4px 10px #5f5f5f;
+    z-index: 20;
+}
+
+.look-editor .editor .wizard .search-ref {
+    display: table;
+}
+
+.look-editor .editor .wizard .search-ref .field {
+    width: 80%;
+    padding-right: 1rem;
+    vertical-align: middle;
+}
+
+.look-editor .editor .wizard .search-ref .field input {
+    width: 100%;
+}
+
+.look-editor .editor .wizard .search-ref .command  {
+    vertical-align: middle;
+}
+
+.look-editor .editor .wizard .search-ref .command button {
+    height: 35px;
+    width: 100%;
+    padding: 0;
+    border-radius: 5px;
+    margin: 0;
+}
+
+.look-editor .editor .wizard .categories {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: calc(100% - 50px);
+    overflow: auto;
+}
+.look-editor .editor .wizard .categories .category {
+    width: 150px;
+    height: 150px;
+    margin: 1rem;
+    border: 1px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    background: white;
+    overflow: hidden;
+}
+.look-editor .editor .wizard .categories .category:hover {
+    box-shadow: 0px 0px 6px #ffa705;
+    border-color: orange;
+}
+
+.look-editor .editor .wizard .categories .drawing {
+    display: block;
+    width: 100%;
+    height: calc(100% - 30px);
+    background-size: 120px auto;
+}
+
+.look-editor .editor .wizard .categories .name {
+    display: block;
+    text-align: center;
+    line-height: 30px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s linear;
+}
+.look-editor .editor .wizard .categories .category:hover .name {
+    color: orange;
+}
+
+.look-editor .editor .view {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.look-editor .editor .view.active {
+    opacity: 1;
+    z-index: 2;
+}
+
+.look-editor .editor .wizard [data-view="main-categories"] {
+    height: 500px;
+}
+
+
+.look-editor .editor .wizard [data-view="products"] {
+    transform: translate3d(100%, 0, 0);
+}
+.look-editor .editor .wizard [data-view="products"].active {
+    transform: none;
+}
+
+.look-editor .editor .related-looks [data-view="product-detail"] {
+    transform: translate3d(100%, 0, 0);
+}
+.look-editor .editor .related-looks [data-view="product-detail"].active {
+    transform: none;
+}
+
+.look-editor .editor .related-looks [data-view="product-detail"] .bar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    background: #eaeaed;
+}
+
+.look-editor .editor .wizard [data-view="products"].loading {
+    background-image: url(../images/icons/loading.gif);
+    background-size: 150px 150px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.look-editor .editor .bar .back {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 100%;
+    font-size: 20px;
+    cursor: pointer;
+    line-height: 50px;
+    padding: 0 0.5rem;
+}
+
+.look-editor .editor .bar .title {
+    position: absolute;
+    left: 50px;
+    top: 0;
+    width: calc(100% - 50px);
+    height: 100%;
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+
+.look-editor .editor .wizard [data-view="products"] .back:hover {
+    color: white;
+}
+
+.look-editor .editor .wizard [data-view="products"] .products {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    height: calc(100% - 6rem);
+    overflow: auto;
+    padding: 2rem 0;
+}
+
+.look-editor .editor .wizard [data-view="products"] .products .product {
+    width: 150px;
+    height: 200px;
+    margin: 0.5rem;
+    border: 1px solid #b6b6b6;
+    border-radius: 5px;
+    cursor: pointer;
+    background: white;
+    transition: all 0.3s ease-out;
+}
+.look-editor .editor .wizard [data-view="products"] .products .product:hover {
+    border-color: black;
+}
+.look-editor .editor .wizard [data-view="products"] .products .product.selected {
+    border-color: orange;
+    transform: scale(1.2);
+}
+.look-editor .editor .wizard [data-view="products"] .products .product .image {
+    width: 100%;
+    height: calc(100% - 30px);
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+.look-editor .editor .wizard [data-view="products"] .products .product .name {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.look-editor .editor .items .no-result {
+    display: none;
+    color: grey;
+    font-style: italic;
+}
+
+.look-editor .editor .related-looks .favorites .loading {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.look-editor .editor .user-products .items {
+    border-top: none;
+}
+
+.look-editor.has-premium .editor .user-products .items {
+    height: 450px;
+    margin-bottom: 2rem;
+    border-radius: 0px 10px 10px 10px;
+    background: #7c8e64;
+}
+
+.look-editor.has-premium .editor .option .items {
+    background: #f6e3fa;
+    border-radius: 10px;
+}
+
+.look-editor.client h2 {
+    margin: 1rem 0 !important;
+    font-size: 1.5rem !important;
+}
+
+.look-editor.client .count {
+    font-size: 2rem !important;
+}
+
+
+.look-editor .editor .items .item {
+    position: relative;
+    width: 140px;
+    height: 200px;
+    margin: 0.5rem;
+    background: white;
+    border: 1px solid #a3a3a3;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    border-radius: 5px;
+}
+
+.look-editor .editor .items .item.not-ready {
+    cursor: default;
+}
+
+.look-editor .editor .items .item:hover {
+    border-color: gold;
+}
+
+.look-editor .editor .items .item.not-ready:hover {
+    border-color: #c1c1c1;
+}
+
+.look-editor .editor .items .item.selected {
+    border: 2px solid #ffae1a;
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.look-editor .editor .items .item.selected .title {
+    background: orange;
+    color: white;
+}
+
+.look-editor .editor .items .item.selected .price {
+    background: orange;
+    color: white;
+}
+
+.look-editor .editor .items .item .calibrate {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 2;
+}
+
+.look-editor .editor .items .item .calibrate .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    text-align: center;
+    margin: 0;
+}
+
+.look-editor .editor .items .item .calibrate p {
+    margin-bottom: 1.5rem;
+}
+
+.look-editor .editor .items .item .calibrate .btn {
+    text-decoration: none;
+}
+
+
+.look-editor .editor .items .item .image {
+    width: 100%;
+    height: calc(100% - 30px);
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.look-editor .editor .items .item .name {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: center;
+}
+
+.look-editor .editor h2 {
+    font-weight: bold;
+    font-size: 1.8rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    margin-top: 0 !important;
+}
+
+.look-editor .editor .option .items {
+    border-top: 1px solid black;
+    position: relative;
+    height: 500px;
+}
+
+.look-editor .editor .option.must-have h2 {
+    margin-top: 4rem;
+    line-height: 1.2;
+}
+.look-editor .editor .option.trends h2 {
+    margin-top: 4rem;
+}
+
+.look-editor .editor .option.must-have .items {
+    background: #ff8943;
+}
+
+.look-editor .editor .option .item {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    background: none;
+    border: 2px dashed black;
+    padding: 0.5rem;
+    overflow: visible;
+}
+
+.look-editor .editor .option .item:hover,
+.look-editor .editor .option .item.active {
+    background: #f4c2ff;
+    border-color: grey !important;
+}
+
+.look-editor .editor .option.must-have .item:hover,
+.look-editor .editor .option.must-have .item.active {
+    background: rgb(255 197 162);
+}
+
+.look-editor .editor .option .item .icon {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+}
+
+.look-editor .editor .option .item.dont-have {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.look-editor .editor .option.trends .items .item {
+    display: block;
+}
+
+.look-editor .editor .option.trends .items .item {
+    height: 260px;
+}
+
+.look-editor .editor .option .items .item .image {
+    background-size: cover;
+    margin-bottom: 0.5rem;
+    height: 200px;
+}
+
+
+.look-editor .editor .option .item .title {
+    text-align: center;
+    display: block;
+    margin: auto;
+    color: black;
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
+
+.look-editor.client .editor .option.trends .item .title {
+    font-size: 0.8rem;
+}
+
+.look-editor .editor .option .item .dont-have-txt {
+    font-size: 0.8rem;
+    color: black;
+    font-style: italic;
+    text-align: center;
+}
+
+.look-editor .popup {
+    display: none;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    width: 500px;
+    height: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 5px 5px 23px #444444;
+    z-index: 100;
+    padding: 1rem;
+}
+.look-editor .popup h2 {
+    margin: 0;
+}
+
+.look-editor .popup .products {
+    border: 1px solid grey;
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    overflow: auto;
+    flex-wrap: wrap;
+    max-height: 300px;
+    background: whitesmoke;
+}
+
+.look-editor .popup .products .product {
+    width: 150px;
+    height: 200px;
+    border: 1px solid lightgrey;
+    margin: 0.5rem;
+    background: white;
+    box-shadow: 5px 5px 8px lightgrey;
+    cursor: pointer;
+}
+.look-editor .popup .products .product:hover .name {
+    background: orange;
+}
+
+.look-editor .popup .products .product.selected {
+    border: 2px solid orange;
+}
+
+.look-editor .popup .products .product .image {
+    width: 100%;
+    height: calc(100% - 30px);
+    background-size: contain;
+    background-position: 50% 50%;
+}
+.look-editor .popup .products .product .name {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: black;
+    color: white;
+}
+
+.look-editor .editor .model-cont {
+    width: 500px;
+    height: 100%;
+    position: relative;
+    transition: all 0.2s linear;
+}
+
+.look-editor .editor .model-cont.loading {
+    filter: grayscale(0.5);
+}
+
+.look-editor .editor .model-cont .model-outer {
+    position: relative;
+    height: 1024px;
+    background: url(../images/look-editor/scenes/dressing.jpg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(10px);
+    box-shadow: 8px 8px 10px #cbcbcb;
+    z-index: 20;
+    margin-bottom: 3rem;
+    margin-top: 7rem;
+}
+.look-editor .editor .model-cont .model-outer[data-scene="dressing"] {
+    background-image: url(../images/look-editor/scenes/dressing.jpg);
+}
+.look-editor .editor .model-cont .model-outer[data-scene="city"] {
+    background-image: url(../images/look-editor/scenes/city.jpg);
+}
+.look-editor .editor .model-cont .model-outer[data-scene="city-night"] {
+    background-image: url(../images/look-editor/scenes/city-night.jpg);
+}
+.look-editor .editor .model-cont .model-outer[data-scene="nature"] {
+    background-image: url(../images/look-editor/scenes/nature.jpg);
+}
+.look-editor .editor .model-cont .model-outer[data-scene="romantic"] {
+    background-image: url(../images/look-editor/scenes/romantic.jpg);
+}
+.look-editor .editor .model-cont .model-outer[data-scene="beach"] {
+    background-image: url(../images/look-editor/scenes/beach.jpg);
+}
+.look-editor .editor .model-cont .model-outer[data-scene="beach-way"] {
+    background-image: url(../images/look-editor/scenes/beach-way.jpg);
+}
+.look-editor .editor .model-cont .model-outer[data-scene="office"] {
+    background-image: url(../images/look-editor/scenes/office.jpg);
+}
+.look-editor .editor .model-cont .model-outer[data-scene="party"] {
+    background-image: url(../images/look-editor/scenes/party.jpg);
+}
+.look-editor .editor .model-cont .model-outer[data-scene="red-carpet"] {
+    background-image: url(../images/look-editor/scenes/red-carpet.jpg);
+}
+
+
+.look-editor .editor .model-cont.loading:before {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background-image: url(../images/icons/loading.gif);
+    background-position: 50% 50%;
+    background-size: 100px 100px;
+    background-repeat: no-repeat;
+}
+
+.look-editor .editor .model-cont .model-outer .model {
+    transition: all 0.3s ease-out;
+}
+.look-editor .editor .model-cont .model-outer .logo {
+    position: absolute;
+    left: 50%;
+    top: -82px;
+    transform: translate3d(-50%, 0, 0);
+    z-index: 1000000;
+    width: 200px;
+    padding: 0.5rem;
+    border-radius: 10px;
+    background:#aaa;
+    background-image:
+        linear-gradient(90deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.6)  39%,
+        rgba(255,255,255,0) 75%);
+    box-shadow: 5px 5px 3px black;
+}
+
+.look-editor .editor .model-cont .model-outer .logo img {
+    width: 100px;
+    display: block;
+    margin: auto;
+}
+
+
+.look-editor .editor .model-cont .model-outer:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -85px;
+    top: -100px;
+    width: calc(100% + 168px);
+    height: calc(100% + 166px);
+    background-image: url(../images/look-editor/frame.png);
+    background-size: 100% 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+
+.look-editor .editor .model-cont .model-outer:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -77px;
+    top: -91px;
+    width: calc(100% + 152px);
+    height: calc(100% + 131px);
+    box-shadow: 8px 8px 10px #7f7f7f;
+}
+
+.look-editor .editor .model-cont .zoom {
+    position: absolute;
+    right: 30px;
+    bottom: 64px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 1.5rem;
+    text-shadow: 0px 0px 5px white;
+    z-index: 100;
+    cursor: pointer;
+    color: black;
+}
+
+.look-editor .editor .model-cont .toggle-model {
+    position: absolute;
+    right: 30
+}
+
+.look-editor.cliente .editor .model-cont .zoom {
+    right: 5px;
+    bottom: 100px;
+}
+
+.look-editor .editor .model-cont .window {
+    display: none;
+    position: absolute;
+    top: 0;
+    padding: 0.5rem;
+    width: 100px;
+    border: 1px solid white;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(6px);
+    z-index: 10;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+}
+
+.look-editor .editor .model-cont .window.coat-vest {
+    left: 28px;
+    top: 12px;
+    border-radius: 0px 0px 5px 0px;
+    border-left: none;
+    border-top: none;
+}
+
+.look-editor .editor .model-cont .window.coat-vest .controls {
+    width: 100%;
+    height: 30px;
+    border-top: 1px solid white;
+    text-align: center;
+    line-height: 30px;
+    margin-bottom: 5px;
+}
+
+.look-editor .editor .model-cont .window.coat-vest .controls .toggle {
+    display: inline-block;
+    color: black;
+    text-shadow: 0px 0px 5px white;
+    font-size: 1.5rem;
+}
+
+.look-editor .editor .model-cont .window.accessories {
+    top: 12px;
+    right: 29px;
+    border-radius: 0px 0px 0px 5px;
+    border-right: none;
+    border-top: none;
+}
+
+
+.look-editor .editor .model-cont .window .products {
+    display: none;
+}
+
+.look-editor .editor .model-cont .window .loading {
+    display: none;
+}
+
+.look-editor .editor .model-cont .window .title {
+    color: white;
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+.look-editor.client .editor .model-cont .window .title {
+    font-family: 'Montserrat';
+    font-size: 0.85rem;
+}   
+
+.look-editor .editor .model-cont .window .list {
+    display: flex;
+    flex-direction: row;
+    width: 80px;
+    margin: auto;
+    height: auto;
+}
+
+.look-editor .editor .model-cont .window .list .item {
+    position: relative;
+}
+
+.look-editor .editor .model-cont .window .list .item:hover:after {
+    font-size: 1.2rem;
+	font-weight: 900;
+	font-family: "Font Awesome 5 Free";
+    content: "\f044";
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+
+}
+
+.look-editor .editor .model-cont .window .edit {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    font-size: 1.2rem;
+}
+
+.look-editor .editor .model-cont .window:hover .edit {
+    display: block;
+}
+
+.look-editor .editor .model-cont .window.full-screen {
+    width: calc(100% - 72px);
+    height: calc(100% - 90px);
+    border: none;
+    z-index: 150;
+    overflow: auto;
+}
+
+.look-editor.client  .editor .model-cont .window.full-screen {
+    width: calc(100% - 57px);
+    height: calc(100% - 74px);
+}
+
+.look-editor .editor .model-cont .window.full-screen .list.item {
+    width: 80px;
+    height: 80px;
+}
+
+.look-editor .editor .model-cont .window.full-screen .products {
+    display: block;
+    text-align: center;
+}
+
+.look-editor .editor .model-cont .window.full-screen .close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+    transition: all 0.3s linear;
+}
+.look-editor .editor .model-cont .window.full-screen .close:hover {
+    color: red;
+}
+
+.look-editor .editor .model-cont .window.full-screen .edit {
+    display: none;
+}
+
+.look-editor .editor .model-cont .window.full-screen .loading {
+    display: block;
+    width: 150px;
+    height: 150px;
+    margin: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.look-editor .editor .model-cont .window.full-screen .list {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: auto;
+    border-bottom: 1px solid white;
+    padding: 1rem;
+}
+
+.look-editor .editor .model-cont .window.full-screen .list .item {
+    width: auto;
+    height: 100px;
+}
+
+.look-editor .editor .model-cont .window.full-screen .product-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    overflow: auto;
+    height: 650px;
+    padding: 1rem;
+}
+
+.look-editor .editor .model-cont .window.full-screen .product-list .product {
+    width: 150px;
+    height: 250px;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: black;
+    text-shadow: 0px 0x 5px white;
+}
+
+.look-editor .editor .model-cont .window.full-screen .product-list .product:hover {
+    border: 2px solid rgb(255, 208, 0);
+}
+.look-editor .editor .model-cont .window.full-screen .product-list .product.selected {
+    border: 2px solid orange;
+}
+
+.look-editor .editor .model-cont .window.full-screen .product-list .product .image {
+    width: 100%;
+    height: calc(100% - 50px);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repat;
+}
+
+.look-editor .editor .model-cont .window.full-screen .product-list .product .name {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.look-editor .editor .model-cont .window.full-screen .products .btn {
+    margin-top: 1rem;
+    background: rgb(255 165 0 / 50%);
+    border: 1px solid white;
+    border-radius: 5px;
+    text-shadow: 0px 0px 5px black;
+    backdrop-filter: blur(5);
+    transition: all 0.3s linear;
+}
+
+.look-editor .editor .model-cont .window.full-screen .products .btn:hover {
+    box-shadow: 0px 0px 10px white;
+    opacity: 1;
+}
+
+.look-editor .editor .model-cont .window .item {
+    width: 100%;
+    border-bottom: 1px solid grey;
+}
+
+.look-editor .editor .model-cont .model {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.look-editor .editor .model-cont .model.selected {
+    display: block;
+}
+
+.look-editor .editor .model-cont .cloth {
+    position: absolute;
+    left: 20%;
+    top: 20%;
+    width: 200px;
+    z-index: 2;
+    transition: all 0.5s ease-out;
+    cursor: pointer;
+}
+.look-editor .editor .model-cont .cloth:hover {
+    filter: brightness(115%);
+}
+.look-editor .editor .model-cont .cloth.before-move {
+    transform: translate3d(500px, 0px, 0px);
+    opacity: 0;
+}
+
+.look-editor .editor .model-cont .clothing {
+    transition: all 0.3s ease-out;
+}
+
+
+.look-editor .editor .model-cont .clothing .composition {
+    position: absolute;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    color: black;
+    text-shadow: 0px 0px 5px white;
+    width: 150px;
+    z-index: 100;
+    opacity: 1;
+    transform: none;
+    transition: all 0.3s ease-out;
+    font-family: 'Josefin Slab';
+    padding: 0.5rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.5);
+    font-weight: bold;
+    text-align: center;
+}
+.look-editor .editor .model-cont .clothing .composition:after {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 2px;
+    background: black;
+    top: 50%;
+    box-shadow: 0px 0px 5px white;
+}
+
+.look-editor .editor .model-cont .clothing .composition.top {
+    left: 50px;
+    top: 250px;
+}
+
+.look-editor .editor .model-cont .clothing .composition.top:after {
+    right: -10px;
+}
+
+.look-editor .editor .model-cont .clothing .composition.bottom {
+    right: 50px;
+    bottom: 340px;
+    text-align: right;
+}
+
+.look-editor .editor .model-cont .clothing .composition.bottom:after {
+    left: -10px;
+}
+
+.look-editor .editor .model-cont .clothing .composition.before-show {
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
+}
+
+.look-editor .editor .model-cont .customize .btn {
+    position: absolute;
+    bottom: 64px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    font-size: 1.5rem;
+    color: black;
+    text-shadow: 0px 0px 5px white;
+    padding: 0;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.look-editor .editor .model-cont .customize .btn.scene-settings {
+    left: 70px;
+}
+
+.look-editor .editor .model-cont .cloth-replace,
+.look-editor .editor .model-cont .settings-cont {
+    left: 28px;
+    top: 12px;
+    transition: all 0.3s ease-out;
+    width: calc(100% - 75px);
+    height: calc(100% - 90px);
+    opacity: 0;
+    transform: scale(0);
+}
+
+
+.look-editor .editor .model-cont .cloth-replace h2,
+.look-editor .editor .model-cont .settings-cont h2 {
+    color: white;
+    text-align: center;
+    text-shadow: 0px 0px 5px black;
+    font-weight: normal;
+}
+
+.look-editor .editor .model-cont .cloth-replace .close,
+.look-editor .editor .model-cont .settings-cont .close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    text-shadow: 0px 0px 5px black;
+}
+
+.look-editor .editor .model-cont .cloth-replace .loading,
+.look-editor .editor .model-cont .settings-cont .loading {
+    background-image: url(../images/icons/loading.gif);
+    background-size: 150px 150px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.look-editor .editor .model-cont .cloth-replace.full-screen,
+.look-editor .editor .model-cont .settings-cont.full-screen {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.look-editor .editor .model-cont .settings-cont .filter-selection {
+    margin-top: 0 !important;
+}
+
+.look-editor .editor .model-cont .cloth-replace.full-screen .product-list {
+    height: 750px;
+}
+
+
+.look-editor .editor .model-cont .settings-cont.label-desc .center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 90%;
+    height: auto;
+    transform: translate3d(-50%, -50%, 0);
+    font-size: 2rem;
+    text-align: center;
+    color: black;
+    text-shadow: 0px 0px 10px white;
+    font-style: normal;
+}
+
+.look-editor .editor .model-cont .settings-cont.label-desc p img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+
+.look-editor .editor .model-cont .settings-cont.label-desc p .important {
+    color: #ffce73;
+}
+
+.look-editor .editor .model-cont .action-btn {
+    display: none;
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translate3d(-50%, 0, 0);
+    backdrop-filter: blur(5px);
+    border: 1px solid black;
+    background: rgb(255 85 85);
+    text-shadow: 0px 0px 5px black;
+    cursor: pointer;
+    z-index: 100;
+    border-radius: 5px;
+    width: 300px;
+    height: 69px;
+    box-shadow: 5px 5px 9px black;
+    font-size: 1.4rem;
+    color: black;
+    text-shadow: 0px 0px 2px white;
+    font-weight: bold;
+    z-index: 10000;
+}
+.look-editor .editor .model-cont .action-btn:hover {
+    opacity: 1;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+}
+
+.look-editor.client .editor .model-cont .action-btn {
+    bottom: 43px;
+    font-size: 1rem;
+}
+
+.look-editor .editor .model-cont .propose {
+    background: rgb(67 255 171 / 30%);
+}
+
+.look-editor .editor .model-cont .vote {
+    display: none;
+    position: absolute;
+    width: 70px;
+    height: 150px;
+    right: 30px;
+    top: 50%;
+    font-size: 2rem;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    transform: translate3d(0%, -50%, 0);
+    border-radius: 10px 0px 0px 10px;
+    border: 1px solid white;
+    border-right: none;
+}
+
+.look-editor .editor .model-cont .vote div {
+    width: 100%;
+    height: 75px;
+    line-height: 75px;
+    text-shadow: 3px 3px 6px #626262;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    text-align: center;
+    color: #3c434a;
+}
+
+.look-editor .editor .model-cont .vote div.like {
+    border-bottom: 1px solid white;
+}
+
+.look-editor .editor .model-cont .vote div.like:hover,
+.look-editor .editor .model-cont .vote div.like.selected {
+    color: #ffeb00;
+}
+.look-editor .editor .model-cont .vote div.dislike:hover,
+.look-editor .editor .model-cont .vote div.dislike.selected {
+    color: #f80000;
+}
+
+
+.look-editor .editor .model-cont .comment {
+    display: none;
+    position: absolute;
+    left: 29px;
+    bottom: 63px;
+    width: 68px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 3px 4px 5px #3b3b3b;
+    cursor: pointer;
+    z-index: 50;
+    transition: all 0.3s linear;
+}
+.look-editor .editor .model-cont .comment:hover {
+    color: orange;
+}
+
+.look-editor .editor .model-cont .mensurations {
+    position: absolute;
+    bottom: 62px;
+    right: 31px;
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px solid white;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 5px 0px 0px 0px;
+    z-index: 150;
+    transition: all 0.3s ease-out;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
+    font-size: 16px;
+}
+
+.look-editor .editor .model-cont .mensurations .values {
+    display: none;
+    opacity: 0;
+    transform: all 0.3s linear;
+    margin-top: 100px;
+    text-shadow: 0px 0px 3px white;
+}
+
+.look-editor .editor .model-cont .mensurations .toggle-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    
+}
+.look-editor .editor .model-cont .mensurations.shown .toggle-btn {
+    background: rgb(255 149 0 / 80%);
+    border: 1px solid white;
+    border-right: 0;
+    border-bottom: 0;
+    border-radius: 5px 0px 0px 0px;
+    color: white;
+    backdrop-filter: blur(5px);
+}
+
+.look-editor .editor .model-cont .mensurations:hover {
+    box-shadow: 0px 0px 10px white;
+}
+
+.look-editor .editor .model-cont .mensurations.shown:hover {
+    box-shadow: none;
+}
+
+.look-editor .editor .model-cont .mensurations.shown {
+    width: calc(100% - 87px);
+    height: calc(100% - 105px);
+    padding: 1rem;
+    border: none;
+}
+
+.look-editor .editor .model-cont .mensurations.shown .values {
+    display: block;
+    opacity: 1;
+    font-size: 18px;
+    color: black;
+}
+
+.look-editor .editor .model-cont .mensurations .group {
+    padding: 0.5rem;
+    border: 1px solid grey;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+}
+
+.look-editor .editor .model-cont .mensurations .group label {
+    font-weight: bold;
+}
+
+.look-editor .editor .model-cont .mensurations .group .table {
+    width: 100%;
+}
+
+.look-editor .editor .model-cont .mensurations .group .table .td {
+    padding: 0.5rem;
+}
+
+.look-editor .editor .model-cont .mensurations .group .table .value {
+    text-align: right;
+}
+
+.look-editor .editor .model-cont .filter-selection {
+    text-align: center;
+}
+
+.look-editor .editor .model-cont .filter-selection.size {
+    margin-top: -6rem;
+}
+
+.look-editor .editor .model-cont .filter-btn {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    margin: 0.5rem;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.look-editor .editor .model-cont .scenes .filter-btn {
+    margin-top: 2rem;
+    height: 200px;
+}
+
+.look-editor .editor .model-cont .filter-btn.selected {
+    border-color: orange;
+}
+
+.look-editor .editor .model-cont .filter-btn .photo {
+    width: 100%;
+    height: 100%;
+    background-size: 250px auto;
+    background-position: center -15px;
+}
+
+.look-editor .editor .model-cont .face .filter-btn .photo {
+    background-size: cover;
+}
+
+.look-editor .editor .model-cont .filter-btn .name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    line-height: 30px;
+    backdrop-filter: blur(5px);
+}
+
+.look-editor .editor .related-looks {
+    position: relative;
+    width: 30%;
+}
+
+.look-editor .related-looks .outer {
+    width: 100%;
+    overflow: auto;
+}
+
+.look-editor .related-looks .tabs {
+    background: none;
+}
+
+.look-editor .related-looks .tabs .tab {
+    background: #efd9b0;
+    width: 50%;
+}
+
+.look-editor .related-looks .tabs .tab.active {
+    background: #fdebc9;
+}
+
+.look-editor .editor .related-looks .tags {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 42px;
+    overflow-x: auto;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #b7b7b7;
+    background: #fdebc9;
+    box-shadow: 5px 4px 10px #8a8a8a;
+    z-index: 15;
+    margin: 0;
+}
+
+.look-editor .profiling .context {
+    font-size: 40px;
+    font-family: 'Montserrat';
+    text-align: center;
+}
+
+.look-editor .profiling .context p {
+    display: inline-block;
+}
+
+.look-editor .profiling .context select {
+    display: inline-block;
+    color: orange;
+    background-color: transparent;
+    width: auto;
+    font-size: 40px;
+    font-family: 'Montserrat';
+}
+
+.look-editor .advanced-search {
+    margin: auto;
+    max-width: 1200px;
+    background-color: rgb(248 248 248);
+    box-shadow: 5px 5px 8px lightgrey;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
+
+.look-editor .advanced-search .toggle-btn {
+    background: black;
+    height: 35px;
+    line-height: 35px;
+    color: white;
+    border-radius: 5px;
+    padding: 0px 0.5rem;
+    cursor: pointer;
+    transition: all 0.5s linear;
+}
+.look-editor .advanced-search .toggle-btn:first-child {
+    margin-bottom: 5px;
+}
+.look-editor .advanced-search .toggle-btn:hover {
+    background: lightgrey;
+}
+.look-editor .advanced-search .toggle-btn.selected {
+    background: orange;
+}
+
+.look-editor .advanced-search .toggle-group {
+    display: flex;
+}
+
+.look-editor .advanced-search .toggle-group .toggle-area {
+    display: none;
+}
+
+.look-editor .advanced-search .toggle-group .toggle-area.selected {
+    display: block;
+}
+
+.look-editor .advanced-search .toggle-area {
+    width: 160px;
+    padding-left: 5px;
+}
+
+.look-editor .advanced-search .color-case select:first-child {
+    margin-bottom: 5px;
+}
+
+.look-editor .advanced-search .search {
+    width: 150px;
+    background: black;
+    padding: 0 0.5rem;
+    border-radius: 5px;
+    color: white;
+}
+
+.look-editor .advanced-search .filter {
+    border-right: 1px solid gainsboro;
+    padding: 0px 10px;
+}
+
+.look-editor .advanced-search .filter:last-child {
+    border-right: none;
+}
+
+.look-editor .advanced-search .filter select:first-child {
+    margin-bottom: 5px;
+}
+
+
+.look-editor .advanced-search select {
+    height: 35px;
+    padding: 0 0.5rem;
+    padding-right: 2rem;
+}
+
+
+.look-editor .editor .related-looks .tags .tag {
+    display: inline-block;
+    padding: 5px 10px;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+.look-editor .editor .related-looks .tags .tag:hover {
+    background: #5a5a5a;
+}
+.look-editor .editor .related-looks .tags .tag.selected {
+    background: orange;
+}
+
+.look-editor .editor .related-looks .items {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+    padding-top: 4rem;
+    border-radius: 0px 0px 10px 10px;
+    border-top: none;
+    background: rgb(245 245 245);
+}
+
+.look-editor.assistant .editor .related-looks .items {
+    border-top: 1px solid #b9b9b9;
+    border-radius: 10px;
+}
+
+.look-editor .editor .related-looks .items .looks {
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: auto;
+    height: calc(100% - 50px);
+    padding: 3rem 1rem;
+    text-align: center;
+    background: whitesmoke;
+}
+.look-editor .editor .related-looks .items .looks.active {
+    display: flex;
+}
+
+.look-editor .editor .related-looks.loading .items:after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/icons/loading.gif);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.look-editor .editor .related-looks .item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 250px;
+    height: 500px;
+    overflow: hidden;
+}
+.look-editor .editor .related-looks .item.selected {
+    border-color: #b27300;
+    border-radius: 6px;
+}
+
+.look-editor .editor .related-looks .item .title {
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    background: black;
+    text-align: center;
+    color: white;
+}
+
+.look-editor .editor .related-looks .item .price {
+    font-size: 1.2rem;
+    color: gold;
+    padding: 0.5rem;
+    background: black;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.look-editor .editor .related-looks .item .product {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-bottom: 1px solid #d0d0d0;
+    cursor: pointer;
+    z-index: 3;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.look-editor .editor .related-looks .item .product.selected {
+    background: #ffe2b2;
+    border-top: 1px solid orange;
+    border-bottom: 1px solid orange;
+}
+
+#zoom-popup {
+    display: block;
+    position: absolute;
+    width: 350px;
+    background: white;
+    box-shadow: 5px 5px 8px grey;
+    z-index: 100000000;
+}
+
+#zoom-popup img {
+    width: 100%;
+}
+
+#zoom-popup .close {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    color: black;
+    cursor: pointer;
+}
+
+#zoom-popup .close:hover {
+    color: red;
+}
+
+#replace-cloth {
+    display: none;
+    position: absolute;
+    left: 5%;
+    top: 0;
+    width: 90%;
+    height: 300px;
+    background: white;
+    box-shadow: 5px 5px 7px grey;
+    border: 1px solid grey;
+    box-shadow: 5px 8px 10px grey;
+    z-index: 10;
+    overflow: visible;
+}
+
+#replace-cloth .triangle {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+    border-bottom: 8px solid black;
+    left: 50%;
+    top: -8px;
+    margin-left: -4px;
+}
+
+#replace-cloth.loading .footer {
+    display: none;
+}
+
+#replace-cloth.loading:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images//loading.gif);
+    background-size: 150px 150px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+#replace-cloth .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 1rem;
+    overflow: auto;
+    height: calc(100% - 85px);
+}
+
+#replace-cloth .product {
+    width: 100px;
+    height: 200px;
+    border: 1px solid grey;
+    margin: 0.5rem;
+    cursor: pointer;
+}
+
+#replace-cloth .product.selected {
+    border: 2px solid orange;
+}
+
+#replace-cloth .footer {
+    height: 50px;
+    text-align: center;
+}
+
+#replace-cloth .product .image {
+    width: 100%;
+    height: calc(100% - 30px);
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+#replace-cloth .product .name {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.look-editor .editor .related-looks .item .product.selection {
+    padding-top: 0.5rem;
+    background:  #eaf6ef;
+}
+
+.look-editor .editor .related-looks .item .product .tip {
+    font-size: 12px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 50px;
+    height: 50px;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 50%;
+    transform: rotate(45deg);
+}
+.look-editor .editor .related-looks .item .product .tip.sale {
+    background: red;
+}
+.look-editor .editor .related-looks .item .product .tip.sold {
+    background: #84c596;
+}
+
+.look-editor.client .editor .related-looks .item .product .sale {
+    font-size: 0.8rem;
+}
+
+.look-editor .editor .related-looks .item .product:last-child {
+    border-bottom: none;
+    margin-bottom: none;
+}
+
+
+#adminmenumain,
+#wpcontent {
+    transition: all 0.3s ease-out;
+}
+
+
+#toggle-menu {
+    display: none;
+    position: fixed;
+    left: 165px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    background: black;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    z-index: 999999;
+}
+
+
+#turn-device {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 1);
+    background-image: url(../images/icons/device-orientation.webp);
+    background-size: 100px 100px;
+    background-position: 50% 100px;
+    background-repeat: no-repeat;
+    z-index: 1000000;
+    transition: none;
+}
+
+#turn-device span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 400px;
+    transform: translate3d(-50%, calc(50% - 200px), 0);
+    font-size: 2rem;
+    color: grey;
+    line-height: 1.5;
+    text-align: center;
+}
+
+#hint-clothes {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    z-index: 100000;
+}
+
+#hint-clothes .content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    text-align: center;
+}
+
+#hint-clothes .content i {
+    font-size: 25vmin;
+}
+
+#hint-clothes .content .desc {
+    font-size: 5vmin;
+}
+
+
+
+#toggle-menu:hover {
+    opacity: 0.7;
+}
+
+.menu-hide #toggle-menu {
+    left: 5px;
+}
+
+.menu-hide #adminmenumain {
+    transform: translate3d(-100%, 0, 0);
+}
+
+.menu-hide #wpcontent {
+    transform: translate3d(-160px, 0, 0);
+    width: 100%;
+}
+
+ #wpcontent:after {
+    content: '';
+    display: block;
+    position: fixed;
+    left: 160px;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: all 0.3s ease-out;
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.view-translated {
+    overflow: hidden;
+}
+
+.view-translated #wpcontent:after {
+    opacity: 1;
+    transform: none;
+    pointer-events: all;
+}
+
+
+.view-translated .look-editor {
+    width: 1300px;
+}
+
+.sp-menu {
+    display: none;
+}
+
+.desc {
+    color: grey;
+    font-style: italic;
+}
+
+.look-editor .editor .toggle-filter {
+    display: none;
+}
+
+
+
+#product-detail .window {
+    position: relative;
+    overflow: hidden;
+    background: #f6f6f8 !important;
+    border: 1px solid black;
+    background: #fff4e5;
+    padding: 1rem;
+    height: 1135px;
+    box-shadow: 8px 8px 10px lightgrey;
+    overflow: auto;
+    border: 1px solid #b9b9b9;
+    border-radius: 10px;
+    padding-top: 70px;
+}
+
+#product-detail .name {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#product-detail .photos {
+    position: relative;
+    border: 1px solid #b2b2b2;
+    border-radius: 5px;
+}
+
+#product-detail .photos .main {
+    display: block;
+    background: white;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    cursor: crosshair;
+}
+
+#product-detail.has-gallery .photos .main {
+    border-radius: 5px 5px 0px 0px;
+}
+
+#product-detail .photos .main .expand {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 10000;
+    cursor: pointer;
+}
+
+#product-detail .photos .main.expanded-mode {
+    overflow: visible;
+}
+
+#product-detail .photos .main.expanded-mode .zoom {
+    display: block;
+    transform: translate3d(0, -50%, 0);
+}
+
+
+#product-detail .photos .main .zoom {
+    display: none;
+    border-radius: 5px;
+}
+
+#product-detail .photos .main.hover .zoom {
+    display: block;
+}
+#product-detail .photos .main.hover .photo {
+    display: none;
+}
+
+#product-detail .photos .main .photo {
+    padding: 1rem;
+}
+
+#product-detail .photos .main .photo img {
+    display: block;
+    height: 350px;
+    width: auto;
+    margin: auto;
+}
+
+#product-detail .photos .main .brand {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 100px;
+    z-index: 1000;
+}
+
+#product-detail h3 {
+    text-align: center;
+    margin: 0;
+}
+
+#product-detail .scrollable {
+    height: 345px;
+    overflow: auto; 
+    background: #eaeaed;
+    border: 1px solid #afafaf;
+    border-radius: 5px;
+    padding: 0.5rem;
+}
+
+#product-detail.has-gallery .scrollable {
+    height: 235px;
+}
+
+#product-detail .description {
+    font-style: italic;
+    padding: 1rem;
+    padding-bottom: 0;
+}
+
+
+#product-detail .blocks {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#product-detail .blocks .block {
+    width: calc(50% - 1rem);
+}
+
+#product-detail .blocks .block .row {
+    display: table;
+    width: 100%;
+}
+
+#product-detail .blocks .block .row:nth-child(even) {
+    background: #f3f3f3;
+}
+
+#product-detail .blocks .block .row .label {
+    width: 100px;
+    padding: 0 0.5rem;
+}
+
+#product-detail .blocks .block .row .value {
+    text-align: left;
+}
+
+#product-detail .blocks .block .title {
+    background: black;
+    color: white;
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+}
+
+#product-detail .blocks .block .field:first-child .title {
+    border-radius: 5px 5px 0px 0px;
+}
+
+#product-detail .blocks .block .content {
+    min-height: 50px;
+    background: white;
+    padding: 0.5rem;
+}
+
+#product-detail .blocks .block .field:last-child .content {
+    border-radius: 0px 0px 5px 5px;
+}
+
+
+#product-detail .price {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    font-size: 2.5rem;
+    color: orange;
+    text-align: center;
+    line-height: 1;
+}
+
+#product-detail .stock {
+    font-size: 1.2rem;
+    text-align: right;
+}
+#product-detail .stock p {
+    font-size: 1.2rem;
+}
+
+
+#product-detail .sizes {
+    text-align: center;
+}
+#product-detail .origin-block,
+#product-detail .composition-block,
+#product-detail .advice-block {
+    margin-bottom: 0.5rem;
+}
+
+#product-detail .origin,
+#product-detail .composition,
+#product-detail .advices {
+    font-size: 14px;
+    color: grey;
+}
+
+#product-detail .advices {
+    margin-top: 0.5rem;
+}
+
+#product-detail .advices li {
+    line-height: 1.2;
+    padding-bottom: 5px;
+}
+
+#product-detail .colors {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#product-detail .colors .bullet {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+    margin: 0px 10px;
+    overflow: hidden;
+    text-indent: -999999px;
+}
+#product-detail .colors .bullet:hover {
+    border-color: orange;
+}
+
+
+#product-detail .colors .bullet[data-ref="2153S-52061-07837-703-1"] { background: #5e76a8; }
+
+#product-detail .colors .bullet[data-color="251"] { background: white; }
+
+#product-detail .colors .bullet[data-color="301"] { background: yellow; }
+
+#product-detail .colors .bullet[data-color="402"] { background: blue; }
+#product-detail .colors .bullet[data-color="404"] { background: #759ecd; }
+#product-detail .colors .bullet[data-color="407"] { background: #9fcfeb; }
+#product-detail .colors .bullet[data-color="409"] { background: #94a3c2; }
+
+
+#product-detail .colors .bullet[data-color="602"] { background: #cd4945; }
+#product-detail .colors .bullet[data-color="607"] { background: #ba2f6e; }
+#product-detail .colors .bullet[data-color="605"] { background: #722F37; }
+#product-detail .colors .bullet[data-color="617"] { background: salmon; }
+#product-detail .colors .bullet[data-color="621"] { background: pink; }
+
+#product-detail .colors .bullet[data-color="630"] { background: #c85872; }
+
+#product-detail .colors .bullet[data-color="705"] { background: grey; }
+
+#product-detail .colors .bullet[data-color="900"] { background: black; }
+
+
+#product-detail .colors .bullet.selected { 
+    border-width: 2px;
+    border-color: orange; 
+}
+
+
+#product-detail .model-selection {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+}
+
+#product-detail .model-selection .model {
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+}
+
+#product-detail .model-selection .model.selected {
+    border-color: orange;
+    border-width: 2px;
+}
+
+#product-detail .model-selection .model .photo {
+    width: 50px;
+    height: 50px;
+    background-size: 250%;
+    background-position: center -7px;
+    background-repeat: no-repeat;
+}
+
+#product-detail .sizes {
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#product-detail .sizes .size {
+    height: 30px;
+    line-height: 30px;
+    cursor: pointer;
+}
+#product-detail .sizes .size:hover {
+    background: #ffe8be;
+}
+#product-detail .sizes .size.selected {
+    background: orange;
+}
+
+#product-detail .label-block .content {
+    display: flex;
+    flex-direction: row;
+}
+
+#product-detail .label-block .content .col {
+    width: 50%;
+    padding: 0.5rem;
+}
+
+#product-detail .label-block .label {
+    cursor: pointer;
+}
+
+#product-detail .category {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 2rem;
+}
+
+#product-detail .photos .others {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    background: #eaeaed;
+    border-radius: 0px 0px 5px 5px;
+    padding: 0.5rem;
+}
+
+#product-detail.has-gallery .photos .others {
+    display: flex;
+}
+
+#product-detail .photos .others .photo {
+    width: auto;
+    height: 100px;
+    border: 1px solid #e1e1e1;
+    cursor: pointer;
+    margin: 0px 5px;
+}
+
+#product-detail .related-items {
+    overflow-x: auto;
+    margin-top: 1rem;
+}
+
+#product-detail .reference {
+    color: grey;
+    text-align: right;
+    margin-bottom: 1rem;
+}
+
+#product-detail .related-items h3 {
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+#product-detail .related-items .outer {
+    border: 1px solid #afafaf;
+    border-radius: 5px;
+    background: #eaeaed;
+}
+
+#product-detail .related-items .inner {
+    display: flex;
+    flex-direction: row;
+    width: 1000px;
+}
+
+#product-detail .related-items .inner .product {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #cdcdce;
+    background: white;
+    border-radius: 5px;
+    margin: 10px;
+    cursor: pointer;
+    background-size: contain;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+#product-detail .related-items .inner .product:hover {
+    border-color: orange;
+}
+
+#product-detail .controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+#product-detail .controls .btn {
+    border: 1px solid black;
+    background: rgb(255 85 85);
+    cursor: pointer;
+    z-index: 100;   
+    border-radius: 5px;
+    font-size: 1rem;
+    color: black;
+    text-shadow: 0px 0px 2px white;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+@media screen and (max-width: 2000px) {
+    .model-cont {
+        transform: translate3d(0, 0, 0) scale(0.8);
+        margin-top: -10rem;
+    }
+}
+
+@media screen and (max-width: 1900px) {
+    .user-products .tabs {
+        background: #515947;
+        border-radius: 5px 5px 0px 0px;
+        padding-top: 5px;
+    }
+
+    .user-products .tabs .tab {
+        margin: 5px;
+        border-radius: 5px;
+        border-bottom: 1px solid #b9b9b9;
+        margin-top: 0;
+    }
+}
+
+@media screen and (max-width: 1700px) {
+    #toggle-menu {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1560px) {
+
+    .look-editor-page #wpwrap {
+        overflow-x: hidden;
+    }
+
+    .editor {
+        transform: scale(0.9);
+    }
+
+    .look-editor .editor {
+        margin-top: 2rem;
+    }
+
+    .look-editor .editor h2 {
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+
+    .model-cont {
+        transform: translate3d(0, -8%, 0) scale(0.7);
+        margin-top: -10rem;
+    }
+}
+
+
+@media screen and (max-width: 1006px) {
+
+    #adminmenu,
+    #adminmenuback, 
+    #adminmenuwrap {
+        z-index: 10000000 !important;
+    }
+
+    .sp-menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(5px);
+        width: 100%;
+        height: 50px;
+        z-index: 10002;
+        box-shadow: 0px 5px 8px black;
+    }
+
+    .sp-menu .item {
+        line-height: 50px;
+        font-size: 1.1rem;
+        cursor: pointer;
+    }
+
+    .sp-menu .item.active {
+        color: orange;
+    }
+
+    .look-editor .editor .toggle-filter {
+        display: block;
+    }
+
+    #toggle-menu {
+        display: none;
+    }
+
+    #wpwrap {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    #wpbody {
+        padding: 0;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    #wpcontent {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    #wpbody-content {
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .look-editor {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+    
+
+    .look-editor .editor {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100000;
+        margin: 0;
+        padding: 0;
+        margin: 0;
+        transform: none;
+    }
+
+    .look-editor .editor .model-cont {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        transform: none;
+        padding: 0;
+        margin: 0;
+        background-image: url(../images/look-editor/walking-closet.png);
+        backdrop-filter: blur(5px);
+        background-repeat: no-repeat;
+        background-size: cover;
+        transform: translate3d(100%, 0, 0);
+        transition: all 0.3s ease-out;
+    }
+
+    .look-editor .editor .model-cont .model-outer:before {
+        display: none;
+    }
+
+    .look-editor .editor .model-cont .model-outer:after {
+        display: none;
+    }
+
+    .look-editor .editor .model-cont .model-outer {
+        position: fixed;
+        left: 50%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+        transform: translate3d(-50%, 0, 0);
+        box-shadow: none;
+        border: 2px solid white;
+        border-top: 0;
+        border-bottom: 0;
+    }
+    
+    .look-editor .filter-selection {
+        display: none;
+    }
+
+    img {
+        max-width: inherit !important;
+    }
+
+    .look-editor .editor .model-cont .model-outer .model {
+        width: 500px;
+        height: 1024px;
+        max-width: inherit;
+    }
+    .look-editor .editor .model-cont .mensurations {
+        right: 0;
+        bottom: 0;
+    }
+
+    .look-editor .editor .model-cont .window.coat-vest {
+        left: 0;
+        top: 0;
+    }
+
+    .look-editor .editor .model-cont .window.accessories {
+        right: 0;
+        top: 0;
+    }
+
+    .look-editor .editor .model-cont .window.full-screen .product-list .product {
+        width: 120px;
+        height: 200px;
+    }
+
+    .look-editor .editor .model-cont .action-btn {
+        bottom: 0;
+    }
+
+    .look-editor .editor .model-cont .vote {
+        right: 0;
+    }
+
+    .look-editor .editor .model-cont .comment {
+        left: 5px;
+        bottom: 5px;
+    }
+
+    .look-editor .editor .related-looks .tabs .tab {
+        line-height: 25px;
+    }
+    
+
+    .look-editor .editor .model-cont .mensurations.shown {
+        width: calc(100% - 2rem);
+        height: calc(100% - 2rem);
+    }
+
+    .look-editor .editor .user-products, 
+    .look-editor .editor .related-looks {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1000;
+        transform: translate3d(100%, 0, 0);
+        transition: all 0.3s ease-out;
+    }
+
+    .look-editor .editor .user-products.sp-active,
+    .look-editor .editor .related-looks.sp-active {
+        transform: none !important;
+    }
+
+    .look-editor .editor .model-cont .zoom {
+        right: 10px;
+    }
+
+    .look-editor .editor .user-products .outer {
+        position: absolute;
+        left: 0;
+        top: 50px;
+        width: 100%;
+        height: auto;
+        z-index: 102;
+        overflow-x: auto;
+        overflow-y: hidden;
+        margin: 0;
+    }
+
+    .look-editor .editor .user-products .tabs {
+        border-radius: 0;
+        width: auto;
+        height: 100%;
+        background: rgb(255 255 255 / 50%);
+        backdrop-filter: blur(5px);
+    }
+
+    .look-editor .editor .toggle-filter {
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        color: white;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+    }
+    .look-editor .editor .toggle-filter.active {
+        color: orange;
+    }
+
+    .look-editor .editor .user-products .result.items,
+    .look-editor .editor .related-looks .items {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        padding-top: calc(50px + 1rem);
+        width: calc(100% - 2rem);
+        height: calc(100% - 2rem);
+        z-index: 100;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .look-editor .editor .related-looks .items {
+        width: 100%;
+    }
+
+    .look-editor .editor .related-looks .tabs {
+        position: absolute;
+        top: 45px;
+        left: 0;
+        width: 100%;
+        z-index: 101;
+    }
+
+    .look-editor .editor .user-products .filter-window,
+    .look-editor .editor .related-looks .filter-window {
+        display: none;
+    }
+
+    .look-editor .editor .user-products .filter-window.shown,
+    .look-editor .editor .related-looks .filter-window.shown {
+        display: block;
+    }
+
+    .look-editor .editor .related-looks .tags {
+        top: 82px;
+        height: auto;
+    }
+
+    .look-editor.assistant .editor .related-looks .tags {
+        top: 50px;
+    }
+
+    .look-editor .editor .sp-active .main-title {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+        color: white;
+        font-size: 1.2rem;
+        background: black;
+        z-index: 102;
+        margin: 0;
+    }
+
+    .look-editor.client .editor .model-cont .action-btn {
+        bottom: 0;
+        margin: 0;
+    }
+
+    .look-editor.client .editor .model-cont .window.full-screen {
+        width: 100%;
+        height: 100%;
+    }
+
+    .admin-menu-open .look-editor .editor .sp-active .main-title {
+        transform: translate3d(190px, 0, 0);    
+    }
+
+    .look-editor .editor .sp-active .main-title .menu-btn {
+        display: block;
+        position: absolute;
+        left: 0px;
+        top: 0;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+    }
+
+    .look-editor .editor .related-looks .item {
+        display: block;
+        height: auto !important;
+    }
+
+    .look-editor .editor .items .item.selected {
+        transform: none;
+    }
+
+    .look-editor .editor .related-looks .item .product {
+        width: auto;
+        height: 100px;
+
+    }
+
+    .look-editor .editor .items.sp-active {
+        z-index: 101 !important;
+    }
+
+    .look-editor .editor .model-cont.sp-active {
+        transform: none !important;
+    }
+
+    .look-editor-page #toggle-admin-menu {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 1.2rem;
+    }
+
+    .look-editor .editor .model-cont .window.full-screen {
+        left: 0;
+        top: 0;
+        width: calc(100% - 1rem);
+        height: calc(100% - 1rem);
+    }
+
+    .look-editor .editor .model-cont .window.full-screen .products {
+        height: calc(100% - 82px);
+    }
+
+    .look-editor .editor .model-cont .cloth-replace.full-screen .product-list {
+        height: calc(100% - 104px);
+        padding: 0;
+    }
+
+    .look-editor .editor .related-looks .item .show-look {
+        display: none;
+        padding: 0.5rem;
+        background: #f6deb1;
+        z-index: 100000000000;
+    }
+
+    .look-editor .editor .related-looks .item .show-look button {
+        width: 100px;
+        height: 40px;
+        border: 1px solid #adadad;
+        border-radius: 5px;
+        background: #ffffff;
+        z-index: 10000000;
+    }
+
+    .look-editor .editor .related-looks .item.selected .show-look {
+        display: block;
+    }
+
+}

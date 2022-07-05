@@ -1,0 +1,48 @@
+.woocommerce {
+
+    @import 'woocommerce/archive';
+    @import 'woocommerce/globals';
+    @import 'woocommerce/login';
+    @import 'woocommerce/product-loop';
+    @import 'woocommerce/product-page';
+
+    &.rtl {
+        #content .site-main {
+            div.product {
+                div.product-summary {
+                    .woocommerce-product-gallery {
+                        .flex-direction-nav {
+                            .flex-nav-prev {
+                                a {
+                                    @include afterIcon( $icon__arow-right, $size__icon-default, $size__icon-default, $global--body-color-2 );
+                                }
+                            }
+
+                            .flex-nav-next {
+                                a {
+                                    @include afterIcon( $icon__arow-left, $size__icon-default, $size__icon-default, $global--body-color-2 );
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.wc-block-grid {
+    @import 'woocommerce/product-loop';
+}
+
+@import 'woocommerce/account';
+@import 'woocommerce/cart-block';
+@import 'woocommerce/cart-shortcode';
+@import 'woocommerce/checkout-shortcode';
+@import 'woocommerce/checkout-block';
+@import 'woocommerce/store-notice';
+@import 'woocommerce/minicart';
+@import 'woocommerce/lightbox';
+@import 'woocommerce/notifications';
+@import 'woocommerce/pagination';
+@import 'woocommerce/extensions'

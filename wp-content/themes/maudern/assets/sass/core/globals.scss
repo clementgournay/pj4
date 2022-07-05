@@ -1,0 +1,99 @@
+@mixin imageHover() {
+    transform: translateZ(0);
+    transition: $global--transition;
+
+    &:hover {
+        opacity: .9;
+    }
+}
+
+@mixin globalLinkUnderline($color) {
+    text-decoration: underline solid $color 2px;
+    text-underline-position: under;
+
+    &:hover, &:focus, &:active {
+        text-decoration: underline solid transparent 2px;
+    }
+}
+
+@mixin underlineLinkHover( $color ) {
+    background-image: linear-gradient( transparent calc( 100% - 2px ), $color 5px );
+    background-size: 0;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    padding-bottom: $size__link-underline-padding;
+    text-decoration: none;
+    transition: all .4s ease, text-decoration 0s ease;
+
+    &:hover, &:focus, &:active {
+        background-image: linear-gradient( transparent calc( 100% - 2px ), $color 5px );
+        background-size: 100%;
+    }
+}
+
+@mixin underlineLink( $color ) {
+    background-image: linear-gradient( transparent calc( 100% - 2px ), $color 5px );
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    padding-bottom: $size__link-underline-padding;
+    text-decoration: none;
+    transition: all .4s ease, text-decoration 0s ease;
+
+    &:hover, &:focus, &:active {
+        background-image: linear-gradient( transparent calc( 100% - 2px ), $color 5px );
+        background-size: 0;
+    }
+}
+
+@mixin floatingLabel() {
+    color: $global--body-color-2-medium;
+    clip: unset;
+    clip-path: unset;
+    height: auto;
+    line-height: $global--line-height-heading;
+    position: absolute;
+    transform: translateY(1.3rem);
+    left: 1.25rem;
+    top: 0;
+    transform-origin: top left;
+    transition: $global--transition;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 32px);
+    cursor: text;
+    width: 100%;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.no-list-style {
+    list-style: none;
+}
+
+.svg-icon {
+    display: inline-block;
+    margin-right: $size__element-small-spacing;
+    position: relative;
+    vertical-align: middle;
+    transition: $global--transition;
+}
+
+.relative {
+    @include generateResponsive() {
+        position: relative;
+    }
+}
+
+.absolute {
+    @include generateResponsive() {
+        position: absolute;
+    }
+}
+
+.fixed {
+    @include generateResponsive() {
+        position: fixed;
+    }
+}

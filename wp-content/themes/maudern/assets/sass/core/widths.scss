@@ -1,0 +1,83 @@
+@mixin alignWide() {
+	@include media(large, up) {
+		margin-left: calc(16.5% - 16.5vw);
+		margin-right: calc(16.5% - 16.5vw);
+	}
+}
+
+@mixin alignFull() {
+	margin-left: calc( -100vw / 2 + 100% / 2 );
+	margin-right: calc( -100vw / 2 + 100% / 2 );
+	max-width: 100vw;
+}
+
+.full-width {
+    @include generateResponsive() {
+        width: $size__max-site-width;
+    }
+}
+
+.full-height {
+    @include generateResponsive() {
+        height: 100%;
+    }
+}
+
+.half-width {
+    @include generateResponsive() {
+        max-width: 50%;
+    }
+}
+
+.alignwide {
+	@include media(large, up) {
+		margin-left: calc(16.5% - 16.5vw);
+		margin-right: calc(16.5% - 16.5vw);
+	}
+}
+
+.alignfull {
+	margin-left: calc( -100vw / 2 + 100% / 2 + 7px ); // 7px fix scrollbar extra width
+	margin-right: calc( -100vw / 2 + 100% / 2 + 7px ); // 7px fix scrollbar extra width
+	max-width: 100vw;
+}
+
+.alignleft,
+[class*=wp-block-].alignleft {
+	display: inline;
+	float: left;
+	margin: $size__element-spacing $size__element-spacing $size__element-spacing 0;
+}
+
+.alignright,
+[class*=wp-block-].alignright {
+	display: inline;
+    float: right;
+	margin: $size__element-spacing 0 $size__element-spacing $size__element-spacing;
+}
+
+.aligncenter {
+	display: block;
+	float: none;
+	margin: 0 auto;
+}
+
+[class*="__inner-container"] > .alignfull {
+	max-width: 100%;
+
+	&:only-child {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+[class*="__inner-container"] > .alignwide {
+	margin-left: 0;
+	margin-right: 0;
+	width: 100%;
+
+	&:only-child {
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}

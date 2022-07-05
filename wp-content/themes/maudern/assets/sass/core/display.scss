@@ -1,0 +1,120 @@
+.flex {
+    @include generateResponsive() {
+        display: flex;
+    }
+}
+
+.items-left {
+    @include generateResponsive() {
+        align-items: flex-start;
+    }
+}
+
+.items-center {
+    @include generateResponsive() {
+        align-items: center;
+    }
+}
+
+.items-right {
+    @include generateResponsive() {
+        align-items: flex-end;
+    }
+}
+
+.justify-left {
+    @include generateResponsive() {
+        justify-content: flex-start;
+    }
+}
+
+.justify-center {
+    @include generateResponsive() {
+        justify-content: center;
+    }
+}
+
+.justify-right {
+    @include generateResponsive() {
+        justify-content: flex-end;
+    }
+}
+
+.flex-row {
+    @include generateResponsive() {
+        flex-direction: row;
+    }
+}
+
+.flex-column {
+    @include generateResponsive() {
+        flex-direction: column;
+    }
+}
+
+.flex-1 {
+    @include generateResponsive() {
+        flex: 1;
+    }
+}
+
+.flex-2 {
+    @include generateResponsive() {
+        flex: 2;
+    }
+}
+
+.flex-3 {
+    @include generateResponsive() {
+        flex: 3;
+    }
+}
+
+.inline-block {
+    @include generateResponsive() {
+        display: inline-block;
+    }
+}
+
+.block {
+    @include generateResponsive() {
+        display: block;
+    }
+}
+
+.hidden {
+    @include generateResponsive() {
+        display: none;
+    }
+}
+
+.left {
+    @include generateResponsive() {
+        float: left;
+    }
+}
+
+.right {
+    @include generateResponsive() {
+        float: right;
+    }
+}
+
+.top-centered {
+    @include generateResponsive() {
+        top: 50%;
+        transform: translate(0, -50%);
+    }
+}
+
+.right-0 {
+    @include generateResponsive() {
+        right: 0;
+    }
+}
+
+.left-0 {
+    @include generateResponsive() {
+        left: 0;
+    }
+}

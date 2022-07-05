@@ -1,0 +1,68 @@
+a {
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+table.compare-list {
+  font-family: 'Prompt';
+  color: #222222;
+  font-size: 14px;
+}
+table.compare-list th {
+  font-size: 14px;
+  color: #222222;
+}
+table.compare-list td {
+  padding: 10px 30px;
+  border-left: 1px solid #e5e5e5;
+}
+table.compare-list td:last-child {
+  border-right: 1px solid #e5e5e5;
+}
+table.compare-list td.odd {
+  background: #ffffff;
+}
+table.compare-list .price-box {
+  color: #c9a654;
+}
+table.compare-list .price-box ins {
+  text-decoration: none;
+}
+table.compare-list .price-box del {
+  color: #aaaaaa;
+}
+table.compare-list .add-to-cart td a {
+  background-color: #222222;
+  padding: 10px 20px;
+}
+table.compare-list .add-to-cart td a:hover {
+  background-color: #c9a654;
+}
+table.compare-list .remove td a {
+  background: none !important;
+  display: inline-block;
+  height: 40px;
+  overflow: hidden;
+  width: 40px;
+  -webkit-transition: none;
+  transition: none;
+  border-radius: 50%;
+  border: 1px solid #e5e5e5;
+  position: relative;
+  text-align: center;
+  font-size: 0px;
+  color: #222222 !important;
+  font-weight: normal;
+  margin-bottom: 20px;
+}
+table.compare-list .remove td a:before {
+  content: 'x';
+  line-height: 36px;
+  font-size: 20px;
+}
+table.compare-list .remove td a:hover {
+  border-color: #c9a654;
+  color: #c9a654 !important;
+}
+table.compare-list .description td {
+  padding: 30px 30px;
+}

@@ -1,0 +1,27 @@
+/*
+Theme Name: Maudern
+Theme URI: https://maudern.thunder-stores.com/
+Author: Thunderstores
+Author URI: https://www.thunder-stores.com/
+Description: A contemporary block-based theme that helps you effortlessly design a minimalistic online store with WooCommerce.
+Tags: blog, one-column, custom-colors, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, block-styles, wide-blocks, block-patterns, accessibility-ready
+Version: 1.0.1
+Requires at least: 5.8
+Tested up to: 5.8
+Requires PHP: 7.0
+Woo: 8424179:188520857b91b9a4ad8c7bbe58fd6620
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: maudern
+*/
+
+.keyvisual {
+	background: #ebe7e8;
+}
+
+.keyvisual img {
+	width: 1200px !important;
+}
+
+
+

@@ -1,0 +1,75 @@
+.woocommerce-error,
+.woocommerce-info,
+.woocommerce-message {
+    border: 0;
+    border-radius: 3px;
+    color: $global--body-color-1;
+    margin: 0 0 2*$size__element-spacing 0;
+    padding-top: $size__element-spacing;
+    padding-bottom: $size__element-spacing;
+    padding-left: calc( 2*#{$size__element-spacing} + 2*#{$size__element-xsmall-spacing} );
+    padding-right: $size__element-spacing;
+
+    @include media(large, up) {
+        padding-right: 2*$size__element-spacing;
+        padding-left: calc( 3*#{$size__element-spacing} + 3*#{$size__element-xsmall-spacing} );
+    }
+
+    a.button {
+        background-color: transparent;
+        border-radius: 0;
+        margin: 0 0 0 $size__element-small-spacing;
+        padding: 0;
+
+        &:hover, &:focus {
+            background-color: transparent;
+        }
+
+        @include underlineLink( $global--body-color-1 );
+    }
+
+    a {
+        color: $global--body-color-1;
+
+        &:not(.no-underline) {
+            @include underlineLink( $global--body-color-1 );
+        }
+    }
+
+    &:before {
+        top: calc( #{$size__element-spacing} + 3px );
+        left: $size__element-spacing;
+        right: auto;
+
+        @include media(large, up) {
+            left: 2*$size__element-spacing;
+            right: auto;
+        }
+    }
+}
+
+li.woocommerce-error,
+li.woocommerce-info,
+li.woocommerce-message {
+    &:last-child, &:only-child {
+        padding-bottom: $size__element-spacing;
+    }
+}
+
+.woocommerce-message {
+    background-color: $global--body-color-4;
+
+    @include beforeIcon( $icon__checked-radio, $size__icon-default, $size__icon-default, $global--body-color-1 );
+}
+
+.woocommerce-error {
+    background-color: $global--body-color-5;
+
+    @include beforeIcon( $icon__warning, $size__icon-default, $size__icon-default, $global--body-color-1 );
+}
+
+.woocommerce-info {
+    background-color: $global--body-color-6;
+
+    @include beforeIcon( $icon__info, $size__icon-default, $size__icon-default, $global--body-color-1 );
+}

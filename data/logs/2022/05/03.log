@@ -1,0 +1,4 @@
+03/05/2022 11:55:01 Check for tasks...\r\n03/05/2022 11:55:01 ==========TASKSTART==========\r\n03/05/2022 11:55:01 Task found.\r\n03/05/2022 11:55:01 [6270fbe469656 import-receipts] Start action...\r\n03/05/2022 11:55:02 Start task.\r\n03/05/2022 11:55:02 [6270fbe469656 import-receipts] Action result: X-Powered-By: PHP/7.2.34
+Content-type: text/html; charset=UTF-8
+
+03/05/2022 11:55:02 Start task.<br>\r\n03/05/2022 11:55:02 [6270fbe469656 import-receipts] Remove json parts...\r\n03/05/2022 11:55:02 [6270fbe469656 import-receipts] Json parts removed.\r\n03/05/2022 11:55:02 [6270fbe469656 import-receipts] Remove task folder...\r\n03/05/2022 11:55:02 [6270fbe469656 import-receipts] Task folder removed.\r\n03/05/2022 11:55:02 ===========TASKEND===========\r\n

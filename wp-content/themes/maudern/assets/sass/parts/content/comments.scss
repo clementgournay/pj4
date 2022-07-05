@@ -1,0 +1,252 @@
+.offcanvas.offcanvas-comments {
+    .offcanvas-inner {
+        position: relative;
+
+        &:before,
+        &:after {
+            content: '';
+            opacity: 0;
+            visibility: hidden;
+            transition: $global--transition;
+        }
+
+        &:after {
+            margin-top: -2*$size__element-small-spacing;
+        }
+    }
+
+    &.loading {
+        .offcanvas-inner {
+            &:before {
+                background-color: $global--body-color-1-dark;
+                display: block;
+                height: 100%;
+                opacity: 1;
+                position: absolute;
+                top: 0;
+                visibility: visible;
+                width: 100%;
+                z-index: 100;
+            }
+
+            &:after {
+                animation: rotate 1.0s infinite;
+                animation-timing-function: linear;
+                border: solid 2px $global--body-color-2;
+                border-radius: 50%;
+                border-right-color: $global--body-color-2-light;
+                border-bottom-color: $global--body-color-2-light;
+                display: block;
+                opacity: 1;
+                position: fixed;
+                width: $size__icon-default;
+                height: $size__icon-default;
+                top: 50%;
+                right: calc( 50% - #{$size__icon-default}/2 );
+                visibility: visible;
+                z-index: 101;
+
+                @include media(medium, up) {
+                    right: calc( 295px - #{$size__icon-default}/2 );
+                }
+            }
+        }
+    }
+
+    .comments {
+        padding-bottom: $size__site-gutter-mobile;
+        transition: $global--transition;
+
+        @include media(medium, up) {
+            padding-bottom: $size__site-gutter-tablet;
+        }
+
+        .comment {
+            padding-left: 60px;
+            padding-bottom: $size__site-gutter-mobile;
+
+            @include media(medium, up) {
+                padding-bottom: $size__site-gutter-tablet;
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+
+            > *:not(.comment):not(.comment-respond) {
+                font-size: $global--font-size-base;
+                font-weight: normal;
+                line-height: $global--line-height-body;
+                margin: 0;
+            }
+
+            .comment-awaiting-moderation {
+                display: block;
+                font-size: small;
+                padding-top: $size__element-small-spacing;
+            }
+
+            .comment {
+                padding-top: $size__site-gutter-mobile;
+
+                @include media(medium, up) {
+                    padding-top: $size__site-gutter-tablet;
+                }
+
+                @include media(medium, down) {
+                    padding-left: $size__element-spacing/2;
+                }
+
+                &:last-child:not(:only-child) {
+                    padding-bottom: 0;
+                }
+            }
+
+            .reply {
+                padding-top: $size__element-small-spacing;
+
+                a.comment-reply-link {
+                    @include icon( $icon__reply, $global--font-size-base, $global--font-size-base );
+
+                    background-color: $global--body-color-2;
+                    display: block;
+                    font-size: 0;
+
+                    &:hover {
+                        background-color: $global--body-color-3;
+                    }
+                }
+            }
+
+            + .comment-respond {
+                padding-bottom: $size__site-gutter-mobile;
+
+                @include media(medium, up) {
+                    padding-bottom: $size__site-gutter-tablet;
+                }
+            }
+        }
+
+        .comment,
+        .trackback,
+        .pingback {
+            .comment-author {
+                line-height: 2;
+                position: relative;
+                img {
+                    border-radius: 50%;
+                    position: absolute;
+                    top: 0;
+                    left: -60px;
+                }
+
+                .fn {
+                    color: $global--body-color-2;
+                    font-style: normal;
+                    font-weight: normal;
+
+                    a.url {
+                        color: $global--body-color-2;
+                        font-size: $global--font-size-base;
+
+                        @include underlineLink( $global--body-color-2 );
+                    }
+                }
+            }
+
+            .comment-meta {
+                padding-top: $size__element-small-spacing;
+
+                a {
+                    color: $global--body-color-2-medium;
+                    font-size: small;
+
+                    @include underlineLinkHover( $global--body-color-2-medium );
+                }
+
+                + * {
+                    padding-top: $size__element-small-spacing;
+                }
+
+                .comment-edit-link {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .comment-respond {
+        transition: $global--transition;
+
+        .comment-reply-title {
+            display: none;
+        }
+
+        .logged-in-as {
+            margin: 0;
+            padding-bottom: $size__site-gutter-mobile;
+
+            @include media(medium, up) {
+                padding-bottom: $size__site-gutter-tablet;
+            }
+
+            a {
+                @include underlineLink( $global--body-color-2 );
+            }
+        }
+
+        .comment-notes {
+            font-size: small;
+            font-weight: bold;
+            padding-bottom: $size__element-spacing;
+        }
+
+        .comment-form-cookies-consent {
+            label {
+                width: 75%;
+                vertical-align: top;
+                padding-top: 2px;
+                margin: 0;
+            }
+        }
+
+        .comment-form-comment,
+        .comment-form-author,
+        .comment-form-email,
+        .comment-form-url {
+            position: relative;
+
+            label {
+                @include floatingLabel();
+            }
+
+            input,
+            textarea {
+                line-height: normal;
+                padding: calc( #{$size__element-spacing} + #{$size__element-xsmall-spacing} ) $size__element-spacing calc( #{$size__element-spacing} - #{$size__element-xsmall-spacing} ) $size__element-spacing;
+            }
+
+            &.is-active {
+                label {
+                    font-size: small;
+                    transform: translateY(.55rem);
+                }
+            }
+        }
+
+        .form-submit,
+        .submit {
+            cursor: pointer;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@keyframes rotate {
+   from {
+       transform: rotate(0deg);
+   }
+   to {
+       transform: rotate(360deg);
+   }
+}

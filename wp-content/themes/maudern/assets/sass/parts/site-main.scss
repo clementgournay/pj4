@@ -1,0 +1,17 @@
+.site-main {
+	@include alignPaddingRight();
+	@include alignPaddingLeft();
+
+	opacity: 0;
+    transition: opacity .3s ease-in-out;
+	transition-delay: 0s;
+}
+
+.blog, .archive:not(.woocommerce), .search-results:not(.woocommerce),
+.single-post, .page, .attachment {
+    #main {
+		position: relative;
+
+        @include gridSiteMain();
+    }
+}

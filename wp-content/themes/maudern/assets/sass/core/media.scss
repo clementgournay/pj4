@@ -1,0 +1,227 @@
+// Breakpoints.
+$width__mobile_portrait: 	419px; //small
+$width__mobile_landscape: 	767px; //medium
+$width__tablet_portrait: 	1023px; //large
+$width__desktop_tablet: 	1365px; //xlarge
+
+@mixin media( $res, $dir ) {
+
+	@if 'small' == $res {
+		// min-width: 420px & max-width: 767px
+		@if 'only' == $dir {
+			@media only screen and (min-width: $width__mobile_portrait+1) and (max-width: $width__mobile_landscape) {
+				@content;
+			}
+		}
+
+		// max-width: 419px
+		@if 'down' == $dir {
+			@media only screen and (max-width: $width__mobile_portrait) {
+				@content;
+			}
+		}
+
+		// min-width: 420px
+		@if 'up' == $dir {
+			@media only screen and (min-width: $width__mobile_portrait+1) {
+				@content;
+			}
+		}
+	}
+
+	@if 'medium' == $res {
+		// min-width: 768px & max-width: 1023px
+		@if 'only' == $dir {
+			@media only screen and (min-width: $width__mobile_landscape+1) and (max-width: $width__tablet_portrait) {
+				@content;
+			}
+		}
+
+		// max-width: 767px
+		@if 'down' == $dir {
+			@media only screen and (max-width: $width__mobile_landscape) {
+				@content;
+			}
+		}
+
+		// min-width: 768px
+		@if 'up' == $dir {
+			@media only screen and (min-width: $width__mobile_landscape+1) {
+				@content;
+			}
+		}
+
+	}
+
+	@if 'large' == $res {
+		// min-width: 1024px & max-width: 1365px
+		@if 'only' == $dir {
+			@media only screen and (min-width: $width__tablet_portrait+1) and (max-width: $width__desktop_tablet) {
+				@content;
+			}
+		}
+
+		// max-width: 1023px
+		@if 'down' == $dir {
+			@media only screen and (max-width: $width__tablet_portrait) {
+				@content;
+			}
+		}
+
+		// min-width: 1024px
+		@if 'up' == $dir {
+			@media only screen and (min-width: $width__tablet_portrait+1) {
+				@content;
+			}
+		}
+	}
+
+	@if 'xlarge' == $res {
+		// max-width: 1365px
+		@if 'down' == $dir {
+			@media only screen and (max-width: $width__desktop_tablet) {
+				@content;
+			}
+		}
+
+		// min-width: 1366px
+		@if 'up' == $dir {
+			@media only screen and (min-width: $width__desktop_tablet+1) {
+				@content;
+			}
+		}
+	}
+
+	@if 'wp-admin' == $res {
+		@media only screen and (min-width: $wpadmin_width) {
+			@content;
+		}
+	}
+}
+
+@mixin generateResponsive() {
+    // Create a list of sizes and widths
+	$sizes: (
+		'sm': 'small',
+		'md': 'medium',
+		'lg': 'large',
+		'xlg': 'xlarge'
+	);
+
+    // Base style, without a suffix
+    @content;
+
+    // Responsive styles
+    // Loop over each size
+
+	@each $suffix, $width in $sizes {
+
+        &-#{$suffix} {
+			@include media( $width, 'only' ) {
+				@content;
+			}
+    	}
+
+        &-#{$suffix}-down {
+			@include media( $width, 'down' ) {
+				@content;
+			}
+    	}
+
+        &-#{$suffix}-up {
+			@include media( $width, 'up' ) {
+				@content;
+			}
+    	}
+    }
+}
+
+@mixin generateResponsiveSpacing($spacing, $dir) {
+    // Create a list of sizes and widths
+	$sizes: (
+		'sm': 'small',
+		'md': 'medium',
+		'lg': 'large',
+		'xlg': 'xlarge'
+	);
+
+    // Responsive styles
+    // Loop over each size
+
+	@each $suffix, $width in $sizes {
+
+		$value: $size__site-gutter-mobile;
+
+		@if 'medium' == $width {
+			$value: $size__site-gutter-tablet;
+		}
+
+		@if 'large' == $width {
+			$value: $size__site-gutter-tablet;
+		}
+
+		@if 'xlarge' == $width {
+			$value: $size__site-gutter-desktop;
+		}
+
+        &-#{$suffix} {
+			#{$spacing}-#{$dir}: $value;
+    	}
+
+		&-#{$suffix}-only {
+			@include media( $width, 'only' ) {
+				#{$spacing}-#{$dir}: $value;
+			}
+    	}
+
+        &-#{$suffix}-down {
+			@include media( $width, 'down' ) {
+				#{$spacing}-#{$dir}: $value;
+			}
+    	}
+
+        &-#{$suffix}-up {
+			@include media( $width, 'up' ) {
+				#{$spacing}-#{$dir}: $value;
+			}
+    	}
+    }
+}
+
+@mixin generateResponsiveNoSpacing($spacing, $dir) {
+    // Create a list of sizes and widths
+	$sizes: (
+		'sm': 'small',
+		'md': 'medium',
+		'lg': 'large',
+		'xlg': 'xlarge'
+	);
+
+	&-#{$dir} {
+		#{$spacing}-#{$dir}: 0;
+	}
+
+    // Responsive styles
+    // Loop over each size
+
+	@each $suffix, $width in $sizes {
+
+        &-#{$dir}-#{$suffix} {
+			@include media( $width, 'only' ) {
+				#{$spacing}-#{$dir}: 0;
+			}
+    	}
+
+        &-#{$dir}-#{$suffix}-down {
+			@include media( $width, 'down' ) {
+				#{$spacing}-#{$dir}: 0;
+			}
+    	}
+
+        &-#{$dir}-#{$suffix}-up {
+			@include media( $width, 'up' ) {
+				#{$spacing}-#{$dir}: 0;
+			}
+    	}
+    }
+}

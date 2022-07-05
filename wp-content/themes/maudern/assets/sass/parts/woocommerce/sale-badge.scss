@@ -1,0 +1,24 @@
+.onsale,
+span.onsale,
+.wc-block-grid__product-onsale {
+    background-color: $global--body-color-2;
+    border: 0;
+    border-radius: 5px;
+    color: $global--body-color-1;
+    font-size: small;
+    font-weight: 700;
+    line-height: 1;
+    margin: 0;
+    min-height: 0;
+    padding: $size__element-small-spacing ($size__element-small-spacing + $size__element-xsmall-spacing);
+    position: absolute;
+    top: $size__element-small-spacing;
+    right: $size__element-small-spacing;
+    left: auto;
+
+    @include media(medium, up) {
+        top: 2 * $size__element-small-spacing;
+        right: 2 * $size__element-small-spacing;
+        left: auto;
+    }
+}

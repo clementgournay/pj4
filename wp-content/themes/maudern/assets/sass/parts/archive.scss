@@ -1,0 +1,64 @@
+.blog, .archive, .search-results {
+    #main {
+        .post,
+        .page {
+            margin-bottom: $size__site-gutter-tablet;
+
+        	@include media(medium, up) {
+        		margin-bottom: $size__site-gutter-desktop;
+        	}
+
+        	@include media(xlarge, up) {
+        		margin-bottom: $size__site-gutter-desktop-large;
+        	}
+
+            &:nth-child(even) {
+                .entry-header {
+                    .entry-header-featured-image {
+                        @include media(medium, up) {
+                            order: 1;
+                        }
+
+                        + .entry-header-inner {
+                            @include media(medium, up) {
+                                order: 2;
+                                padding-left: $size__site-gutter-tablet;
+                        	}
+
+                            @include media(xlarge, up) {
+                                padding-left: $size__site-gutter-desktop;
+                        	}
+                        }
+                    }
+                }
+            }
+
+            &:nth-child(odd) {
+                .entry-header {
+                    .entry-header-featured-image {
+                        @include media(medium, up) {
+                            order: 2;
+                        }
+
+                        + .entry-header-inner {
+                            @include media(medium, up) {
+                                order: 1;
+                                padding-right: $size__site-gutter-tablet;
+                        	}
+
+                            @include media(xlarge, up) {
+                                padding-right: $size__site-gutter-desktop;
+                        	}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.search-no-results {
+    .search-form-wrapper {
+        @include alignMarginTop();
+    }
+}

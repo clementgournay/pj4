@@ -1,0 +1,598 @@
+/* General */
+
+.tac { text-align: center; }
+.table { display: table; }
+.tr { display: table-row; }
+.td { display:  table-cell; }
+
+
+.cva {
+    font-size: 2.5rem;
+    color: #88b9eb;
+    float: left;
+}
+
+.clearfix {
+    display: block;
+    clear: both;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #11171a;
+    border-radius: 10px;
+}
+
+.manage-clients h1 {
+    font-family: 'Josefin Slab';
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 2rem;
+    line-height: 1.5;
+}
+
+.manage-clients .subtitle {
+    text-align: center;
+    font-family: 'Josefin Slab';
+    font-size: 2rem;
+    text-align: center;
+    margin: 0.5rem;
+    margin-top: -1.5rem;
+    margin-bottom: 2rem;
+}
+
+.manage-clients .icon {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.manage-clients .icon.dress {
+    background-image: url(../../../themes/maudern/assets/images/icons/robe_2b_black.svg);
+}
+.manage-clients .icon.cardigan {
+    background-image: url(../../../themes/maudern/assets/images/icons/gilet_2_black.svg);
+}
+.manage-clients .icon.skirt {
+    background-image: url(../../../themes/maudern/assets/images/icons/jupe_3_black.svg);
+}
+.manage-clients .icon.shirt {
+    background-image: url(../../../themes/maudern/assets/images/icons/chemise_black.svg);
+}
+.manage-clients .icon.coat {
+    background-image: url(../../../themes/maudern/assets/images/icons/coat-black.png);
+}
+.manage-clients .icon.vest {
+    background-image: url(../../../themes/maudern/assets/images/icons/manteau_veste_2_black.svg);
+}
+.manage-clients .icon.top_tshirt {
+    background-image: url(../../../themes/maudern/assets/images/icons/tee_shirt_woman.svg);
+}
+
+.manage-clients .icon.pants {
+    background-image: url(../../../themes/maudern/assets/images/icons/pantalon_black.svg);
+}
+.manage-clients .icon.short {
+    background-image: url(../../../themes/maudern/assets/images/icons/short_black.svg);
+}
+.manage-clients .icon.jumpsuit {
+    background-image: url(../../../themes/maudern/assets/images/icons/jumpsuit-black.png);
+}
+.manage-clients .icon.accessory {
+    background-image: url(../../../themes/maudern/assets/images/icons/sac_black.svg);
+}
+
+
+.manage-clients button.send {
+    display: block;
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    margin: auto;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+
+.manage-clients button.send:hover {
+    opacity: 0.8;
+}
+
+.manage-clients .controls {
+    text-align: center;
+}
+
+.manage-clients .get-back {
+    display: block;
+    margin-top: 1rem;
+}
+
+.manage-clients .filters {
+    width: 100%;
+}
+
+.manage-clients .category-btn {
+    position: relative;
+    display: block;
+    float: left;
+    padding: 10px 0px;
+    border: 2px solid #e4e4e4;
+    border-radius: 10px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    width: 80px;
+    height: 50px;
+    text-align: center;
+}
+.manage-clients .category-btn.active {
+    border-color: black;
+}
+
+.manage-clients .brands .category-btn:not(.all) {
+    width: 120px;
+    padding: 10px;
+}
+
+.manage-clients .brands .category-btn img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    max-width: 90px;
+}
+
+.manage-clients .category-btn .icon {
+    display: block;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+}
+
+.manage-clients .category-btn .cat-count {
+    position: absolute;
+    right: 5px;
+    bottom: 2px;
+}
+
+.manage-clients .category-btn.no-result {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.manage-clients .category-btn.no-result .cat-count {
+    color: red;
+}
+
+
+.manage-clients .filters .label {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+
+.manage-clients .filters .tr:not(:first-child) .td {
+    padding-top: 1rem;
+}
+
+.client-actions {
+    display: block;
+    width: calc(100% - 3rem);
+    background: #e9f3fd;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.client-actions p {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.client-actions a {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
+
+/* Client list */
+
+.manage-clients.list .search  {
+    position: relative;
+    margin-bottom: 2rem;
+
+}
+
+.manage-clients.list .search .input {
+    width: 460px;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.manage-clients.list .search input {
+    float: left;
+    display: block;
+    height: 40px;
+    width: 400px;
+    margin: auto;
+}
+.manage-clients.list .search button {
+    width: 50px;
+    float: right;
+    padding: 0;
+    height: 40px;
+}
+
+.manage-clients.list .action-col {
+    width: 50px;
+}
+
+.manage-clients.list .id-col {
+    width: 150px;
+}
+
+.manage-clients.list .number {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    height: 40px;
+}
+
+.manage-clients.list .outer {
+    margin-top: 2rem;
+}
+
+
+.manage-clients.list .action-cell {
+    position: relative;
+}
+
+.manage-clients.list .action-btn {
+    width: 30px;
+    height: 30px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    margin: auto;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+.manage-clients.list .action-btn:hover,
+.manage-clients.list .action-btn.active {
+    background: orange;
+}
+
+
+#expand {
+    display: none;
+    position: fixed;
+    right: 5px;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    color:  white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+.manage-clients.list .actions {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 200px;
+    height: auto;
+    box-shadow: 5px 5px 10px #929292;
+    z-index: 100;
+}
+.manage-clients.list .actions.shown {
+    display: block;
+}
+.manage-clients.list .actions .action {
+    height: 40px;
+    line-height: 40px;
+    background: white;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 1rem;
+}
+.manage-clients.list .actions .action i {
+    display: inline-block;
+    width: 20px;
+    line-height: 40px;
+}
+
+.manage-clients.list .actions .action:hover {
+    background: orange;
+    color: white;
+}
+
+.manage-clients.list table {
+    border-collapse: collapse;
+    width: calc(100% - 20px);
+    box-shadow: 2px 5px 10px #bcbcbc;
+}
+
+.manage-clients.list table td, th {
+    padding: 10px;
+}
+
+.manage-clients.list table thead tr {
+    background: black;
+    color: white;
+}
+
+.manage-clients.list table tbody tr:nth-child(even) {
+    background: white;
+}
+
+.manage-clients.list table tbody tr:nth-child(odd) {
+    background: #f1f5ff;
+}
+
+.manage-clients .pager {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.manage-clients .pager a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    line-height: 40px;
+    outline: none;
+    margin: 5px;
+}
+.manage-clients .pager a.active {
+    color: white;
+    background: black;
+    border-radius: 50%;
+}
+
+
+
+/* Feature look */
+.manage-clients.look-editor .filters {
+    margin-top: 2rem;
+}
+
+
+.manage-clients.dashboard-cont {
+    width: calc(100% - 2rem);
+    min-width: 1000px;
+}
+
+.manage-clients.dashboard-cont .dashboard {
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    margin-top: 2rem;
+}
+
+/* Feature dressing */
+
+.manage-clients.dressing .outer {
+    overflow: auto;
+    box-shadow: 0px 0px 10px inset grey;
+    width: calc(100% - 20px);
+}
+
+.manage-clients.dressing .results {
+    table-layout: fixed;
+    width: 100%;
+    min-width: 1700px;
+    box-shadow: 2px 5px 10px #bcbcbc;
+}
+
+.manage-clients.dressing .results .td {
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #dadada;
+}
+.manage-clients.dressing .results .tr:last-child .td {
+    border-bottom: none;
+}
+
+.manage-clients.dressing .results .td .btn {
+    width: 130px;
+    height: 35px;
+    padding: 0;
+}
+
+.manage-clients.dressing .results .row {
+    padding: 10px 15px;
+}
+.manage-clients.dressing .results .row .icon {
+    width: 30px;
+    height: 30px;
+}
+
+.manage-clients.dressing .results .head .td {
+    background: black;
+    color: white;
+}
+
+
+.manage-clients.dressing .results .image-col {
+    width: 150px;
+}
+
+.manage-clients.dressing .results .ref-col {
+    width: 200px;
+}
+
+.manage-clients.dressing .results .image img {
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: auto;
+}
+
+.manage-clients.dressing .results .category .icon {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    margin: auto;
+}
+
+.manage-clients.dressing .results .brand img {
+    max-width: 100px;
+}
+
+.manage-clients.dressing .no-results .text {
+    padding: 1rem;
+    color: grey;
+    font-style: italic;
+}
+
+.manage-clients.dressing .results .comment textarea {
+    width: 100%;
+}
+
+/* Measurement */
+.manage-clients.measurement {
+    width: calc(100% - 20px);
+}
+
+
+.manage-clients.measurement fieldset {
+    border: 1px solid lightgrey;
+    padding: 1rem;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.manage-clients.measurement .part {
+    width: 50%;
+}
+
+.manage-clients.measurement .part.left {
+    float: left;
+}
+
+.manage-clients.measurement .part.right {
+    float: right;
+}
+
+.manage-clients.measurement .part.left img {
+    display: block;
+    margin: auto;
+    width: 200px;
+}
+
+.manage-clients.measurement .part select {
+    width: 100%;
+}
+
+.manage-clients.measurement .part.right .td {
+    width: 50%;
+    padding: 0.5rem;
+}
+
+
+
+@media all and (max-width: 1006px) {
+
+    /* Clients */
+    .manage-clients.list .search {
+        width: calc(100% - 1rem);
+        margin-bottom: 1rem;
+    }
+
+    .manage-clients.list .search:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .manage-clients.list .search .input {
+        display: inline-block;
+        width: calc(100% - 120px);
+        margin-top: 0;
+    }
+    
+
+    .manage-clients.list .search input {
+        width: calc(100% - 60px);
+    }
+
+    #expand {
+        display: block;
+    }
+
+    .manage-clients.list .number {
+        position: static;
+        float: right;
+    }
+
+    .manage-clients.list .outer {
+        overflow: hidden;
+        margin-right: 1rem;
+        box-shadow: 2px 5px 10px #bcbcbc;
+        margin-top: 0;
+    }
+
+    .manage-clients.list .outer.expanded {
+        overflow: visible;
+    }
+
+    .manage-clients.list table {
+        width: 100%;
+    }
+
+    /* Dashboard */
+    .manage-clients.dashboard-cont {
+        min-width: auto;
+    }
+
+    /* Dressing */
+    .manage-clients .filters .label {
+        display: block;
+        padding-left: 0;
+    }
+
+    /* Measurement */
+    .manage-clients.measurement .part.left img {
+        width: 60%;
+    }
+
+    .manage-clients.measurement .part {
+        width: 100%;
+        float: none;
+    }
+
+    
+    
+}

@@ -1,0 +1,72 @@
+.wp-block-gallery {
+    .blocks-gallery-item {
+        padding: 0;
+
+        a {
+            transition: $global--transition;
+
+            &:hover {
+                box-shadow: 0px 0px 20px 5px rgba(0,0,0,0.15);
+            }
+        }
+
+        figcaption {
+            color: $global--body-color-1;
+            padding: $size__element-small-spacing;
+
+            a {
+                color: $global--body-color-1;
+                @include underlineLink($global--body-color-1);
+            }
+        }
+    }
+
+    &.alignfull {
+        padding: 0 24px;
+    }
+}
+
+.wp-block-cover {
+    height: auto;
+    padding: 2 * $size__element-spacing;
+
+    &.alignwide,
+    &.alignfull {
+        width: auto;
+    }
+
+    .wp-block-cover__inner-container {
+        position: relative;
+        max-width: 775px;
+    }
+
+    p {
+        margin-bottom: 0;
+    }
+}
+
+.wp-block-image {
+    .alignfull {
+        > figcaption {
+            padding-left: 1.25rem;
+        }
+    }
+
+    .alignleft {
+        margin: $size__element-spacing $size__element-spacing $size__element-spacing 0;
+    }
+
+    .alignright {
+        margin: $size__element-spacing 0 $size__element-spacing $size__element-spacing;
+    }
+
+    figcaption {
+        margin-top: $size__element-spacing;
+    }
+}
+
+.wp-block-media-text {
+    .wp-block-media-text__content {
+        margin: 0;
+    }
+}

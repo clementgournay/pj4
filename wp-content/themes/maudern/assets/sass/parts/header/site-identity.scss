@@ -1,0 +1,37 @@
+.custom-logo-link {
+    display: block;
+    font-size: 0;
+
+    img {
+        height: var(--global--logo-height);
+        max-height: 30px;
+        width: auto;
+
+        @include media(large, up) {
+            max-height: var(--global--logo-height);
+        }
+    }
+}
+
+.site-title a {
+    color: $global--body-color-2;
+    display: block;
+    font-size: var(--global--font-size-h4);
+    line-height: $global--line-height-heading;
+    margin: 0 auto $size__element-xsmall-spacing;
+    width: fit-content;
+
+    @include underlineLinkHover( $global--body-color-2 );
+
+    @include media(large, down) {
+        margin: 0 0 $size__element-xsmall-spacing 0;
+    }
+}
+
+.site-tagline {
+    font-size: small;
+
+    @include media(large, down) {
+        text-align: left;
+    }
+}

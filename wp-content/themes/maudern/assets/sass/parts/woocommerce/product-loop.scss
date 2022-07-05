@@ -1,0 +1,144 @@
+ul.products {
+
+    &[class*=columns-] {
+        li.product {
+            @include media(large, down) {
+                margin-bottom: 2*$size__element-spacing;
+                margin-right: 0;
+                margin-left: 0;
+                width: calc(50% - #{$size__element-spacing});
+
+                &:nth-child(odd) {
+                    margin-right: 2*$size__element-spacing;
+                    margin-left: 0;
+                }
+
+                &.first {
+                    clear: none;
+                }
+            }
+
+            @include media(medium, down) {
+                margin-bottom: 2*$size__element-spacing;
+                width: calc(50% - #{$size__element-spacing}/2);
+
+                &:nth-child(odd) {
+                    margin-right: $size__element-spacing;
+                    margin-left: 0;
+                }
+
+                &.first {
+                    clear: none;
+                }
+            }
+        }
+    }
+
+    li.product {
+        margin-bottom: $size__element-spacing;
+        position: relative;
+
+        a {
+            display: block;
+
+            img {
+                margin-bottom: $size__element-small-spacing;
+
+                @include media(large, up) {
+                    margin-bottom: $size__element-spacing;
+                }
+            }
+
+            &.woocommerce-loop-product__link {
+                @include media(large, down) {
+                    line-height: $global--line-height-heading;
+                }
+            }
+        }
+
+        .woocommerce-loop-product__title,
+        .woocommerce-loop-category__title {
+            color: $global--body-color-2;
+            display: inline;
+            font-size: $global--font-size-base;
+            line-height: $global--line-height-body;
+            padding: 0;
+            transition: $global--transition;
+
+            @include media(medium, down) {
+                line-height: $global--line-height-heading;
+            }
+
+            @include underlineLinkHover( $global--body-color-2 );
+
+            .count {
+                background-color: transparent;
+            }
+
+            + * {
+                margin-top: calc( #{$size__element-small-spacing} - 3px );
+            }
+        }
+
+        .star-rating {
+            margin-bottom: $size__element-small-spacing;
+        }
+
+        a.button {
+            background-color: transparent;
+            border-radius: 0;
+            color: $global--body-color-2;
+            display: inline;
+            margin: 0 2*$size__element-spacing $size__element-small-spacing 0;
+            padding: 0;
+            transition: $global--transition;
+
+            @include underlineLink( $global--body-color-2 );
+
+            @include media(large, up) {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        a.button.loading {
+            &:after {
+                animation: rotate 1.0s infinite;
+                animation-timing-function: linear;
+                border:solid 1px $global--body-color-2;
+                border-radius: 50%;
+                border-right-color: $global--body-color-2-light;
+                border-bottom-color: $global--body-color-2-light;
+                content: '';
+                display: inline-block;
+                margin: 0 0 0 $size__element-small-spacing;
+                width: $size__icon-default-smaller;
+                height: $size__icon-default-smaller;
+                position: absolute;
+                top: 0;
+                right: calc( -1 * #{$size__icon-default-smaller} - 3 * #{$size__element-xsmall-spacing} );
+                left: auto;
+            }
+        }
+
+        a.button.added {
+            &:after {
+                content: none;
+            }
+        }
+
+        a.added_to_cart {
+            display: none;
+        }
+
+        &:hover {
+            a.button,
+            a.added_to_cart {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        @import 'sale-badge';
+    }
+}

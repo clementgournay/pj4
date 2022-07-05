@@ -1,0 +1,105 @@
+.wp-block-group {
+    &.has-background {
+        margin-bottom: 2*$size__element-spacing;
+    }
+}
+
+.wp-block-columns {
+    .wp-block-column {
+        @media all and (max-width: 599px) {
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        @media all and (min-width: 600px) and (max-width: 781px) {
+            &:last-child,
+            &:nth-last-child(2) {
+                margin-bottom: 0;
+            }
+        }
+
+        @include media(medium, up) {
+            margin-bottom: 0;
+
+            &:not(:first-child) {
+                margin-left: $size__site-gutter-mobile;
+            }
+        }
+
+        > [class*='wp-block-'] {
+            &:only-child {
+        		margin-top: 0;
+        		margin-bottom: 0;
+        	}
+        }
+    }
+
+    &.alignwide {
+        .wp-block-column {
+            &:not(:first-child) {
+                @include media(medium, up) {
+                    margin-left: $size__site-gutter-mobile;
+                }
+
+                @include media(large, up) {
+                    margin-left: $size__site-gutter-tablet;
+                }
+            }
+        }
+    }
+
+    &.alignfull {
+        .wp-block-column {
+            &:not(:first-child) {
+                @include media(medium, up) {
+                    margin-left: $size__site-gutter-mobile;
+                }
+
+                @include media(large, up) {
+                    margin-left: $size__site-gutter-tablet;
+                }
+
+                @include media(xlarge, up) {
+                    margin-left: $size__site-gutter-desktop;
+                }
+            }
+        }
+    }
+}
+
+[class*='wp-block-'].alignwide .wp-block-column {
+    .wp-block-column {
+        &:not(:first-child) {
+            @include media(medium, up) {
+                margin-left: $size__site-gutter-mobile;
+            }
+
+            @include media(large, up) {
+                margin-left: $size__site-gutter-tablet;
+            }
+        }
+    }
+}
+
+[class*='wp-block-'].alignfull .wp-block-column {
+    &:not(:first-child) {
+        @include media(medium, up) {
+            margin-left: $size__site-gutter-mobile;
+        }
+
+        @include media(large, up) {
+            margin-left: $size__site-gutter-tablet;
+        }
+
+        @include media(xlarge, up) {
+            margin-left: $size__site-gutter-desktop;
+        }
+    }
+}
+
+ul.wp-block-post-template {
+    li {
+        padding-bottom: 0;
+    }
+}

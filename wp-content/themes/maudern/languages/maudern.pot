@@ -1,0 +1,684 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Maudern\n"
+"POT-Creation-Date: 2021-08-25 17:32+0300\n"
+"PO-Revision-Date: 2021-05-10 12:06+0300\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.0\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+"X-Poedit-SearchPathExcluded-1: assets\n"
+"X-Poedit-SearchPathExcluded-2: class/class-tgm-plugin-activation.php\n"
+"X-Poedit-SearchPathExcluded-3: demo\n"
+
+#: 404.php:18
+msgctxt "404 Page Template"
+msgid "Page Not Found"
+msgstr ""
+
+#: 404.php:22
+msgctxt "404 Page Template"
+msgid ""
+"The page you were looking for could not be found. It might have been "
+"removed, renamed, or did not exist in the first place."
+msgstr ""
+
+#: class/admin/class-maudern-inbox-messages-customize.php:33
+msgctxt "Theme starter content"
+msgid "Design your store with Maudern 🎨"
+msgstr ""
+
+#: class/admin/class-maudern-inbox-messages-customize.php:34
+msgctxt "Theme starter content"
+msgid ""
+"Visit the Maudern settings page to start setup and customization of your "
+"shop."
+msgstr ""
+
+#: class/admin/class-maudern-inbox-messages-customize.php:41
+#: class/admin/class-maudern-plugin-install.php:145
+msgctxt "Theme starter content"
+msgid "Let's go!"
+msgstr ""
+
+#: class/admin/class-maudern-plugin-install.php:124
+msgctxt "Theme notification"
+msgid "Welcome to Maudern!"
+msgstr ""
+
+#: class/admin/class-maudern-plugin-install.php:125
+msgctxt "Theme notification"
+msgid ""
+"To enable eCommerce features you need to install the WooCommerce plugin."
+msgstr ""
+
+#: class/admin/class-maudern-plugin-install.php:126
+msgctxt "Theme notification"
+msgid "WooCommerce activated"
+msgstr ""
+
+#: class/admin/class-maudern-plugin-install.php:126
+msgctxt "Theme notification"
+msgid "Activate WooCommerce"
+msgstr ""
+
+#: class/admin/class-maudern-plugin-install.php:126
+msgctxt "Theme notification"
+msgid "Install WooCommerce"
+msgstr ""
+
+#: class/admin/class-maudern-plugin-install.php:143
+msgctxt "Theme notification"
+msgid "Design Your Store with Maudern!"
+msgstr ""
+
+#: class/admin/class-maudern-plugin-install.php:144
+msgctxt "Theme notification"
+msgid "You've set up WooCommerce, now it's time to give it some style!"
+msgstr ""
+
+#: class/admin/class-maudern-plugin-install.php:182
+msgctxt "Theme notification"
+msgid "Activated"
+msgstr ""
+
+#: class/admin/class-maudern-plugin-install.php:195
+msgctxt "Theme notification"
+msgid "Activate"
+msgstr ""
+
+#: class/admin/class-maudern-plugin-install.php:216
+msgctxt "Theme notification"
+msgid "Install now"
+msgstr ""
+
+#. translators: conjunction of two alternative options user can choose (in missing plugin admin notice). Example: "Activate WooCommerce or learn more"
+#: class/admin/class-maudern-plugin-install.php:235
+msgctxt "Theme notification"
+msgid "or"
+msgstr ""
+
+#: class/admin/class-maudern-plugin-install.php:236
+msgctxt "Theme notification"
+msgid "learn more"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:52
+msgctxt "Theme starter content"
+msgid "Maudern Logo"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:56
+msgctxt "Theme starter content"
+msgid "Maudern Favicon"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:60
+msgctxt "Theme starter content"
+msgid "Maudern Cards"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:64
+msgctxt "Theme starter content"
+msgid "Homepage Cover"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:68
+msgctxt "Theme starter content"
+msgid "Collection Image 1"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:72
+msgctxt "Theme starter content"
+msgid "Collection Image 2"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:76
+msgctxt "Theme starter content"
+msgid "Collection Image 3"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:80
+msgctxt "Theme starter content"
+msgid "Collection Image 4"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:84
+msgctxt "Theme starter content"
+msgid "Collection Image 5"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:88
+msgctxt "Theme starter content"
+msgid "Bazar"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:92
+msgctxt "Theme starter content"
+msgid "InStyle"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:96
+msgctxt "Theme starter content"
+msgid "Marie Claire"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:100
+msgctxt "Theme starter content"
+msgid "PopSugar"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:104
+msgctxt "Theme starter content"
+msgid "Vogue"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:112
+#: class/admin/class-maudern-starter-content.php:651
+msgctxt "Theme starter content"
+msgid "Hoodie with Zipper"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:116
+#: class/admin/class-maudern-starter-content.php:672
+msgctxt "Theme starter content"
+msgid "Long Sleeve Tee"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:120
+#: class/admin/class-maudern-starter-content.php:693
+msgctxt "Theme starter content"
+msgid "Polo"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:124
+#: class/admin/class-maudern-starter-content.php:715
+msgctxt "Theme starter content"
+msgid "Tshirt"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:128
+#: class/admin/class-maudern-starter-content.php:737
+msgctxt "Theme starter content"
+msgid "Vneck Tshirt"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:132
+msgctxt "Theme starter content"
+msgid "Post Image 1"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:136
+msgctxt "Theme starter content"
+msgid "Post Image 2"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:140
+msgctxt "Theme starter content"
+msgid "Post Image 3"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:144
+msgctxt "Theme starter content"
+msgid "Post Image 4"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:148
+msgctxt "Theme starter content"
+msgid "Post Content 1"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:152
+msgctxt "Theme starter content"
+msgid "Post Content 2"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:156
+msgctxt "Theme starter content"
+msgid "Post Content 3"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:160
+msgctxt "Theme starter content"
+msgid "Post Content 4"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:164
+msgctxt "Theme starter content"
+msgid "Post Content 5"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:172
+msgctxt "Theme starter content"
+msgid "Maudern Store"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:195
+#: class/admin/class-maudern-starter-content.php:201
+#: class/admin/class-maudern-starter-content.php:207
+#: class/admin/class-maudern-starter-content.php:213
+#: class/admin/class-maudern-starter-content.php:219
+#: functions/function-block-patterns.php:38
+#: functions/function-block-patterns.php:44
+#: functions/function-block-patterns.php:50
+#: functions/function-block-patterns.php:56
+#: functions/function-block-patterns.php:62
+msgctxt "Theme starter content"
+msgid "Homepage Image"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:228
+msgctxt "Theme starter content"
+msgid "About"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:233
+#: class/admin/class-maudern-starter-content.php:239
+#: functions/function-block-patterns.php:141
+#: functions/function-block-patterns.php:147
+msgctxt "Theme starter content"
+msgid "About Image"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:277
+msgctxt "Theme starter content"
+msgid "Collection"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:286
+#: class/admin/class-maudern-starter-content.php:294
+#: class/admin/class-maudern-starter-content.php:310
+#: class/admin/class-maudern-starter-content.php:318
+#: class/admin/class-maudern-starter-content.php:334
+#: functions/function-block-patterns.php:80
+#: functions/function-block-patterns.php:88
+#: functions/function-block-patterns.php:104
+#: functions/function-block-patterns.php:112
+#: functions/function-block-patterns.php:128
+msgctxt "Theme starter content"
+msgid "Collection Image"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:342
+msgctxt "Theme starter content"
+msgid "Order Tracking"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:357
+msgctxt "Theme starter content"
+msgid "The Blog"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:362
+msgctxt "Theme starter content"
+msgid "Six Ways To Style Out Summer In The City"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:373
+#: class/admin/class-maudern-starter-content.php:445
+msgctxt "Theme starter content"
+msgid "Post Content Image 1"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:373
+#: class/admin/class-maudern-starter-content.php:445
+msgctxt "Theme starter content"
+msgid "Post Content Image 2"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:373
+#: class/admin/class-maudern-starter-content.php:445
+msgctxt "Theme starter content"
+msgid "Post Content Image 3"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:389
+#: class/admin/class-maudern-starter-content.php:461
+msgctxt "Theme starter content"
+msgid "Post Content Image 4"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:389
+#: class/admin/class-maudern-starter-content.php:461
+msgctxt "Theme starter content"
+msgid "Post Content Image 5"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:410
+msgctxt "Theme starter content"
+msgid "This Season’s Most Covetable Combat Boots"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:434
+msgctxt "Theme starter content"
+msgid ""
+"Our Latest Vanguard Line-Up: The Three Eco-Concious Brands You Need to Know"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:482
+msgctxt "Theme starter content"
+msgid "The Ultimate Guide for Sneaker Shopping for This Season"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:526
+msgctxt "Theme starter content"
+msgid "Main Navigation"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:544
+msgctxt "Theme starter content"
+msgid "Footer Navigation"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:624
+msgctxt "Theme starter content"
+msgid "Clothes"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:625
+msgctxt "Theme starter content"
+msgid "A short category description"
+msgstr ""
+
+#: class/admin/class-maudern-starter-content.php:629
+msgctxt "Theme starter content"
+msgid "Hoodie with Pocket"
+msgstr ""
+
+#: class/class-maudern-customize.php:281
+msgctxt "Theme customizer options"
+msgid "Logo Height"
+msgstr ""
+
+#: class/class-maudern-customize.php:307
+msgctxt "Theme customizer options"
+msgid "Footer"
+msgstr ""
+
+#: class/class-maudern-customize.php:329
+msgctxt "Theme customizer options"
+msgid "Footer Text Note"
+msgstr ""
+
+#: class/class-maudern-customize.php:330
+msgctxt "Theme customizer options"
+msgid "Allowed HTML tags: a, br, div, em, i, img, span, strong"
+msgstr ""
+
+#: class/class-maudern-customize.php:362
+msgctxt "Theme customizer options"
+msgid "Credit Card Icon"
+msgstr ""
+
+#: class/class-maudern-customize.php:383
+msgctxt "Theme customizer options"
+msgid "Footer Background Color"
+msgstr ""
+
+#: class/class-maudern-customize.php:395
+msgctxt "Theme customizer options"
+msgid "Footer Text Color"
+msgstr ""
+
+#: class/class-maudern-customize.php:414
+msgctxt "Theme customizer options"
+msgid "Fonts"
+msgstr ""
+
+#: class/class-maudern-customize.php:436
+msgctxt "Theme customizer options"
+msgid "Base Font Family"
+msgstr ""
+
+#: class/class-maudern-customize.php:440
+msgctxt "Theme customizer options"
+msgid "Enter the font name"
+msgstr ""
+
+#: class/class-maudern-customize.php:469
+msgctxt "Theme customizer options"
+msgid "Base Font Size"
+msgstr ""
+
+#: class/class-maudern-customize.php:470
+msgctxt "Theme customizer options"
+msgid ""
+"The Base Font Size refers to the size applied to the paragraph text. All "
+"other elements, such as headings, links, buttons, etc will adjusted "
+"automatically to keep the hierarchy of font sizes based on this one size. "
+"Easy-peasy!"
+msgstr ""
+
+#: class/class-maudern-customize.php:495
+msgctxt "Theme customizer options"
+msgid "Colors"
+msgstr ""
+
+#: class/class-maudern-customize.php:506
+msgctxt "Theme customizer options"
+msgid "Color 1"
+msgstr ""
+
+#: class/class-maudern-customize.php:507
+msgctxt "Theme customizer options"
+msgid "Used as background color and contrast texts."
+msgstr ""
+
+#: class/class-maudern-customize.php:518
+msgctxt "Theme customizer options"
+msgid "Color 2"
+msgstr ""
+
+#: class/class-maudern-customize.php:519
+msgctxt "Theme customizer options"
+msgid "Used as global text color."
+msgstr ""
+
+#: class/class-maudern-customize.php:530
+msgctxt "Theme customizer options"
+msgid "Color 3"
+msgstr ""
+
+#: class/class-maudern-customize.php:542
+msgctxt "Theme customizer options"
+msgid "Color 4"
+msgstr ""
+
+#: class/class-maudern-customize.php:543
+msgctxt "Theme customizer options"
+msgid "Used for success notifications."
+msgstr ""
+
+#: class/class-maudern-customize.php:554
+msgctxt "Theme customizer options"
+msgid "Color 5"
+msgstr ""
+
+#: class/class-maudern-customize.php:555
+msgctxt "Theme customizer options"
+msgid "Used for error notifications."
+msgstr ""
+
+#: class/class-maudern-customize.php:566
+msgctxt "Theme customizer options"
+msgid "Color 6"
+msgstr ""
+
+#: class/class-maudern-customize.php:567
+msgctxt "Theme customizer options"
+msgid "Used for info notifications."
+msgstr ""
+
+#: class/class-maudern-customize.php:598
+msgctxt "Theme customizer options"
+msgid "Show categories list in product archives"
+msgstr ""
+
+#: class/class-maudern-customize.php:622
+msgctxt "Theme customizer options"
+msgid "Show categories list in mobile menu"
+msgstr ""
+
+#: class/class-maudern-customize.php:836 template-parts/footer/image.php:14
+msgid "Footer Image"
+msgstr ""
+
+#: comments.php:53
+msgid "Comments"
+msgstr ""
+
+#: comments.php:84
+msgid "Comments are closed."
+msgstr ""
+
+#: functions/function-block-patterns.php:207
+msgctxt "Block Patterns Category"
+msgid "Maudern"
+msgstr ""
+
+#: functions/function-theme-setup.php:71
+msgctxt "Menu Locations"
+msgid "Primary Menu"
+msgstr ""
+
+#: functions/function-theme-setup.php:72
+msgctxt "Menu Locations"
+msgid "Mobile Menu"
+msgstr ""
+
+#: functions/function-theme-setup.php:73
+msgctxt "Menu Locations"
+msgid "Footer Menu"
+msgstr ""
+
+#: functions/function-theme-setup.php:125
+msgctxt "Sidebar name"
+msgid "Shop Filters"
+msgstr ""
+
+#: functions/function-theme-setup.php:136
+msgctxt "Sidebar name"
+msgid "Footer Widgets"
+msgstr ""
+
+#: functions/function-woocommerce-setup.php:81
+msgid "All Products"
+msgstr ""
+
+#: functions/function-woocommerce-setup.php:149
+msgctxt "Shop filters"
+msgid "Filters"
+msgstr ""
+
+#: header.php:30
+msgid "Skip to content"
+msgstr ""
+
+#: includes/template-tags.php:347
+msgctxt "Post meta"
+msgid "Featured —"
+msgstr ""
+
+#: includes/template-tags.php:360
+msgctxt "Post meta"
+msgid "Categories"
+msgstr ""
+
+#: includes/template-tags.php:377
+msgctxt "Post meta"
+msgid "Post date"
+msgstr ""
+
+#: includes/template-tags.php:393
+msgctxt "Post meta"
+msgid "Tags"
+msgstr ""
+
+#: includes/template-tags.php:409
+msgctxt "Post meta"
+msgid "Full size"
+msgstr ""
+
+#: includes/template-tags.php:732
+msgid "Continue shopping"
+msgstr ""
+
+#: includes/template-tags.php:777
+msgid "Previous Product"
+msgstr ""
+
+#: includes/template-tags.php:805
+msgid "Next Product"
+msgstr ""
+
+#: index.php:21
+msgid "Search:"
+msgstr ""
+
+#: index.php:29
+#, php-format
+msgid "We found %s result for your search."
+msgid_plural "We found %s results for your search."
+msgstr[0] ""
+msgstr[1] ""
+
+#: index.php:37
+msgid ""
+"We could not find any results for your search. You can give it another try "
+"through the search form below."
+msgstr ""
+
+#: index.php:40
+msgid "Nothing Found"
+msgstr ""
+
+#: index.php:46 index.php:48 index.php:85
+msgid "All Articles"
+msgstr ""
+
+#: template-parts/content.php:21
+msgid "Continue reading"
+msgstr ""
+
+#: template-parts/content/navigation.php:18
+msgid "Previous Post"
+msgstr ""
+
+#: template-parts/content/navigation.php:46
+msgid "Next Post"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Maudern"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://maudern.thunder-stores.com/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"A contemporary block-based theme that helps you effortlessly design a "
+"minimalistic online store with WooCommerce."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Thunderstores"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.thunder-stores.com/"
+msgstr ""

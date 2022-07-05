@@ -1,0 +1,5 @@
+wp-config.php
+wp-content/uploads
+.ftpquota
+Pipfile
+Pipfile.lock

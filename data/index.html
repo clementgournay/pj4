@@ -1,0 +1,132 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Tâches en cours</title>
+    <style>
+        body {
+            background: whitesmoke;
+            padding: 2rem;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 0;
+        }
+
+        .action {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .no-tasks { display: none; }
+
+        .task {
+            padding: 1rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 5px 5px 8px grey;
+            margin-bottom: 1rem;
+        }
+
+        .task.in-progress {
+            color: green;
+        }
+
+        .progress-bar {
+            position: relative;
+            height: 50px;
+            background: whitesmoke;
+            border: 1px solid grey;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 0%;
+            height: 100%;
+            background: green;
+            border-radius: 5px;
+            
+        }
+        .progress-text {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            line-height: 50px;
+            text-shadow: 0px 0px 3px white;
+            font-size: 1.5rem;
+            z-index: 2;
+            color: black;
+        }
+        .controls {
+            text-align: center;
+        }
+        .controls .logs {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Tâches en cours</h1>
+        <div class="tasks"></div>
+        <div clasS="no-tasks">Aucune tâche en cours actuellement.</div>
+    </main>
+    <div class="controls">
+        <a class="logs" href="./logs" target="_blank">Voir les logs d'aujourd'hui</a>
+    </div>
+    <script>
+        const tasks = [];
+
+        var headers = new Headers();
+        headers.append('pragma', 'no-cache');
+        headers.append('cache-control', 'no-cache');
+
+        const getTasks = () => {
+            fetch('tasks.json', {
+                method: 'GET',
+                headers: headers
+            }).then((resp) => {
+                return resp.json();
+            }).then((tasks) => {
+                const tasksEl = document.querySelector('.tasks');
+
+                tasksEl.innerHTML = '';
+                if (tasks.length === 0) {
+                    document.querySelector('.no-tasks').style.display = 'block';
+                } else {
+                    document.querySelector('.no-tasks').style.display = 'none';
+                    let tasksSTR = '';
+                    tasks.forEach((task) => {
+                        tasksSTR += `
+                            <div class="task ${(task.in_progress) ? 'in-progress' : ''}">
+                                <h2>${task.id}</h2>
+                                <div class="action">
+                                    <label>Action: </label><span>${task.action}</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div class="progress" style="width: ${task.per}%"></div>
+                                    <div class="progress-text">${task.per}%</div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    tasksEl.innerHTML = tasksSTR;
+                }
+            });
+        }
+
+        getTasks();
+        setInterval(getTasks, 10000);
+
+    </script>
+</body>
+</html>

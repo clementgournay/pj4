@@ -1,0 +1,134 @@
+#reviews.woocommerce-Reviews {
+    position: relative;
+
+    .woocommerce-Reviews-title {
+        display: none;
+    }
+
+    #comments {
+        margin-bottom: $size__site-gutter-tablet;
+
+        ol.commentlist {
+            padding-left: 0;
+
+            li.review {
+                margin: 0;
+                padding-bottom: $size__site-gutter-mobile;
+
+                @include media(medium, up) {
+                    padding-bottom: $size__site-gutter-tablet;
+                }
+
+                &:last-child {
+                    padding-bottom: 0;
+                }
+
+                .comment_container {
+                    img.avatar {
+                        background-color: transparent;
+                        border: 0;
+                        border-radius: 50%;
+                        padding: 0;
+                        width: 45px;
+                    }
+
+                    .comment-text {
+                        border: 0;
+                        margin: 0 0 0 60px;
+                        padding: 0;
+                    }
+
+                    .star-rating {
+                        margin-top: calc( #{$size__element-small-spacing} + 2px );
+                    }
+
+                    p.meta {
+                        line-height: 1;
+                        margin-bottom: $size__element-spacing;
+                        margin-top: calc( #{$size__element-small-spacing} + 3px );
+
+                        .woocommerce-review__author {
+                            font-size: $global--font-size-base;
+                            font-weight: normal;
+                            color: $global--body-color-2;
+                            display: inline-block;
+                            vertical-align: middle;
+                        }
+
+                        .woocommerce-review__dash,
+                        .woocommerce-review__published-date {
+                            color: $global--body-color-2-medium;
+                            display: inline-block;
+                            font-size: small;
+                            padding-top: 2px;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+
+        .woocommerce-pagination {
+            padding-left: 0;
+            padding-right: 0;
+
+            @include media(xlarge, up) {
+                padding-top: $size__site-gutter-tablet;
+                padding-bottom: $size__site-gutter-tablet;
+            }
+        }
+    }
+
+    #review_form_wrapper {
+        #review_form .comment-respond {
+            span.comment-reply-title {
+                display: block;
+                font-size: $global--font-size-h4;
+                margin-bottom: $size__element-spacing;
+            }
+
+            form.comment-form {
+
+                .comment-form-comment,
+                .comment-form-author,
+                .comment-form-email {
+                    position: relative;
+
+                    label {
+                        @include floatingLabel();
+                    }
+
+                    input,
+                    textarea {
+                        line-height: normal;
+                        padding: calc( #{$size__element-spacing} + #{$size__element-xsmall-spacing} ) $size__element-spacing calc( #{$size__element-spacing} - #{$size__element-xsmall-spacing} ) $size__element-spacing;
+                    }
+
+                    &.is-active {
+                        label {
+                            font-size: small;
+                            transform: translateY(.55rem);
+                        }
+                    }
+                }
+
+                .form-submit input {
+                    margin: 0;
+                }
+
+                p {
+                    margin-bottom: $size__element-spacing;
+                    position: relative;
+                }
+
+                p.comment-form-comment {
+                    position: relative;
+
+                    textarea {
+                        height: $size__site-gutter-desktop-large;
+                    }
+                }
+            }
+        }
+    }
+}

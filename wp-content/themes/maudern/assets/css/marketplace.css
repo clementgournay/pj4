@@ -1,0 +1,361 @@
+.brands {
+    display: flex;
+    justify-content: space-around;
+}
+
+.brands .brand {
+    width: 200px;
+    height: 100px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.brands .brand img {
+    position: absolute;
+    top: 50%;
+    padding: 1rem;
+    transform: translate3d(0, -50%, 0);
+}
+
+.brands .brand:hover {
+    background: #e35f35;
+}
+
+.brands .brand img {
+    width: calc(100% - 2rem);
+}
+
+.banner {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+}
+
+@keyframes monitor {
+    0% {
+        background-color: #0e0127;
+    }
+    25% {
+        background-color: #011927;
+    }
+    50% {
+        background-color: #012723;
+    }
+    75% {
+        background-color: #01270d;
+    }
+    to {
+        background-color: #0e0127;
+    }
+}
+.lcd {
+    padding: 2rem;
+    height: 400px;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    border: 10px solid black;
+    border-left: none;
+    border-right: none;    
+    pointer-events: all !important;
+}
+
+.lcd .background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: 500px;
+    background-attachment: fixed;
+}
+
+.lcd .background:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/patterns/dots.png);
+}
+/*
+@keyframes slide {
+    from {
+        opacity: 0;
+        left: calc(100%);
+        transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, -35deg) scale(1);
+    }
+    10% {
+        opacity: 0.9;
+    }
+    40% {
+        transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, 0deg) scale(1);
+    }
+    45% {
+        transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, 0deg) scale(1.1);
+    }
+    55% {
+        transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, 0deg) scale(1.1);
+    }
+    60% {
+        transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, 0deg) scale(1);
+    }
+    90% {
+        opacity: 0.9;
+    }
+    to {
+        opacity: 0;
+        left: -600px;
+        transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, 35deg);
+    }
+}*/
+
+@keyframes slide {
+    from {
+        opacity: 0;
+        left: calc(100%);
+        transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, -35deg) scale(1);
+    }
+    10% {
+        opacity: 0.9;
+    }
+    40% {
+        transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, 0deg) scale(1);
+    }
+    45% {
+        transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, 0deg) scale(1.1);
+    }
+    55% {
+        transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, 0deg) scale(1.1);
+    }
+    60% {
+        transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, 0deg) scale(1);
+    }
+    90% {
+        opacity: 0.9;
+    }
+    to {
+        opacity: 0;
+        left: -600px;
+        transform: translate3d(0, 0, 150px) rotate3d(0, 1, 0, 35deg);
+    }
+}
+
+.lcd .logo {
+    position: relative;
+    left: 100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+.lcd .logo img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 400px;
+}
+
+.lcd .screens {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    z-index: 3;
+}
+
+.lcd .screens .screen {
+    position: absolute;
+    top: 70px;
+    left: 500px;
+    width: 450px;
+    height: 250px;
+    animation: slide 40s linear infinite;
+    opacity: 0;
+    border: 2px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s linear;
+    background-color: black;
+}
+
+.lcd .screens .screen:hover {
+    border-width: 2px;
+    border-color: orange;
+}
+
+.lcd .screens .screen:nth-child(2) {
+    animation-delay: 10s;
+}
+
+.lcd .screens .screen:nth-child(3) {
+    animation-delay: 20s;
+}
+.lcd .screens .screen:nth-child(4) {
+    animation-delay: 30s;
+}
+
+.lcd .screens video {
+    display: block;
+    width: 100%;
+}
+
+.lcd .screens .screen .image {
+    width: 100%;
+    height: 320px;
+    background-size: cover;
+}
+
+.lcd .screens .screen .title {
+    font-family: 'Montserrat';
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    font-size: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+.get-back {
+    display: block;
+    margin-top: calc(400px + 1rem);
+}
+
+canvas { 
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100000
+}
+
+.look-editor .editor .model-cont .cloth-replace h2, .look-editor .editor .model-cont .settings-cont h2 {
+    font-size: 1.6rem !important;
+}
+
+.look-editor .editor .model-cont .window.full-screen {
+    width: calc(100% - 55px) !important;
+    height: calc(100% - 73px) !important;
+}
+
+.look-editor .editor .wizard .bar {
+    height: 50px !important;
+}
+
+.look-editor .editor .wizard .search-ref .field input {
+    height: 40px;
+}
+
+.editor h3 {
+    margin: 1rem;
+}
+
+.main-title .count {
+    font-size: 2rem;
+}
+
+.look-editor .editor .wizard .bar {
+    width: 100% !important;
+}
+
+.look-editor .editor .related-looks .tags {
+    height: 80px !important;
+}
+
+.look-editor .editor .model-cont .action-btn {
+    font-size: 16px !important;
+}
+
+.assistant .icon {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.assistant .drawing {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.assistant .icon.dress {
+    background-image: url(../images/icons/robe_2b_black.svg);
+}
+.assistant .icon.cardigan {
+    background-image: url(../images/icons/gilet_2_black.svg);
+}
+.assistant .icon.skirt {
+    background-image: url(../images/icons/jupe_3_black.svg);
+}
+.assistant .icon.shirt {
+    background-image: url(../images/icons/chemise_black.svg);
+}
+.assistant .icon.coat {
+    background-image: url(../images/icons/manteau_veste_2_black.svg);
+}
+.assistant .icon.vest {
+    background-image: url(../images/icons/manteau_veste_2_black.svg);
+}
+.assistant .icon.top_tshirt {
+    background-image: url(../images/icons/tee_shirt_woman.svg);
+}
+
+.assistant .icon.pants {
+    background-image: url(../images/icons/pantalon_black.svg);
+}
+.assistant .icon.short {
+    background-image: url(../images/icons/short_black.svg);
+}
+.assistant .icon.accessory {
+    background-image: url(../images/icons/sac_black.svg);
+}
+
+
+.assistant .drawing.dress {
+    background-image: url(../images/icons/dress.jpg);
+}
+.assistant .drawing.cardigan {
+    background-image: url(../images/icons/gilet_2_black.svg);
+}
+.assistant .drawing.skirt {
+    background-image: url(../images/icons/skirt.jpg);
+}
+.assistant .drawing.shirt {
+    background-image: url(../images/icons/shirt.jpg);
+}
+.assistant .drawing.coat {
+    background-image: url(../images/icons/coat.jpg);
+}
+.assistant .drawing.vest {
+    background-image: url(../images/icons/vest.jpg);
+}
+.assistant .drawing.top_tshirt {
+    background-image: url(../images/icons/top_tshirt.jpg);
+}
+
+.assistant .drawing.pants {
+    background-image: url(../images/icons/pants.jpg);
+}
+.assistant .drawing.short {
+    background-image: url(../images/icons/short.jpg);
+}
+.assistant .drawing.jumpsuit {
+    background-image: url(../images/icons/jumpsuit.jpg);
+}
+.assistant .drawing.accessory {
+    background-image: url(../images/icons/accessory.jpg);
+}
+
+

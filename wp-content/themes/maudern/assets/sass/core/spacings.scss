@@ -1,0 +1,159 @@
+@mixin alignMarginTop() {
+	margin-top: $size__site-gutter-mobile;
+
+    @include media(medium, up) {
+        margin-top: $size__site-gutter-tablet;
+	}
+
+    @include media(xlarge, up) {
+        margin-top: $size__site-gutter-desktop;
+	}
+}
+
+@mixin alignMarginBottom() {
+    margin-bottom: $size__site-gutter-mobile;
+
+    @include media(medium, up) {
+        margin-bottom: $size__site-gutter-tablet;
+	}
+
+    @include media(xlarge, up) {
+        margin-bottom: $size__site-gutter-desktop;
+	}
+}
+
+@mixin alignMarginRight() {
+    margin-right: $size__site-gutter-mobile;
+
+    @include media(medium, up) {
+        margin-right: $size__site-gutter-tablet;
+	}
+
+    @include media(xlarge, up) {
+        margin-right: $size__site-gutter-desktop;
+	}
+}
+
+@mixin alignMarginLeft() {
+    margin-left: $size__site-gutter-mobile;
+
+    @include media(medium, up) {
+        margin-left: $size__site-gutter-tablet;
+	}
+
+    @include media(xlarge, up) {
+        margin-left: $size__site-gutter-desktop;
+	}
+}
+
+@mixin alignPaddingTop() {
+    padding-top: $size__site-gutter-mobile;
+
+    @include media(medium, up) {
+        padding-top: $size__site-gutter-tablet;
+    }
+
+    @include media(xlarge, up) {
+        padding-top: $size__site-gutter-desktop;
+    }
+}
+
+@mixin alignPaddingBottom() {
+    padding-bottom: $size__site-gutter-mobile;
+
+    @include media(medium, up) {
+        padding-bottom: $size__site-gutter-tablet;
+    }
+
+    @include media(xlarge, up) {
+        padding-bottom: $size__site-gutter-desktop;
+    }
+}
+
+@mixin alignPaddingRight() {
+    padding-right: $size__site-gutter-mobile;
+
+    @include media(medium, up) {
+        padding-right: $size__site-gutter-tablet;
+    }
+
+    @include media(xlarge, up) {
+        padding-right: $size__site-gutter-desktop;
+    }
+}
+
+@mixin alignPaddingLeft() {
+    padding-left: $size__site-gutter-mobile;
+
+    @include media(medium, up) {
+        padding-left: $size__site-gutter-tablet;
+    }
+
+    @include media(xlarge, up) {
+        padding-left: $size__site-gutter-desktop;
+    }
+}
+
+.no-margin {
+
+	@include generateResponsive() {
+		margin: 0;
+	}
+
+    @include generateResponsiveNoSpacing('margin', 'left');
+	@include generateResponsiveNoSpacing('margin', 'right');
+	@include generateResponsiveNoSpacing('margin', 'top');
+	@include generateResponsiveNoSpacing('margin', 'bottom');
+}
+
+.no-padding {
+
+	@include generateResponsive() {
+		padding: 0;
+	}
+
+	@include generateResponsiveNoSpacing('padding', 'left');
+	@include generateResponsiveNoSpacing('padding', 'right');
+	@include generateResponsiveNoSpacing('padding', 'top');
+	@include generateResponsiveNoSpacing('padding', 'bottom');
+}
+
+.padding-l {
+    @include alignPaddingLeft();
+	@include generateResponsiveSpacing('padding', 'left');
+}
+
+.padding-r {
+    @include alignPaddingRight();
+	@include generateResponsiveSpacing('padding', 'right');
+}
+
+.padding-t {
+    @include alignPaddingTop();
+	@include generateResponsiveSpacing('padding', 'top');
+}
+
+.padding-b {
+    @include alignPaddingBottom();
+	@include generateResponsiveSpacing('padding', 'bottom');
+}
+
+.margin-l {
+    @include alignMarginLeft();
+	@include generateResponsiveSpacing('margin', 'left');
+}
+
+.margin-r {
+    @include alignMarginRight();
+	@include generateResponsiveSpacing('margin', 'right');
+}
+
+.margin-t {
+    @include alignMarginTop();
+	@include generateResponsiveSpacing('margin', 'top');
+}
+
+.margin-b {
+    @include alignMarginBottom();
+	@include generateResponsiveSpacing('margin', 'bottom');
+}

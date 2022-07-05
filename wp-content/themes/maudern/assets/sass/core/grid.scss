@@ -1,0 +1,51 @@
+@mixin gridSection {
+	display: grid;
+	grid-template-columns: $size__mobile-grid;
+
+	@include media(medium, up) {
+		grid-template-columns: $size__tablet-grid;
+	}
+
+	@include media(xlarge, up) {
+		grid-template-columns: $size__desktop-grid;
+		max-width: $size__max-site-width;
+		width: 100%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+@mixin regularContentMaxWidth() {
+	grid-column: 1 / -1;
+
+	@include media(large, up) {
+		grid-column: 3 / -3;
+	}
+
+	@include media(xlarge, up) {
+		grid-column: 4 / -4;
+	}
+}
+
+@mixin wideContentMaxWidth() {
+	grid-column: 2 / -2;
+}
+
+@mixin fullContentMaxWidth() {
+	grid-column: 1 / -1;
+}
+
+@mixin gridSiteMain() {
+	@include gridSection();
+
+	> article {
+		@include fullContentMaxWidth();
+		@include gridSection();
+
+		.entry-content,
+		.entry-footer {
+			@include regularContentMaxWidth();
+			@include alignMarginBottom();
+		}
+	}
+}

@@ -1,0 +1,146 @@
+[
+    {
+        "id": "623ddc07b2e21",
+        "action": "update-products",
+        "in_progress": false,
+        "progress": 0,
+        "total": 111,
+        "per": 0
+    },
+    {
+        "id": "623de02c81816",
+        "action": "import-clients",
+        "in_progress": false,
+        "progress": 0,
+        "total": 111,
+        "per": 0
+    },
+    {
+        "id": "623de13dcfe43",
+        "action": "import-clients",
+        "in_progress": false,
+        "progress": 0,
+        "total": 1,
+        "per": 0
+    },
+    {
+        "id": "623de1aaeb42c",
+        "action": "import-clients",
+        "in_progress": false,
+        "progress": 0,
+        "total": 1,
+        "per": 0
+    },
+    {
+        "id": "623de316ae3b8",
+        "action": "import-clients",
+        "in_progress": false,
+        "progress": 0,
+        "total": 1,
+        "per": 0
+    },
+    {
+        "id": "623de3b2adac0",
+        "action": "update-clients",
+        "in_progress": false,
+        "progress": 0,
+        "total": 1,
+        "per": 0
+    },
+    {
+        "id": "6241b9ae34ddc",
+        "action": "update-products",
+        "in_progress": false,
+        "progress": 0,
+        "total": 111,
+        "per": 0
+    },
+    {
+        "id": "624319023ff7d",
+        "action": "update-products",
+        "in_progress": false,
+        "progress": 0,
+        "total": 111,
+        "per": 0
+    },
+    {
+        "id": "62442e445dfef",
+        "action": "update-products",
+        "in_progress": false,
+        "progress": 0,
+        "total": 111,
+        "per": 0
+    },
+    {
+        "id": "6245a9cb8dd35",
+        "action": "update-products",
+        "in_progress": false,
+        "progress": 0,
+        "total": 111,
+        "per": 0
+    },
+    {
+        "id": "624d9a7d98544",
+        "action": "update-products",
+        "in_progress": false,
+        "progress": 0,
+        "total": 111,
+        "per": 0
+    },
+    {
+        "id": "6253ecd1edea8",
+        "action": "import-products",
+        "in_progress": false,
+        "progress": 0,
+        "total": 1,
+        "per": 0
+    },
+    {
+        "id": "6253f0f283ed0",
+        "action": "import-receipts",
+        "in_progress": false,
+        "progress": 0,
+        "total": 1,
+        "per": 0
+    },
+    {
+        "id": "6253f262746d9",
+        "action": "import-products",
+        "in_progress": false,
+        "progress": 0,
+        "total": 1,
+        "per": 0
+    },
+    {
+        "id": "6253f2eb89582",
+        "action": "import-products",
+        "in_progress": false,
+        "progress": 0,
+        "total": 1,
+        "per": 0
+    },
+    {
+        "id": "6253f2f0ac2ee",
+        "action": "import-receipts",
+        "in_progress": false,
+        "progress": 0,
+        "total": 1,
+        "per": 0
+    },
+    {
+        "id": "625445b6cb4ac",
+        "action": "import-products",
+        "in_progress": false,
+        "progress": 0,
+        "total": 1,
+        "per": 0
+    },
+    {
+        "id": "6269046b43c7c",
+        "action": "import-receipts",
+        "in_progress": false,
+        "progress": 0,
+        "total": 686,
+        "per": 0
+    }
+]

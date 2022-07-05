@@ -1,0 +1,24 @@
+.options h1 {
+    font-family: 'Josefin Slab';
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 2rem;
+}
+
+.options .table {
+    width: 500px;
+    margin: auto;
+}
+
+.options .table .td {
+    padding: 1rem;
+}
+
+.options .table .label {
+    width: 200px;
+}
+
+.options .controls {
+    text-align: center;
+    margin-top: 2rem;
+}

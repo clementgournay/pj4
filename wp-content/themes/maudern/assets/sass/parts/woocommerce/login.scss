@@ -1,0 +1,172 @@
+.login-notices,
+.woocommerce-login-form-wrapper {
+    margin-left: calc( -100vw / 2 + 100% / 2 );
+    margin-right: calc( -100vw / 2 + 100% / 2 );
+    max-width: 100vw;
+    width: auto;
+    white-space: nowrap;
+
+    padding-right: $size__site-gutter-mobile;
+    padding-left: $size__site-gutter-mobile;
+
+    @include media(medium, up) {
+        padding-right: $size__site-gutter-tablet;
+        padding-left: $size__site-gutter-tablet;
+    }
+
+    @include media(large, up) {
+        margin-top: -#{$size__site-gutter-tablet};
+    }
+
+    @include media(xlarge, up) {
+        padding-right: $size__site-gutter-desktop;
+        padding-left: $size__site-gutter-desktop;
+    }
+}
+
+.login-notices {
+    > * {
+        white-space: normal;
+
+        @include media(large, up) {
+            max-width: calc( 50% - #{$size__site-gutter-tablet} );
+        }
+
+        @include media(xlarge, up) {
+            max-width: calc( 34% - #{$size__site-gutter-desktop} );
+        }
+    }
+
+    &:not(:empty) + .woocommerce-login-form-wrapper {
+        margin-top: 0;
+    }
+}
+
+.woocommerce-login-form-wrapper {
+
+    > h2,
+    > .woocommerce-form,
+    > .lost_reset_password {
+        @include media(large, up) {
+            max-width: 50%;
+        }
+
+        @include media(xlarge, up) {
+            max-width: 34%;
+        }
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    .woocommerce-form,
+    .lost_reset_password {
+        border: 0;
+        margin: 0;
+        padding: 0;
+
+        p.woocommerce-form-row {
+            label {
+                @include floatingLabel();
+
+                .required {
+                    color: $global--body-color-2-medium;
+                }
+            }
+
+            .input-text {
+                padding: calc( #{$size__element-spacing} + #{$size__element-xsmall-spacing} ) $size__element-spacing calc( #{$size__element-spacing} - #{$size__element-xsmall-spacing} ) $size__element-spacing;
+            }
+
+            &.is-active {
+                label {
+                    font-size: small;
+                    transform: translateY(.55rem);
+                }
+            }
+        }
+
+        .woocommerce-form-login__rememberme {
+            display: block;
+            line-height: $global--line-height-body;
+            margin-bottom: 0;
+        }
+
+        .woocommerce-button {
+            margin-bottom: 0;
+        }
+
+        .show-password-input {
+            top: calc( #{$size__element-spacing} + 1px );
+            right: $size__element-spacing;
+        }
+    }
+
+    > .woocommerce-form,
+    > .lost_reset_password {
+        @include media(large, up) {
+            padding-right: $size__site-gutter-tablet;
+        }
+
+        @include media(xlarge, up) {
+            padding-right: $size__site-gutter-desktop;
+        }
+    }
+
+    .lost_reset_password {
+        white-space: normal;
+
+        .woocommerce-form-row {
+            width: 100%;
+        }
+    }
+
+    .col2-set {
+
+        .col-1, .col-2 {
+            width: 100%;
+            white-space: normal;
+
+            @include media(large, up) {
+                width: 50%;
+            }
+
+            @include media(xlarge, up) {
+                width: 34%;
+            }
+        }
+
+        .col-1 {
+            border-bottom: 1px solid $global--body-color-2-light;
+            margin-bottom: $size__site-gutter-tablet;
+            padding-bottom: $size__site-gutter-tablet;
+
+            @include media(large, up) {
+                border-bottom: 0;
+                border-right: 1px solid $global--body-color-2-light;
+                margin-bottom: 0;
+                padding-bottom: 0;
+                padding-right: $size__site-gutter-tablet;
+            }
+
+            @include media(xlarge, up) {
+                padding-right: $size__site-gutter-desktop;
+            }
+        }
+
+        .col-2 {
+            margin-bottom: 0;
+
+            @include media(large, up) {
+                float: left;
+                margin-bottom: $size__element-spacing;
+                padding-left: $size__site-gutter-tablet;
+            }
+
+            @include media(xlarge, up) {
+                padding-left: $size__site-gutter-desktop;
+            }
+        }
+    }
+}

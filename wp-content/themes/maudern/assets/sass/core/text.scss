@@ -1,0 +1,85 @@
+.text-left {
+    @include generateResponsive() {
+        text-align: left;
+    }
+}
+
+.text-center {
+    @include generateResponsive() {
+        text-align: center;
+    }
+}
+
+.text-right {
+    @include generateResponsive() {
+        text-align: right;
+    }
+}
+
+.heading-size-title {
+    @include generateResponsive() {
+        font-size: $global--font-size-title;
+    }
+}
+
+.heading-size-1 {
+    @include generateResponsive() {
+        font-size: $global--font-size-h1;
+    }
+}
+
+.heading-size-2 {
+    @include generateResponsive() {
+        font-size: $global--font-size-h2;
+    }
+}
+
+.heading-size-3 {
+    @include generateResponsive() {
+        font-size: $global--font-size-h3;
+    }
+}
+
+.heading-size-4 {
+    @include generateResponsive() {
+        font-size: $global--font-size-h4;
+    }
+}
+
+.heading-size-5 {
+    @include generateResponsive() {
+        font-size: $global--font-size-h5;
+    }
+}
+
+.heading-size-6 {
+    @include generateResponsive() {
+        font-size: $global--font-size-base;
+    }
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.label-size {
+    font-size: small;
+
+    * {
+        font-size: inherit;
+    }
+}
+
+.meta-size {
+    font-size: 12px;
+    font-weight: bold;
+
+    * {
+        font-size: inherit;
+        font-weight: inherit;
+    }
+}

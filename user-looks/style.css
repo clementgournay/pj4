@@ -1,0 +1,25 @@
+body { text-align: center; }
+h1 { margin: 0 !important; }
+.site-header-wrapper { top: 0px !important; }
+.look-img {
+    margin: auto;
+    display: block;
+    max-height: 60vh;
+    width: auto;
+}
+.actions {
+    margin-top: 1rem;
+}
+.btn {
+    display: inline-block;
+    background: black;
+    color: white;
+    padding: 10px 20px;
+}
+.btn:hover {
+    opacity: 0.8;
+}
+
+.sns-share {
+    margin-bottom: 1rem;
+}

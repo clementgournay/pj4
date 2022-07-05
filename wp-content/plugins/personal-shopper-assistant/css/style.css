@@ -1,0 +1,159 @@
+/* General */
+
+.tac { text-align: center; }
+.table { display: table; }
+.tr { display: table-row; }
+.td { display:  table-cell; }
+
+body {
+    background: white;
+}
+
+.clearfix {
+    display: block;
+    clear: both;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #11171a;
+    border-radius: 10px;
+}
+
+.assistant h1 {
+    font-family: 'Josefin Slab';
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 2rem;
+}
+
+.assistant .subtitle {
+    text-align: center;
+    font-family: 'Josefin Slab';
+    font-size: 2rem;
+    text-align: center;
+    margin: 0.5rem;
+}
+
+.assistant .icon {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.assistant .drawing {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.assistant .icon.dress {
+    background-image: url(../images/icons/robe_2b_black.svg);
+}
+.assistant .icon.cardigan {
+    background-image: url(../images/icons/gilet_2_black.svg);
+}
+.assistant .icon.skirt {
+    background-image: url(../images/icons/jupe_3_black.svg);
+}
+.assistant .icon.shirt {
+    background-image: url(../images/icons/chemise_black.svg);
+}
+.assistant .icon.coat {
+    background-image: url(../images/icons/manteau_veste_2_black.svg);
+}
+.assistant .icon.vest {
+    background-image: url(../images/icons/manteau_veste_2_black.svg);
+}
+.assistant .icon.top_tshirt {
+    background-image: url(../images/icons/tee_shirt_woman.svg);
+}
+
+.assistant .icon.pants {
+    background-image: url(../images/icons/pantalon_black.svg);
+}
+.assistant .icon.short {
+    background-image: url(../images/icons/short_black.svg);
+}
+.assistant .icon.accessory {
+    background-image: url(../images/icons/sac_black.svg);
+}
+
+
+.assistant .drawing.dress {
+    background-image: url(../images/icons/dress.jpg);
+}
+.assistant .drawing.cardigan {
+    background-image: url(../images/icons/gilet_2_black.svg);
+}
+.assistant .drawing.skirt {
+    background-image: url(../images/icons/skirt.jpg);
+}
+.assistant .drawing.shirt {
+    background-image: url(../images/icons/shirt.jpg);
+}
+.assistant .drawing.coat {
+    background-image: url(../images/icons/coat.jpg);
+}
+.assistant .drawing.vest {
+    background-image: url(../images/icons/vest.jpg);
+}
+.assistant .drawing.top_tshirt {
+    background-image: url(../images/icons/top_tshirt.jpg);
+}
+
+.assistant .drawing.pants {
+    background-image: url(../images/icons/pants.jpg);
+}
+.assistant .drawing.short {
+    background-image: url(../images/icons/short.jpg);
+}
+.assistant .drawing.jumpsuit {
+    background-image: url(../images/icons/jumpsuit.jpg);
+}
+.assistant .drawing.accessory {
+    background-image: url(../images/icons/accessory.jpg);
+}
+
+
+.assistant button.send {
+    display: block;
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    margin: auto;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+
+.assistant button.send:hover {
+    opacity: 0.8;
+}
+
+.assistant .controls {
+    text-align: center;
+}
+
+.assistant .get-back {
+    display: block;
+    margin-top: 1rem;
+}

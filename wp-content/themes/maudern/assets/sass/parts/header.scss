@@ -1,0 +1,129 @@
+.site-header-wrapper {
+    z-index: 1002;
+
+    @include media(large, up) {
+        z-index: 1001;
+    }
+
+    &.fixed {
+        box-shadow: 0px 22px 29px -6px rgba(0,0,0,0.05);
+        position: fixed;
+        top: 0;
+        transition: transform 0.5s cubic-bezier(0.104, 0.204, 0.492, 1);
+        width: 100%;
+
+        .admin-bar & {
+            top: 0;
+
+            @media screen and (min-width: 601px) and (max-width: 782px) {
+                top: 46px;
+            }
+
+            @media screen and (min-width: 783px) {
+                top: 32px;
+            }
+        }
+
+        // used to push the content and avoid scroll jumping
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .woocommerce-store-notice.demo_store {
+            font-size: small;
+            padding: $size__site-gutter-mobile/2 $size__site-gutter-desktop;
+
+            @include media(medium, down) {
+                padding: $size__site-gutter-mobile/2 3*$size__site-gutter-mobile;
+        	}
+
+            @include media(xlarge, up) {
+                padding: $size__site-gutter-mobile/2 $size__site-gutter-desktop-large;
+        	}
+        }
+
+        #site-header {
+
+            @include media(medium, up) {
+                padding: $size__site-gutter-mobile $size__site-gutter-tablet;
+            }
+
+            @include media(xlarge, up) {
+                padding: $size__site-gutter-mobile $size__site-gutter-desktop;
+            }
+
+            #primary-menu-wrapper {
+                ul.primary-menu {
+                    > li.menu-item-has-children {
+                        &:hover {
+                            // used to create a hover space between item and submenu, avoiding submenu to close
+                            &:before {
+                                height: $size__site-gutter-mobile + 1rem;
+                            }
+                        }
+
+                        > ul.sub-menu {
+                            // use instead of padding top to avoid subitems moving transition
+                            &:before {
+                                content: '';
+                                width: 100%;
+                                display: block;
+                                top: 0;
+                                position: relative;
+                                left: 0;
+                                z-index: -1;
+                                height: $size__site-gutter-mobile;
+
+                                @include media(medium, up) {
+                                    height: $size__site-gutter-tablet;
+                                }
+
+                                @include media(xlarge, up) {
+                                    height: $size__site-gutter-desktop;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #site-header {
+        background-color: $global--body-color-1-xdark;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 1001;
+
+        @import 'header/menu-primary';
+
+        #site-identity-wrapper {
+            flex-grow: 0;
+            z-index: 1001;
+
+            @import 'header/site-identity';
+        }
+
+        #secondary-menu-wrapper {
+            @import 'header/menu-secondary';
+        }
+
+        .logo img {
+            max-width: 150px;
+            height: auto;
+        }
+    }
+
+    .offcanvas-mobile-menu {
+        @import 'header/menu-mobile';
+    }
+}

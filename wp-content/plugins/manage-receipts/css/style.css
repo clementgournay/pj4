@@ -1,0 +1,538 @@
+/* General */
+
+.tac { text-align: center; }
+.table { display: table; }
+.tr { display: table-row; }
+.td { display:  table-cell; }
+
+#update-nag, .update-nag {
+    display: none !important;
+}
+
+body {
+    background: white;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.go-back {
+    display: block;
+    margin-top: 1rem;
+}
+
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+
+.controls {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #11171a;
+    border-radius: 10px;
+}
+
+.manage-receipts h1 {
+    font-family: 'Josefin Slab';
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 2rem;
+    line-height: 1.5;
+}
+
+.manage-receipts .icon {
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+.manage-receipts .icon.dress {
+    background-image: url(../../../themes/maudern/assets/images/icons/robe_2b_black.svg);
+}
+.manage-receipts .icon.cardigan {
+    background-image: url(../../../themes/maudern/assets/images/icons/gilet_2_black.svg);
+}
+.manage-receipts .icon.skirt {
+    background-image: url(../../../themes/maudern/assets/images/icons/jupe_3_black.svg);
+}
+.manage-receipts .icon.shirt {
+    background-image: url(../../../themes/maudern/assets/images/icons/chemise_black.svg);
+}
+.manage-receipts .icon.coat {
+    background-image: url(../../../themes/maudern/assets/images/icons/coat-black.png);
+}
+.manage-receipts .icon.vest {
+    background-image: url(../../../themes/maudern/assets/images/icons/manteau_veste_2_black.svg);
+}
+.manage-receipts .icon.top_tshirt {
+    background-image: url(../../../themes/maudern/assets/images/icons/tee_shirt_woman.svg);
+}
+.manage-receipts .icon.pants {
+    background-image: url(../../../themes/maudern/assets/images/icons/pantalon_black.svg);
+}
+.manage-receipts .icon.short {
+    background-image: url(../../../themes/maudern/assets/images/icons/short_black.svg);
+}
+.manage-receipts .icon.jumpsuit {
+    background-image: url(../../../themes/maudern/assets/images/icons/jumpsuit-black.png);
+}
+.manage-receipts .icon.accessory {
+    background-image: url(../../../themes/maudern/assets/images/icons/sac_black.svg);
+}
+
+
+.manage-receipts button.send {
+    display: block;
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    margin: auto;
+    margin-top: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+
+.manage-receipts button.send:hover {
+    opacity: 0.8;
+}
+
+.manage-receipts .controls {
+    text-align: center;
+}
+
+.manage-receipts .get-back {
+    display: block;
+    margin-top: 1rem;
+}
+
+/* Receipt list */
+
+#expand {
+    display: none;
+    position: fixed;
+    right: 5px;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    color:  white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    background: black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+}
+
+
+.manage-receipts.list .search  {
+    position: relative;
+    margin-bottom: 2rem;
+
+}
+
+.manage-receipts.list .search .input {
+    width: 460px;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.manage-receipts.list .search input {
+    float: left;
+    display: block;
+    height: 40px;
+    width: 400px;
+    margin: auto;
+}
+.manage-receipts.list .search button {
+    width: 50px;
+    float: right;
+    padding: 0;
+    height: 40px;
+}
+
+.manage-receipts.list .number {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    height: 40px;
+}
+
+.manage-receipts.list .outer {
+    margin-top: 2rem;
+}
+
+.manage-receipts.list .action-cell {
+    position: relative;
+}
+
+.manage-receipts.list .action-col {
+    width: 50px;
+}
+
+.manage-receipts.list .number-col {
+    width: 100px;
+}
+
+.manage-receipts.list .action-btn {
+    width: 30px;
+    height: 30px;
+    background: black;
+    color: white;
+    border-radius: 50%;
+    margin: auto;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    cursor: pointer;
+}
+.manage-receipts.list .action-btn:hover,
+.manage-receipts.list .action-btn.active {
+    background: orange;
+}
+
+.manage-receipts.list .actions {
+    display: none;
+    position: absolute;
+    left: 0;
+    width: 200px;
+    height: auto;
+    box-shadow: 5px 5px 10px #929292;
+    z-index: 100;
+}
+.manage-receipts.list .actions.shown {
+    display: block;
+}
+.manage-receipts.list .actions .action {
+    height: 40px;
+    line-height: 40px;
+    background: white;
+    cursor: pointer;
+    text-align: left;
+    padding-left: 1rem;
+}
+.manage-receipts.list .actions .action i {
+    display: inline-block;
+    width: 20px;
+    line-height: 40px;
+}
+
+.manage-receipts.list .actions .action:hover {
+    background: orange;
+    color: white;
+}
+
+.manage-receipts.list table {
+    border-collapse: collapse;
+    width: calc(100% - 20px);
+    box-shadow: 2px 5px 10px #bcbcbc;
+}
+
+.manage-receipts.list table td, th {
+    padding: 10px;
+}
+
+.manage-receipts.list table thead tr {
+    background: black;
+    color: white;
+}
+
+.manage-receipts.list table tbody tr:nth-child(even) {
+    background: white;
+}
+
+.manage-receipts.list table tbody tr:nth-child(odd) {
+    background: #f1f5ff;
+}
+
+.manage-receipts .pager {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.manage-receipts .pager a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    line-height: 40px;
+    outline: none;
+    margin: 5px;
+}
+.manage-receipts .pager a.active {
+    color: white;
+    background: black;
+    border-radius: 50%;
+}
+
+
+
+/* View receipt */
+
+.manage-receipts.view-receipt h1 {
+    margin-bottom: 1rem;
+}
+
+.manage-receipts.view-receipt .total {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.manage-receipts.view-receipt .date {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.manage-receipts.view-receipt .client {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    text-align: right;
+    color: blue;
+}
+
+.manage-receipts.view-receipt .client p {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.manage-receipts.view-receipt .filters {
+    width: 100%;
+}
+.manage-receipts.view-receipt .category-btn {
+    position: relative;
+    display: block;
+    float: left;
+    padding: 10px 0px;
+    border: 2px solid #e4e4e4;
+    border-radius: 10px;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    width: 80px;
+    height: 50px;
+    text-align: center;
+}
+.manage-receipts.view-receipt .category-btn.active {
+    border-color: black;
+}
+
+.manage-receipts.view-receipt .brands .category-btn:not(.all) {
+    width: 120px;
+    padding: 10px;
+}
+
+.manage-receipts.view-receipt .brands .category-btn img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    max-width: 90px;
+}
+
+.manage-receipts.view-receipt .category-btn .icon {
+    display: block;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+}
+
+.manage-receipts.view-receipt .category-btn .cat-count {
+    position: absolute;
+    right: 5px;
+    bottom: 2px;
+}
+
+.manage-receipts.view-receipt .category-btn.no-result {
+    cursor: default;
+    opacity: 0.5;
+}
+
+.manage-receipts.view-receipt .category-btn.no-result .cat-count {
+    color: red;
+}
+
+
+.manage-receipts.view-receipt .filters .label {
+    padding: 1rem;
+    vertical-align: middle;
+}
+
+
+.manage-receipts.view-receipt .filters .tr:not(:first-child) .td {
+    padding-top: 1rem;
+}
+
+
+.manage-receipts.view-receipt .outer {
+    overflow: auto;
+    box-shadow: 0px 0px 10px inset grey;
+    width: calc(100% - 20px);
+}
+
+.manage-receipts.view-receipt .results {
+    table-layout: fixed;
+    width: 100%;
+    min-width: 1600px;
+    box-shadow: 2px 5px 10px #bcbcbc;
+}
+
+.manage-receipts.view-receipt .results .td {
+    padding: 10px;
+    vertical-align: top;
+    border-bottom: 1px solid #dadada;
+}
+.manage-receipts.view-receipt .results .tr:last-child .td {
+    border-bottom: none;
+}
+
+.manage-receipts.view-receipt .results .row {
+    padding: 10px 15px;
+}
+.manage-receipts.view-receipt .results .row .icon {
+    width: 30px;
+    height: 30px;
+}
+
+.manage-receipts.view-receipt .results .head .td {
+    background: black;
+    color: white;
+}
+
+.manage-receipts.view-receipt .results .head .td.col-ref {
+    width: 160px;
+}
+
+.manage-receipts.view-receipt .results .head .td.col-comp {
+    width: 200px;
+}
+
+.manage-receipts.view-receipt .results .image-col {
+    width: 5rem;
+}
+
+.manage-receipts.view-receipt .results .image img {
+    display: block;
+    margin: auto;
+    height: auto;
+    max-width: 100%;
+}
+
+.manage-receipts.view-receipt .results .category .icon {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    margin: auto;
+}
+
+.manage-receipts.view-receipt .results .brand img {
+    max-width: 100px;
+}
+
+.manage-receipts.view-receipt .no-results .text {
+    padding: 1rem;
+    color: grey;
+    font-style: italic;
+}
+
+.manage-receipts.view-receipt .results .comment textarea {
+    width: 100%;
+    min-height: 80px;
+    max-height: 300px;
+}
+
+
+@media all and (max-width: 1006px) {
+
+    /* Receipts list */
+
+
+    #expand {
+        display: block;
+    }
+
+    .manage-receipts.list .search {
+        width: calc(100% - 1rem);
+        margin-bottom: 1rem;
+    }
+
+    .manage-receipts.list .search:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+
+    .manage-receipts.list .search .input {
+        display: inline-block;
+        width: calc(100% - 120px);
+        margin-top: 0;
+    }
+
+    .manage-receipts.list .outer {
+        overflow: hidden;
+    }
+
+    .manage-receipts.list .outer.expanded {
+        overflow: visible;
+    }
+
+    .manage-receipts.list .search input {
+        width: calc(100% - 60px);
+    }
+
+    .manage-receipts.list .number {
+        position: static;
+        float: right;
+    }
+
+    .manage-receipts.list .outer {
+        margin-right: 1rem;
+        box-shadow: 2px 5px 10px #bcbcbc;
+        margin-top: 0;
+    }
+
+    .manage-receipts.list table {
+        width: 100%;
+    }
+
+    /* View receipts */
+    .manage-receipts.view-receipt .filters .label {
+        display: block;
+        padding-left: 0;
+    }
+
+
+    
+    
+}

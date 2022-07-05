@@ -1,0 +1,126 @@
+nav.woocommerce-pagination,
+.woocommerce nav.woocommerce-pagination {
+    width: 100%;
+    padding-bottom: $size__site-gutter-tablet;
+    text-align: left;
+
+    @include media(xlarge, up) {
+        padding-bottom: $size__site-gutter-desktop;
+    }
+
+    @include alignPaddingTop();
+
+    .woocommerce-button {
+        background-color: transparent;
+        border-radius: 0;
+        color: $global--body-color-2;
+        line-height: $global--line-height-heading;
+        margin: 0;
+        padding: 0;
+
+        @include underlineLink( $global--body-color-2 );
+
+        &:hover, &:focus {
+            background-color: transparent;
+            color: $global--body-color-2;
+        }
+    }
+
+    ul.page-numbers {
+        border: 0;
+        margin: 0;
+
+        li {
+            background-color: transparent;
+            border: 0;
+            margin-right: $size__element-small-spacing + $size__element-xsmall-spacing;
+
+            .page-numbers {
+                background-color: transparent;
+                border-radius: 0;
+                color: $global--body-color-2;
+                display: inline-block;
+                line-height: $global--line-height-heading;
+                min-width: $size__square-elements-width + $size__element-xsmall-spacing;
+                min-height: $size__square-elements-width + $size__element-xsmall-spacing;
+                padding: $size__element-small-spacing;
+                text-align: center;
+                vertical-align: middle;
+
+                @include underlineLinkHover( $global--body-color-2 );
+
+                &.prev, &.next {
+                    display: none;
+                }
+
+                &:hover, &:focus {
+                    @include underlineLinkHover( $global--body-color-2 );
+
+                    background-color: transparent;
+                    color: $global--body-color-2;
+                }
+
+                &.current {
+                    @include underlineLinkHover( $global--body-color-2 );
+
+                    background-size: 100%;
+                    background-color: transparent;
+                    color: $global--body-color-2;
+                    pointer-events: none;
+                }
+
+                &.dots {
+                    border: 0;
+                    padding-top: 2px;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+}
+
+.wc-block-pagination {
+    margin: 0;
+    width: 100%;
+    text-align: left;
+
+    @include alignPaddingBottom();
+
+    @include media(medium, down) {
+        padding-top: $size__element-spacing;
+    }
+
+    .wc-block-pagination-page {
+        @include underlineLinkHover( $global--body-color-2 );
+
+        border-radius: 0;
+        color: $global--body-color-2;
+        display: inline-block;
+        line-height: $global--line-height-heading;
+        margin-right: $size__element-small-spacing;
+        min-width: $size__square-elements-width + $size__element-xsmall-spacing;
+        min-height: $size__square-elements-width + $size__element-xsmall-spacing;
+        padding: $size__element-small-spacing;
+        text-align: center;
+        vertical-align: middle;
+
+        &:hover, &:focus {
+            background-color: transparent;
+            color: $global--body-color-2;
+        }
+
+        &.wc-block-pagination-page--active {
+            background-color: transparent;
+            background-size: 100%;
+            color: $global--body-color-2;
+            font-weight: normal;
+            padding: $size__element-small-spacing;
+            pointer-events: none;
+        }
+
+        &[title="Next page"],
+        &[title="Previous page"] {
+            display: none;
+        }
+    }
+}

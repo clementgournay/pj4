@@ -1,0 +1,57 @@
+2022-07-01T13:39:57+00:00 CRITICAL syntax error, unexpected ''morgan'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' dans E:\wamp64\www\gear\pj4\wp-content\themes\maudern\marketplace\index.php à la ligne 13
+
+2022-07-01T14:04:16+00:00 CRITICAL Uncaught Error: Class 'Imagick' not found in E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php:435
+Stack trace:
+#0 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(1143): clothes_setup(Object(WP_REST_Request))
+#1 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(990): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/clothes/...', Array, NULL)
+#2 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#3 E:\wamp64\www\gear\pj4\wp-includes\rest-api.php(394): WP_REST_Server->serve_request('/wp/v2/clothes/...')
+#4 E:\wamp64\www\gear\pj4\wp-includes\class-wp-hook.php(307): rest_api_loaded(Object(WP))
+#5 E:\wamp64\www\gear\pj4\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#6 E:\wamp64\www\gear\pj4\wp-includes\plugin.php(524): WP_Hook->do_action(Array)
+#7 E:\wamp64\www\gear\pj4\wp-includes\class-wp.php(398): do_action_ref_array('pars dans E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php à la ligne 435
+
+2022-07-01T14:04:33+00:00 CRITICAL Uncaught Error: Class 'Imagick' not found in E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php:435
+Stack trace:
+#0 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(1143): clothes_setup(Object(WP_REST_Request))
+#1 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(990): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/clothes/...', Array, NULL)
+#2 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#3 E:\wamp64\www\gear\pj4\wp-includes\rest-api.php(394): WP_REST_Server->serve_request('/wp/v2/clothes/...')
+#4 E:\wamp64\www\gear\pj4\wp-includes\class-wp-hook.php(307): rest_api_loaded(Object(WP))
+#5 E:\wamp64\www\gear\pj4\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#6 E:\wamp64\www\gear\pj4\wp-includes\plugin.php(524): WP_Hook->do_action(Array)
+#7 E:\wamp64\www\gear\pj4\wp-includes\class-wp.php(398): do_action_ref_array('pars dans E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php à la ligne 435
+
+2022-07-01T14:07:09+00:00 CRITICAL Uncaught Error: Class 'Imagick' not found in E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php:435
+Stack trace:
+#0 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(1143): clothes_setup(Object(WP_REST_Request))
+#1 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(990): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/clothes/...', Array, NULL)
+#2 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#3 E:\wamp64\www\gear\pj4\wp-includes\rest-api.php(394): WP_REST_Server->serve_request('/wp/v2/clothes/...')
+#4 E:\wamp64\www\gear\pj4\wp-includes\class-wp-hook.php(307): rest_api_loaded(Object(WP))
+#5 E:\wamp64\www\gear\pj4\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#6 E:\wamp64\www\gear\pj4\wp-includes\plugin.php(524): WP_Hook->do_action(Array)
+#7 E:\wamp64\www\gear\pj4\wp-includes\class-wp.php(398): do_action_ref_array('pars dans E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php à la ligne 435
+
+2022-07-01T14:08:10+00:00 CRITICAL Uncaught Error: Class 'Imagick' not found in E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php:435
+Stack trace:
+#0 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(1143): clothes_setup(Object(WP_REST_Request))
+#1 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(990): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/clothes/...', Array, NULL)
+#2 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#3 E:\wamp64\www\gear\pj4\wp-includes\rest-api.php(394): WP_REST_Server->serve_request('/wp/v2/clothes/...')
+#4 E:\wamp64\www\gear\pj4\wp-includes\class-wp-hook.php(307): rest_api_loaded(Object(WP))
+#5 E:\wamp64\www\gear\pj4\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#6 E:\wamp64\www\gear\pj4\wp-includes\plugin.php(524): WP_Hook->do_action(Array)
+#7 E:\wamp64\www\gear\pj4\wp-includes\class-wp.php(398): do_action_ref_array('pars dans E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php à la ligne 435
+
+2022-07-01T14:35:15+00:00 CRITICAL Uncaught Error: Class 'Imagick' not found in E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php:435
+Stack trace:
+#0 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(1143): clothes_setup(Object(WP_REST_Request))
+#1 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(990): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/clothes/...', Array, NULL)
+#2 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#3 E:\wamp64\www\gear\pj4\wp-includes\rest-api.php(394): WP_REST_Server->serve_request('/wp/v2/clothes/...')
+#4 E:\wamp64\www\gear\pj4\wp-includes\class-wp-hook.php(307): rest_api_loaded(Object(WP))
+#5 E:\wamp64\www\gear\pj4\wp-includes\class-wp-hook.php(331): WP_Hook->apply_filters(NULL, Array)
+#6 E:\wamp64\www\gear\pj4\wp-includes\plugin.php(524): WP_Hook->do_action(Array)
+#7 E:\wamp64\www\gear\pj4\wp-includes\class-wp.php(398): do_action_ref_array('pars dans E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php à la ligne 435
+

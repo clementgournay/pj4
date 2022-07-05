@@ -1,0 +1,30 @@
+[class*='wp-block-'] {
+    margin-top: 0;
+    margin-bottom: 2*$size__element-spacing;
+
+    [class*='__inner-'] {
+        margin-bottom: 0;
+    }
+
+    &.no-margin-bottom {
+        margin-bottom: 0 !important;
+    }
+
+    figcaption {
+        color: $global--body-color-2;
+        font-size: small;
+        font-style: normal;
+        margin-bottom: 0;
+        text-align: left;
+
+        a {
+            font-size: small;
+        }
+    }
+}
+
+@import 'blocks/common';
+@import 'blocks/layout';
+@import 'blocks/media';
+@import 'blocks/widgets';
+@import 'blocks/woocommerce';

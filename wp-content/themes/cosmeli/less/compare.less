@@ -1,0 +1,70 @@
+/* For compare popup */
+@import 'variables.less';
+a {
+	-webkit-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+table.compare-list {
+	font-family: 'Prompt';
+	color: #222222;
+	font-size: 14px;
+	th {
+		font-size: 14px;
+		color: #222222;
+	}
+	td {
+		padding: 10px 30px;
+		border-left: 1px solid #e5e5e5;
+		&:last-child {
+			border-right: 1px solid #e5e5e5;
+		}
+		&.odd {
+			background: #ffffff;
+		}
+	}
+	.price-box{
+		color: @primarycolor;
+		ins{
+			text-decoration: none;
+		}
+		del{
+			color: #aaaaaa;
+		}
+	}
+	.add-to-cart td a {
+		background-color: #222222;
+		padding: 10px 20px;
+		&:hover {
+			background-color: @primarycolor;
+		}
+	}
+	.remove td a {
+		background: none !important;
+		display: inline-block;
+		height: 40px;
+		overflow: hidden;
+		width: 40px;
+		-webkit-transition: none;
+		transition: none;
+		border-radius: 50%;
+		border: 1px solid #e5e5e5;
+		position: relative;
+		text-align: center;
+		font-size: 0px;
+		color: #222222 !important;
+		font-weight: normal;
+		margin-bottom: 20px;
+		&:before {
+			content: 'x';
+			line-height: 36px;
+			font-size: 20px;
+		}
+		&:hover {
+			border-color: @primarycolor;
+			color: @primarycolor !important;
+		}
+	}
+	.description td {
+		padding: 30px 30px;
+	}
+}

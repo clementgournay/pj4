@@ -1,0 +1,1329 @@
+/* General */
+
+.md {display: block !important; }
+
+.sm {display: none !important; }
+
+.table {display: table; }
+.tr { display: table-row; }
+.td { display: table-cell; }
+.tac { text-align: center; }
+.bold { font-weight: bold; }
+
+.clearfix:after {
+	clear: both;
+	content: '';
+	display: block;
+}
+
+.page-id-3220 h1,
+.page-id-1335 h1 {
+	display: none;
+}
+
+#site-identity-wrapper {
+	width: 1500px;
+	position: relative;
+	transition: all 0.3s ease-out;
+}
+
+
+@media screen and (max-width: 1800px) {
+	#site-identity-wrapper {
+		width: 75%;
+	}
+}
+
+
+#site-identity-wrapper .site-logo {
+	position: absolute;
+	left: 0;
+}
+
+#site-identity-wrapper .search {
+	position: relative;
+	float: right;
+	width: calc(100% - 100px);
+	
+}
+
+#site-identity-wrapper .search input {
+	float: left;
+	width: calc(100% - 200px);
+}
+
+#site-identity-wrapper .search button {
+	float: right;
+	margin: 0;
+}
+
+h1 {
+	font-size: 3.5rem !important;
+	font-family: 'Josefin Slab';
+}
+
+h2 {
+	font-size: 3rem;
+}
+
+h4 {
+	margin: 1.5rem 0;
+}
+
+h5 {
+	margin: 0.5rem;
+  	margin-left: 0;
+}
+
+::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar{
+	width: 10px;
+	height: 10px;
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb{
+	background-color: #000000;
+	border: 2px solid #555555;
+}
+
+.image-block {
+	border: 1px solid #cdcdcd;
+	box-shadow: 3px 4px 10px #adadad;
+	overflow: hidden;
+}
+
+.image-block img {
+	display: block;
+	width: 100%;
+}
+
+.no-bg {
+	background: none !important;
+}
+
+
+
+.look-list {
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.look-list .look {
+	width: 22vmin;
+	height: 38vmin;
+	background: #fbf3e5 !important;
+	border: 1px solid #edaf3d;
+    margin: 2rem;
+    border-radius: 8px;
+}
+
+.look-list .look.small {
+	width: 15vmin;
+	height: 30vmin;
+}
+
+
+.look-list .look .vote .vote-btn {
+	width: 50%;
+	text-align: center;
+}
+
+
+.look-list .look .vote .vote-btn.left {
+	border-right: 1px solid #bebebe;
+	border-radius: 8px 0px 0px 0px;
+}
+
+.look-list .look .vote .vote-btn.right {
+	border-radius: 0px 8px 0px 0px;
+}
+
+.look-list .look .vote .vote-btn.disabled:hover {
+	color: black;
+}
+
+.look-list .look .vote .vote-btn.like:hover, 
+.look-list .look .vote .vote-btn.like.on {
+	color: green !important;
+}
+.look-list .look .vote .vote-btn.dislike:hover, 
+.look-list .look .vote .vote-btn.dislike.on {
+	color: red !important;
+}
+
+.look-list .look .image {
+	background-size: cover;
+	background-position: 50%;
+	background-repeat: no-repeat;
+	height: calc(100% - 60px);
+	width: 100%;
+	margin-left: 0px;
+	-webkit-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.look-list .look:hover .image {
+	width: calc(100% + 24px);
+	margin-left: -12px;
+	box-shadow: 2px 3px 5px #c7c7c7;
+}
+
+
+.look-list .look .title {
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	white-space: pre;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	font-family: 'Montserrat';
+}
+
+.map-container {
+    position: relative;
+}
+
+.map-container input {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.8);
+    width: 400px;
+}
+
+.map-container input:focus, 
+.map-container input:hover {
+    background: white;
+}
+
+.woocommerce #content .site-main div.product div.product-summary .summary table.group_table tr td.woocommerce-grouped-product-list-item__quantity {
+	width: 100px;
+}
+
+.woocommerce #content .site-main div.product div.product-summary .summary table.group_table tr td.woocommerce-grouped-product-list-item__quantity a {
+	padding: 0px;
+	background: none;
+}
+
+.woocommerce #content .site-main div.product div.product-summary .summary table.group_table tr td.woocommerce-grouped-product-list-item__label label {
+	font-family: "Josefin Slab";
+	font-weight: bold;
+}
+
+.woocommerce ul.products li.product {
+	margin-bottom: 0;
+}
+
+.woocommerce-loop-product__title {
+	font-weight: bold;
+	font-family: "Josefin Slab";
+	font-size: 1rem !important;
+}
+
+.product_title.entry-title {
+	font-weight: bold;
+	font-family: "Josefin Slab";
+}
+
+.woocommerce ul.products li.product a img {
+	margin-bottom: 0.5rem;
+}
+
+
+.bg_video {
+	position: relative;
+	height: 500px;
+	overflow: hidden;
+}
+
+.animate__animated {
+	visibility: hidden;
+}
+
+
+.main-title {
+	margin-bottom: 1rem;
+	margin-top: 8rem;
+}
+
+.dika-subtitle {
+	margin-top: 0;
+}
+
+h2 {
+	display: block !important;
+	font-family: 'Montserrat' !important;
+	font-size: 2.5rem !important
+}
+
+
+.wp-block-button {
+	margin-bottom: 4rem !important;
+}
+
+.wp-block-group, 
+.wp-block-image {
+	margin-top: 3rem !important;
+	margin-bottom: 3rem !important;
+}
+
+.block-keyvisual {
+	margin-top: 0 !important;
+}
+
+.context {
+	position: relative;
+}
+
+.context .menu {
+	display: none;
+	position: absolute;
+	right: 0;
+	width: 250px;
+	background: white;
+	z-index: 1000;
+	box-shadow: 2px 5px 8px #b8b8b8;
+	text-align: left;
+}
+
+.context .menu ul {
+	list-style: none;
+	margin: 0;
+}
+
+.context .menu ul li {
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	transition: none;
+
+	
+}
+
+.context .menu ul li:hover {
+	background: #edaf3d;
+	color: white;
+	opacity: 1;
+}
+
+
+/* Header */
+.type-page header.main-header {
+	margin-bottom: 0px !important;
+}
+
+#menu-peach-header-menu {
+	margin-top: 20px !important;
+    width: 1200px;
+    margin: auto;
+	text-align: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+
+#site-header {
+	padding: 1.5rem;
+}
+
+#site-header .links {
+	overflow: hidden;
+}
+
+#site-header .links a {
+	font-size: 12px;
+	text-decoration: none;
+	margin-left: 10px;
+}
+
+#site-header .description {
+	text-align: center;
+	margin-top: 0.3rem;
+	margin-bottom: 0;
+	display: block;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+	overflow: hidden;
+	height: 26px;
+	opacity: 1;
+	font-size: 1.2rem;
+	font-family: "Josefin Slab";
+}
+
+.site-header-wrapper.fixed .description {
+	height: 0 !important;
+	opacity: 0 !important;
+	margin: 0 !important;
+}
+
+.site-header-wrapper.fixed .row:first-child {
+	height: 0;
+}
+.site-header-wrapper.fixed .site-logo img {
+	height: 50px !important;
+}
+
+.site-header-wrapper.fixed #site-identity-wrapper {
+	height: 0;
+}
+
+.site-header-wrapper.fixed #site-identity-wrapper input,
+.site-header-wrapper.fixed #site-identity-wrapper button {
+	display: none;
+}
+
+.site-header-wrapper.fixed #menu-peach-header-menu {
+	height: 50px;
+}
+
+.site-header-wrapper #site-header #primary-menu-wrapper ul.primary-menu>li {
+	line-height: 50px;
+}
+
+.site-header-wrapper.fixed #site-header #primary-menu-wrapper ul.primary-menu {
+	margin-top: 0px !important;
+}
+
+.site-header-wrapper.fixed #site-header {
+	padding: 1rem !important;
+}
+
+.site-header-wrapper.fixed .links {
+	height: 0;
+}
+
+
+#site-header #primary-menu-wrapper li a {
+	font-size: 1.2rem !important;
+}
+
+.site-header-wrapper #site-header #primary-menu-wrapper ul.primary-menu {
+	margin-top: 10px !important;
+}
+
+.woocommerce-account:not(.woocommerce-myaccount-dashboard):not(.woocommerce-lost-password) .entry-content>.woocommerce {
+	margin-left: calc(26.5% - 26.5vw);
+    margin-right: calc(26.5% - 26.5vw);
+}
+
+.sns-links {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.sns-links .sns-link {
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	margin: 1rem;
+	
+}
+
+.sns-links .sns-link img {
+	width: 100%;
+}
+
+.convbot-button {
+	background-image: url('../images/my-account/profile-pic.jpg');
+	background-size: cover;
+	background-position: 50%;
+	border-radius: 50% !important;
+}
+
+.convbot-button img {
+	display: none !important;
+}
+
+.chatbox-btn {
+	display: none;
+	position: fixed;
+	bottom: 50px;
+	right: 10px;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
+	color: white;
+	background: black;
+	border-radius: 50%;
+	font-size: 1.5rem;
+	text-align: center;
+	cursor: pointer;
+	-webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+
+.chatbox-btn:hover {
+	opacity: 0.8;
+}
+.chatbox-btn.active {
+	color: #edaf3d;
+}
+
+.chatbox {
+	display: none;
+	position: fixed;
+	right: 10px;
+	bottom: 110px;
+	width: 300px;
+	z-index: 10000;
+	background: white;
+	box-shadow: 3px 3px 5px grey;
+}
+
+.chatbox .title {
+	background: black;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	color: white;
+	text-align: center;
+}
+
+.chatbox .window {
+	height: 300px;
+	padding: 1rem;
+}
+
+.chatbox .profile-pic {
+	width: 50px;
+	height: 50px;
+	background-size: cover;
+	background-position: center;
+	border-radius: 50%;
+	margin-right: 1rem;
+}
+
+.chatbox .message .td {
+	vertical-align: middle;
+}
+
+
+/* TOP */
+
+.main-keyvisual {
+	position: relative;
+	background-color: black;
+	background-size: contain;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+
+.main-keyvisual:before {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	box-shadow: 0px 0px 6px inset black;
+	z-index: 2;
+	background-image: url(../images/top/dot.webp);
+    background-size: 50px 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+
+.main-keyvisual .controls {
+	position: absolute;
+	bottom: -70px;
+	left: 50%;
+	width: 1600px;
+	text-align: center;
+	padding: 2rem;
+	z-index: 3;
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(-50%, 0, 0);
+}
+
+.main-keyvisual .btn {
+	display: block;
+    margin: auto;
+    width: 650px;
+    font-family: 'Montserrat';
+    font-size: 23px;
+    background: rgb(197, 4, 4, 1);
+    border: 1px solid #9b9b9b;
+    box-shadow: 4px 4px 6px #000000;
+    backdrop-filter: blur(3px);
+    border-radius: 8px;
+    font-weight: bold;
+    padding: 1rem 2rem !important;
+    text-shadow: 0px 0px 7px black;
+    letter-spacing: 12px;
+    background-image: none !important;
+}
+
+.main-keyvisual .btn:hover {
+	color: white;
+	opacity: 1;
+	text-decoration: none;
+}
+
+@keyframes highlight {
+	from {
+		background: rgba(197, 4, 4, 0.6);
+	}
+	50% {
+		background: rgb(225 115 115 / 60%);
+	}
+	to {
+		background: rgba(197, 4, 4, 0.6);
+	}
+}
+@-webkit-keyframes highlight {
+	from {
+		background: rgba(197, 4, 4, 0.6);
+	}
+	50% {
+		background: rgb(225 115 115 / 60%);
+	}
+	to {
+		background: rgba(197, 4, 4, 0.6);
+	}
+}
+
+.btn.contest {
+	position: absolute;
+	left: 2rem;
+	bottom: 2rem;
+	width: 10vw;
+	height: 10vw;
+	padding: 0rem !important;
+	border-radius: 50%;
+	z-index: 4;
+	text-align: center;
+	letter-spacing: 5px;
+	-webkit-animation: highlight 3s linear infinite;
+	animation: highlight 3s linear infinite;
+	-webkit-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+}
+
+.btn.contest .inner {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100%;
+	-webkit-transform: translate3d(-50%, -50%, 0);
+	transform: translate3d(-50%, -50%, 0);
+}
+
+.btn.contest i {
+	font-size: 3vw;
+}
+
+.btn.contest span {
+	display: block;
+	font-size: 0.8vw;
+	padding: 0 1rem;
+}
+
+.main-keyvisual .title-cont {
+	display: table;
+	width: 100%;
+	height: 30%;
+	text-align: center;
+	position: relative;
+}
+
+.main-keyvisual .slide {
+	text-align: center;
+}
+
+.main-keyvisual .img-wrapper {
+	display: block;
+	position: relative;
+}
+
+.main-keyvisual img {
+	display: block;
+	margin: auto;
+}
+
+.main-keyvisual .wrapper {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: 1238px;
+	height: 100%;
+	-webkit-transform: translate3d(-50%, 0, 0);
+	transform: translate3d(-50%, 0, 0);
+	color: white;
+	padding: 2rem;
+	z-index: 3;
+}
+
+
+
+@-webkit-keyframes glow {
+	from {
+		text-shadow: 0px 0px 5px white;
+	}
+	50% {
+		text-shadow: 0px 0px 20px white;
+	}
+	to {
+		text-shadow: 0px 0px 5px white;
+	}
+}
+
+@keyframes glow {
+	from {
+		text-shadow: 0px 0px 5px white;
+	}
+	25% {
+		text-shadow: 0px 0px 20px white;
+	}
+	50% {
+		text-shadow: 0px 0px 5px orange;
+	}
+	75% {
+		text-shadow: 0px 0px 20px orange;
+	}
+	to {
+		text-shadow: 0px 0px 5px white;
+	}
+}
+
+.main-keyvisual .title {
+	display: table-cell;
+	text-shadow: 0px 0px 0px white;
+	letter-spacing: 2.5vw;
+    font-weight: bold;
+	font-family: 'Montserrat';
+	text-align: center;
+	vertical-align: middle;
+	font-size: 5.5vw;
+	-webkit-animation: glow 6s linear infinite;
+	animation: glow 6s linear infinite;
+}
+
+
+.keyvisual .look {
+	display: none;
+}
+
+@media screen and (max-width: 1238px) {
+	.main-keyvisual .wrapper {
+		width: 100%;
+	}
+}
+
+
+@media all and (min-width: 1700px) {
+	.main-keyvisual .title {
+		font-size: 90px;
+		letter-spacing: 40px;
+	}
+	.main-keyvisual .btn.contest {
+		width: 200px;
+		height: 200px;
+	}
+	.main-keyvisual .btn.contest i {
+		font-size: 4rem;
+	}
+	.main-keyvisual .btn.contest span {
+		font-size: 16px;
+	}
+}
+
+.personal-shopper {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 350px;
+	padding: 1rem;
+	background: rgb(199 199 199 / 50%);
+	height: 100%;
+	backdrop-filter: blur(5px);
+	text-align: center;
+}
+
+.personal-shopper .inner {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	height: auto;
+	-webkit-transform: translate3d(0, -50%, 0);
+	transform: translate3d(0, -50%, 0);
+	padding: 1rem;
+}
+
+.personal-shopper h2 {
+	font-family: 'Josefin Slab';
+	margin: 0;
+	margin-bottom: 2rem;
+}
+
+.personal-shopper i {
+	font-size: 5rem;
+	margin-bottom: 2rem;
+}
+
+.personal-shopper .btn {
+	display: block;
+	width: 100%;
+	padding: 1rem 2rem;
+	margin-bottom: 1rem;
+	border-radius: 5px;
+	padding-bottom: 1rem !important;
+	font-family: 'Josefin Slab';
+    font-size: 1.2rem;
+}
+.personal-shopper .btn.register {
+	background: #edaf3d;
+}
+
+video#personal-shopper {
+	display: block;
+	width: 100%;
+	margin-left: -1px !important;
+}
+
+.keyvisual {
+	/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#3d3d3d+0,edaf3d+100 */
+	background: rgb(61,61,61); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(61,61,61,1) 0%, rgba(237,175,61,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(61,61,61,1) 0%,rgba(237,175,61,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(61,61,61,1) 0%,rgba(237,175,61,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3d3d3d', endColorstr='#edaf3d',GradientType=0 ); /* IE6-9 */
+	margin-top: 0px !important;
+	margin-bottom: 4rem !important;
+}
+
+.keyvisual .key-wrapper {
+	position: relative;
+	width: 1400px;
+	max-width: 100%;
+	display: block;
+	margin: auto;
+	text-align: center;
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+}
+
+.keyvisual .key-wrapper img {
+	width: 1400px;
+	display: block;
+	margin: auto;
+}
+
+.keyvisual .key-wrapper .slogan {
+	position: absolute;
+	color: white;
+	font-size: 2.5rem;
+	font-family: Josefin Slab;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+.keyvisual .key-wrapper .slogan.part1 {
+	left: 22%;
+	top: 0;
+}
+
+.keyvisual .key-wrapper .slogan.part2 {
+	right: 24%;
+	top: 0;
+}
+
+.key-wrapper .look {
+	position: absolute;
+	z-index: 3;
+}
+
+.key-wrapper .look {
+	background-image: none !important;
+}
+
+.key-wrapper .look span {
+	display: block;
+	padding: 0.5rem 0;
+	font-size: 1.5rem;
+	color: white;
+	opacity: 0;
+	transform: scale(0);
+	-webkit-transition: all 0.2s linear;
+	transition: all 0.2s linear;
+	margin-top: 150px;
+	letter-spacing: 5px;
+	font-family: "Josefin Slab";
+	text-shadow: 0px 0px 5px black;
+	cursor: normal;
+}
+
+.key-wrapper .look:hover span {
+	opacity: 1;
+	transform: scale(1);
+}
+
+.look1 {
+	left: 12%;
+	top: 10%;
+	width: 12%;
+	height: 72%;
+}
+
+.look2 {
+	left: 25%;
+	top: 10%;
+	width: 15%;
+	height: 70%;
+}
+
+.look3 {
+	left: 40%;
+	top: 5%;
+	width: 18%;
+	height: 80%;
+}
+
+.look4 {
+	left: 58%;
+	top: 10%;
+	width: 14%;
+	height: 70%;
+}
+
+.look5 {
+	left: 72%;
+	top: 10%;
+	width: 12%;
+	height: 70%;
+}
+
+.keyvisual .key-wrapper .register-btn {
+	display: inline-block;
+	margin: auto;
+	margin-bottom: -2.5rem;
+	background: rgb(255 138 85);
+	border-right: 0;
+	border-radius: 0;
+	font-size: 1.8vmin;
+	color: black;
+	cursor: pointer;
+	box-shadow: 5px 5px 8px #6a6a6a;
+	text-align: right;
+	padding: 1rem 2rem;
+	letter-spacing: 10px;
+	font-family: "Garamond";
+	padding-left: 5rem;
+}
+
+.keyvisual .key-wrapper .register-btn .arrow {
+	position: absolute;
+	left: 1.5rem;
+	font-size: 0;
+	-webkit-transition: all 0.5s ease-out;
+	transition: all 0.5s ease-out;
+}
+.keyvisual .key-wrapper .register-btn .arrow:before {
+	content: "\f061";
+	font-size: 1.8vmin;
+	font-weight: 900;
+	font-family: "Font Awesome 5 Free";
+}
+
+.keyvisual .key-wrapper .register-btn:hover {
+	box-shadow: 5px 5px 8px #9f9f9f;
+}
+
+.keyvisual .key-wrapper .register-btn:hover .arrow {
+	left: 2.5rem;
+}
+
+
+.home-section h2 {
+	margin: 2rem 0;
+}
+
+.home-section p {
+	font-size: 1.2rem;
+	margin-bottom: 2rem;
+}
+
+.looks-container {
+	padding-left: 5rem;
+  	padding-right: 5rem;
+}
+
+.stores.top {
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.stores.top .store {
+	width: 250px;
+	padding: 1rem;
+	border: 1px solid grey;
+	margin-bottom: 3rem;
+	padding: 1rem;
+    border: 1px solid #9a9a9a;
+    margin-bottom: 3rem;
+    border-radius: 8px;
+	background: pink;
+	text-align: center;
+}
+
+.stores.top .store .title {
+	font-size: 1.5rem;
+	color: #686868;
+	font-family: 'Alfa Slab One';
+	font-weight: bold;
+}
+
+.stores.top .store .opening-hours {
+	font-size: 0.5rem;
+	color: grey;
+}
+
+.booking-categories {
+	display: flex;
+	flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.booking-categories .category {
+	background: none !important;
+}
+
+.booking-categories .item {
+	width: 200px;
+	height: 230px;
+	margin: 1rem;
+	box-shadow: 3px 3px 7px #b7b7b7;
+	transition: all 0.3s ease-out;
+}
+
+.booking-categories .item:hover {
+	transform: scale(1.1);
+}
+
+.booking-categories .item .photo {
+	width: 100%;
+	height: calc(100% - 50px);
+	background-size: cover;
+	background-position: 50% 50%;
+}
+
+.booking-categories .item .title {
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+	text-align: center;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: pre;
+}
+.booking-categories .category:nth-child(2) .title {
+	font-size: 12px;
+}
+
+/* Inside Dika */
+
+.post-22  h1 {
+	display: none;
+}
+
+.cert-img {
+	height: 220px;
+}
+
+.cert-cols img {
+	display: block;
+	margin: auto;
+	height: 200px;
+	width: auto;
+}
+.cert-img.woolmark img {
+	height: auto;
+	width: 220px
+}
+
+.cert-img.grs {
+	padding-top: 20px;
+}
+.cert-img.grs img {
+	height: 150px;
+}
+
+/* Nos boutiques */
+
+#stores-cont {
+	border: 1px solid #e0e0e0;
+}
+
+#stores-cont .store {
+	padding: 1rem;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+#stores-cont .store .title {
+	width: 100%;
+	cursor: pointer;
+	font-family: 'Josefin Slab';
+}
+
+#stores-cont .store:hover {
+	background: #edf2f659;
+}
+
+#stores-cont .store h4 {
+	margin: 0;
+}
+
+#stores-cont .store h4:before {
+	content: "\f0da";
+	font-size: 1.4rem;
+	font-weight: 900;
+	font-family: "Font Awesome 5 Free";
+	margin-right: 20px;
+}
+
+#stores-cont .store .distance {
+	width: 10%;
+	text-align: right;
+	overflow: hidden;
+	color: grey;
+}
+
+#stores-cont .store:last-child {
+	border: none;
+}
+
+#stores-cont .store .content {
+	height: 0;
+	overflow: hidden;
+	transition: all 0.3s ease-out;
+}
+#stores-cont .store.open .content {
+	height: auto;
+}
+
+#stores-cont .store.open h4:before {
+	content: "\f0d7";
+}
+
+.stores .store .icon {
+	width: 80px;
+}
+
+.stores .store h4 {
+	vertical-align: middle;
+}
+
+/* Nos looks */
+.looks .categories-list {
+	margin-bottom: 2rem;
+}
+
+.looks .categories-list li {
+	float: left;
+	margin-right: 20px;
+}
+
+.looks .categories-list li a {
+	background: none;
+}
+
+.looks .categories-list li.active a {
+	color: #edaf3e;
+}
+
+@media screen and (max-width: 1250px) { 
+
+	/* TOP */
+	.personal-shopper i {
+		display: none;
+	}
+}
+
+
+@media screen and (max-width: 1006px) {
+	
+	/* General */
+	.md {
+		display: none !important;
+	}
+
+	.sm {
+		display: block !important;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+	
+	.animate__animated {
+		visibility: visible;
+	}
+	
+	.bg_video {
+		height: 20vh;
+		margin-bottom: 3rem !important;
+	}
+	
+	.sp-no-anim {
+		-webkit-animation: none !important;
+		animation: none !important;
+	}
+	
+	/* Header */
+
+	.entry-header.main-header {
+		margin-top: 0 !important;
+	}
+
+	#site-header .custom-logo {
+		width: auto !important;
+	}
+	
+	#site-header .description {
+		text-align: left;
+   		margin-left: 40px;
+	}
+
+	#my-account-site-tool {
+		position: absolute;
+		right: 10px;
+	}
+
+	.links {
+		margin-top: 1rem;
+	}
+	.links a {
+		margin-right: 10px;
+	}
+	
+	.main-title {
+		font-size: 2rem;
+	}
+	
+	.look-list .look.small {
+		width: 40vmin;
+		height: 90vmin;
+	}
+
+	.look-list .look {
+		margin: 0.5rem;
+	}
+
+	.booking-categories .item {
+		width: 130px;
+	}
+
+	
+	/* TOP */
+	
+
+	.site-header-wrapper #site-header #secondary-menu-wrapper ul#menu-site-tools>li#shopping-bag-site-tool .menu-icon {
+		display: none !important;
+	}
+
+	.site-header-wrapper #site-header #secondary-menu-wrapper ul#menu-site-tools>li#my-account-site-tool {
+		display: block !important;
+		padding-right: 0;
+	}
+
+	.main-keyvisual .wrapper {
+		width: 100%;
+	}
+
+	.personal-shopper {
+		float: none;
+		width: 100%;
+		height: auto;
+		margin-top: 1rem;
+		background: #f6f6f6;
+		border: 1px solid #cecece;
+		max-height: auto;
+		position: static;
+	}
+
+	.keyvisual .key-wrapper {
+		width: auto !important;
+		padding-top: 1rem !important;
+	}
+	
+	.keyvisual .key-wrapper .slogan {
+		bottom: 20%;
+		font-size: 1.2rem;
+		text-align: center;
+		width: 100%;
+	}
+	
+	.keyvisual .key-wrapper .register-btn {
+		font-size: 3vmin;
+    	padding: 1rem;
+		padding-left: 3.5rem;
+		letter-spacing: 5px;
+	}
+	
+	.keyvisual .key-wrapper .register-btn .arrow:before {
+		font-size: 3vmin;
+	}
+	
+	.looks-container {
+		padding-left:1rem;
+		padding-right:1rem;
+	}
+	
+	.look {
+		pointer-events: none;
+	}
+	
+	.home-section p {
+		font-size: 1rem;
+		margin-bottom: 2rem;
+	}
+
+	.stores.top .store {
+		padding: 1rem;
+	}
+	
+	/* Inside Dika */
+	
+	.cert-img {
+		height: auto;
+		margin-bottom: 0;
+	}
+	.cert-cols img {
+		height: auto;
+		max-width: 300px;
+	}
+
+
+	.stores .store {
+		width: 100%;
+		float: none;
+		padding: 0;
+	}
+
+	/* Nos boutiques */
+
+	#shop-map {
+		height: 50vh !important;
+	}
+
+	.map-container input {
+		width: calc(100% - 40px);
+	}
+
+
+	/* Nos looks */
+	.look-list .look {
+		width: 40vmin;
+		height: 80vmin;
+	}
+
+}

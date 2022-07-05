@@ -1,0 +1,167 @@
+.pswp {
+    background-color: $global--body-color-1;
+    display: block;
+    opacity: 0;
+    transition: $global--transition;
+    visibility: hidden;
+    z-index: -1;
+
+    &.pswp--open {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        z-index: 99999;
+    }
+
+    &.pswp--zoom-allowed .pswp__img {
+        cursor: url("data:image/svg+xml,%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' width='#{$size__icon-default}' height='#{$size__icon-default}' viewBox='0 0 #{map-get($icon__plus, 'viewboxX')} #{map-get($icon__plus, 'viewboxY')}' xml:space='preserve'%3E %3Cpath d='#{map-get($icon__plus, 'icon')}'/%3E %3C/svg%3E"), pointer;
+    }
+
+    .pswp__bg,
+    .pswp__img--placeholder--blank {
+        background: $global--body-color-1;
+    }
+
+    .pswp__caption {
+        display: none;
+    }
+
+    .pswp__top-bar {
+        background-color: transparent;
+        opacity: 1 !important;
+
+        .pswp__preloader {
+            display: none;
+        }
+
+        .pswp__button--close {
+            @include icon( $icon__close, $size__icon-default, $size__icon-default );
+
+            background-image: none !important;
+            background-color: $global--body-color-2 !important;
+            color: $global--body-color-2 !important;
+            font-size: 0;
+            left: auto;
+            opacity: 1;
+            padding-left: 0;
+            padding-right: 0;
+            position: absolute;
+            right: $size__element-spacing;
+            top: $size__element-spacing;
+
+            @include media(medium, up) {
+                right: 3*$size__element-spacing;
+                left: auto;
+                top: 3*$size__element-spacing;
+            }
+
+            &:hover {
+                transform: rotate(90deg);
+            }
+        }
+
+        .pswp__counter {
+            color: $global--body-color-2;
+            font-size: $global--font-size-h5;
+            height: auto;
+            line-height: 1;
+            opacity: 1;
+            left: $size__element-spacing;
+            top: calc( #{$size__element-spacing} + 3px );
+            padding: 0;
+            width: 50%;
+
+            @include media(medium, up) {
+                left: 3*$size__element-spacing;
+                top: 3*$size__element-spacing;
+            }
+        }
+    }
+
+    .pswp__container {
+        opacity: 1;
+    }
+
+    .pswp__ui--idle .pswp__button--arrow--left,
+    .pswp__ui--idle .pswp__button--arrow--right {
+        opacity: 1;
+    }
+
+    .pswp__button--arrow--left {
+        @include icon( $icon__arow-left, $size__icon-default, $size__icon-default );
+
+        .rtl & {
+            @include icon( $icon__arow-right, $size__icon-default, $size__icon-default );
+        }
+
+        background-color: $global--body-color-2 !important;
+        left: $size__element-spacing;
+        right: auto;
+        opacity: 1;
+        visibility: visible;
+
+        @include media(medium, up) {
+            left: 3*$size__element-spacing;
+            right: auto;
+        }
+
+        &:before {
+            content: none;
+        }
+
+        &:hover {
+            background-color: $global--body-color-2 !important;
+            left: calc( #{$size__element-spacing} - #{$size__element-xsmall-spacing} );
+            right: auto;
+
+            @include media(medium, up) {
+                left: calc( 3*#{$size__element-spacing} - #{$size__element-xsmall-spacing} );
+                right: auto;
+            }
+        }
+    }
+
+    .pswp__button--arrow--right {
+        @include icon( $icon__arow-right, $size__icon-default, $size__icon-default );
+
+        .rtl & {
+            @include icon( $icon__arow-left, $size__icon-default, $size__icon-default );
+        }
+
+        background-color: $global--body-color-2 !important;
+        right: $size__element-spacing;
+        left: auto;
+        opacity: 1;
+        visibility: visible;
+
+        @include media(medium, up) {
+            right: 3*$size__element-spacing;
+            left: auto;
+        }
+
+        &:before {
+            content: none;
+        }
+
+        &:hover {
+            background-color: $global--body-color-2 !important;
+            right: calc( #{$size__element-spacing} - #{$size__element-xsmall-spacing} );
+            left: auto;
+
+            @include media(medium, up) {
+                right: calc( 3*#{$size__element-spacing} - #{$size__element-xsmall-spacing} );
+                left: auto;
+            }
+        }
+    }
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeout {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}

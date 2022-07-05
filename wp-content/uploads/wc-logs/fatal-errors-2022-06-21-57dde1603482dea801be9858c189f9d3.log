@@ -1,0 +1,30 @@
+2022-06-21T15:59:46+00:00 CRITICAL Uncaught ImagickException: WriteBlob Failed `E:\wamp64\www\gear\pj4//../cloth-snap/assets/images/clothes/3067/330.png' @ error/png.c/MagickPNGErrorHandler/1711 in E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php:430
+Stack trace:
+#0 E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php(430): Imagick->writeimage('E:\\wamp64\\www\\g...')
+#1 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(1143): clothes_setup(Object(WP_REST_Request))
+#2 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(990): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/clothes/...', Array, NULL)
+#3 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#4 E:\wamp64\www\gear\pj4\wp-includes\rest-api.php(394): WP_REST_Server->serve_request('/wp/v2/clothes/...')
+#5 E:\wamp64\www\gear\pj4\wp-includes\class-wp-hook.php(307): rest_api_loaded(Object(WP))
+#6 E:\ dans E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php à la ligne 430
+
+2022-06-21T16:00:07+00:00 CRITICAL Uncaught ImagickException: WriteBlob Failed `E:\wamp64\www\gear\pj4//../cloth-snap/assets/images/clothes/3067/330.png' @ error/png.c/MagickPNGErrorHandler/1711 in E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php:430
+Stack trace:
+#0 E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php(430): Imagick->writeimage('E:\\wamp64\\www\\g...')
+#1 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(1143): clothes_setup(Object(WP_REST_Request))
+#2 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(990): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/clothes/...', Array, NULL)
+#3 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#4 E:\wamp64\www\gear\pj4\wp-includes\rest-api.php(394): WP_REST_Server->serve_request('/wp/v2/clothes/...')
+#5 E:\wamp64\www\gear\pj4\wp-includes\class-wp-hook.php(307): rest_api_loaded(Object(WP))
+#6 E:\ dans E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php à la ligne 430
+
+2022-06-21T16:00:29+00:00 CRITICAL Uncaught ImagickException: WriteBlob Failed `E:\wamp64\www\gear\pj4//../cloth-snap/assets/images/clothes/3067/330.png' @ error/png.c/MagickPNGErrorHandler/1711 in E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php:430
+Stack trace:
+#0 E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php(430): Imagick->writeimage('E:\\wamp64\\www\\g...')
+#1 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(1143): clothes_setup(Object(WP_REST_Request))
+#2 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(990): WP_REST_Server->respond_to_request(Object(WP_REST_Request), '/wp/v2/clothes/...', Array, NULL)
+#3 E:\wamp64\www\gear\pj4\wp-includes\rest-api\class-wp-rest-server.php(414): WP_REST_Server->dispatch(Object(WP_REST_Request))
+#4 E:\wamp64\www\gear\pj4\wp-includes\rest-api.php(394): WP_REST_Server->serve_request('/wp/v2/clothes/...')
+#5 E:\wamp64\www\gear\pj4\wp-includes\class-wp-hook.php(307): rest_api_loaded(Object(WP))
+#6 E:\ dans E:\wamp64\www\gear\pj4\wp-content\plugins\personal-shopper-assistant\functions.php à la ligne 430
+

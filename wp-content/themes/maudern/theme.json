@@ -1,0 +1,190 @@
+{
+    "version": 1,
+    "settings": {
+        "custom": {
+            "lineHeight": {
+                "body": 1.8,
+                "heading": 1.5
+            },
+            "primary-font": "var(--global--font-primary)"
+        },
+        "color": {
+            "palette": [
+                {
+                    "slug": "color-1",
+                    "color": "var(--global--body-color-1)",
+                    "name": "Color 1"
+                },
+                {
+                    "slug": "color-2",
+                    "color": "var(--global--body-color-2)",
+                    "name": "Color 2"
+                },
+                {
+                    "slug": "color-3",
+                    "color": "var(--global--body-color-3)",
+                    "name": "Color 3"
+                },
+                {
+                    "slug": "color-4",
+                    "color": "var(--global--body-color-4)",
+                    "name": "Color 4"
+                },
+                {
+                    "slug": "color-5",
+                    "color": "var(--global--body-color-5)",
+                    "name": "Color 5"
+                },
+                {
+                    "slug": "color-6",
+                    "color": "var(--global--body-color-6)",
+                    "name": "Color 6"
+                }
+            ]
+        },
+        "typography": {
+            "customFontSize": true,
+            "customFontFamily": true,
+            "customLineHeight": true,
+            "customFontStyle": true,
+            "customFontWeight": true,
+            "dropCap": true,
+            "fontFamilies": [
+                {
+                    "fontFamily": "-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,Oxygen-Sans,Ubuntu,Cantarell,\"Helvetica Neue\",sans-serif",
+                    "slug": "system-font",
+                    "name": "System Font"
+                },
+                {
+                    "fontFamily": "var(--global--font-primary)",
+                    "slug": "primary-font",
+                    "name": "Theme Font"
+                }
+            ],
+            "fontSizes": [
+                {
+                    "slug": "extra-small",
+                    "size": "small",
+                    "name": "Extra small"
+                },
+                {
+                    "slug": "small",
+                    "size": "calc( 0.9 * var(--global--font-size-base) )",
+                    "name": "Small"
+                },
+                {
+                    "slug": "normal",
+                    "size": "var(--global--font-size-base)",
+                    "name": "Normal"
+                },
+                {
+                    "slug": "medium",
+                    "size": "calc( 1.2 * var(--global--font-size-base) )",
+                    "name": "Medium"
+                },
+                {
+                    "slug": "large",
+                    "size": "calc( 1.44 * var(--global--font-size-base) )",
+                    "name": "Large"
+                },
+                {
+                    "slug": "extra-large",
+                    "size": "calc( 1.728 * var(--global--font-size-base) )",
+                    "name": "Extra large"
+                },
+                {
+                    "slug": "extra-extra-large",
+                    "size": "calc( 2.074 * var(--global--font-size-base) )",
+                    "name": "Extra extra large"
+                },
+                {
+                    "slug": "huge",
+                    "size": "calc( 2.488 * var(--global--font-size-base) )",
+                    "name": "Huge"
+                }
+            ]
+        },
+        "spacing": {
+            "customPadding": true,
+            "customMargin": true,
+            "units": [ "px", "em", "rem", "vh", "vw", "%" ]
+        },
+        "layout": {
+            "contentSize": "775px",
+            "wideSize": "1150px"
+        }
+    },
+    "styles": {
+        "color": {
+            "background": "var(--wp--preset--color--color-1)",
+            "text": "var(--wp--preset--color--color-2)"
+        },
+        "typography": {
+            "fontSize": "var(--wp--preset--font-size--normal)",
+            "fontFamily": "var(--global--font-primary)",
+            "lineHeight": "var(--wp--custom--line-height--body)"
+        },
+        "elements": {
+            "link": {
+                "color": {
+                    "text": "var(--wp--preset--color--color-2)"
+                },
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--normal)",
+                    "fontStyle": "normal",
+                    "fontWeight": "normal",
+                    "fontFamily": "var(--global--font-primary)",
+                    "lineHeight": "var(--wp--custom--line-height--body)"
+                }
+            },
+            "h1": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--huge)",
+                    "fontWeight": "normal",
+                    "fontFamily": "var(--global--font-primary)",
+                    "lineHeight": "var(--wp--custom--line-height--heading)"
+                }
+            },
+            "h2": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--extra-extra-large)",
+                    "fontWeight": "normal",
+                    "fontFamily": "var(--global--font-primary)",
+                    "lineHeight": "var(--wp--custom--line-height--heading)"
+                }
+            },
+            "h3": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--extra-large)",
+                    "fontWeight": "normal",
+                    "fontFamily": "var(--global--font-primary)",
+                    "lineHeight": "var(--wp--custom--line-height--heading)"
+                }
+            },
+            "h4": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--large)",
+                    "fontWeight": "normal",
+                    "fontFamily": "var(--global--font-primary)",
+                    "lineHeight": "var(--wp--custom--line-height--heading)"
+                }
+            },
+            "h5": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--medium)",
+                    "fontWeight": "normal",
+                    "fontFamily": "var(--global--font-primary)",
+                    "lineHeight": "var(--wp--custom--line-height--heading)"
+                }
+            },
+            "h6": {
+                "typography": {
+                    "fontSize": "var(--wp--preset--font-size--normal)",
+                    "fontWeight": "normal",
+                    "fontFamily": "var(--global--font-primary)",
+                    "lineHeight": "var(--wp--custom--line-height--heading)"
+                }
+            }
+        }
+    }
+}
