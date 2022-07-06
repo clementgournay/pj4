@@ -17,8 +17,6 @@ add_action( 'rest_api_init', function () {
 }, 15 );
 
 add_action('rest_api_init', function () {
-
-
 	register_rest_route('wp/v2', 'products-category',	array(
 		'methods'  => 'GET',
 		'callback' => 'get_products_of_category'

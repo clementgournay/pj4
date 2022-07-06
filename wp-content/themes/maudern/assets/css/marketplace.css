@@ -1,3 +1,7 @@
+#main {
+    overflow: hidden !important;
+}
+
 .brands {
     display: flex;
     justify-content: space-around;

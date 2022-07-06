@@ -246,12 +246,12 @@ function LookEditor(settings) {
         $('.sp-menu').hide();
         $('.model-cont').css('transition', 'none');
         $('.related-looks').css('transition', 'none');
-        $('.product-list').css('transition', 'none');
+        $('.product-selection').css('transition', 'none');
         that.switchView('model');
         setTimeout(function () {
             $('.model-cont').css('transition', 'all 0.3s ease-out');
             $('.related-looks').css('transition', 'all 0.3s ease-out');
-            $('.product-list').css('transition', 'all 0.3s ease-out');
+            $('.product-selection').css('transition', 'all 0.3s ease-out');
         }, 100);
     }
 
@@ -572,15 +572,15 @@ function LookEditor(settings) {
     }
 
     that.initCounts = function () {
-        $('.product-list .count').html($('.product-list > .items .item').length);
+        $('.product-selection .count').html($('.product-selection > .items .item').length);
         $('.related-looks .count').html($('.related-looks .active .item').length);
     }
 
     that.filterEvents = function () {
 
-        $('.product-list .filter').off('.filterEvents');
+        $('.product-selection .filter').off('.filterEvents');
 
-        $('.product-list .filter.color select').on('change.filterEvents', function () {
+        $('.product-selection .filter.color select').on('change.filterEvents', function () {
             var color = $(this).val();
             console.log(color);
         });
@@ -1364,8 +1364,8 @@ function LookEditor(settings) {
         
         switch(view) {
             case 'dressing':
-                $('.product-list').addClass('sp-active');
-                $('.product-list .result.items').addClass('sp-active');
+                $('.product-selection').addClass('sp-active');
+                $('.product-selection .result.items').addClass('sp-active');
 
                 $('.related-looks').css('transform', 'translate3d(100%, 0, 0)');
                 $('.model-cont').css('transform', 'translate3d(200%, 0, 0)');
@@ -1374,12 +1374,12 @@ function LookEditor(settings) {
                 $('.related-looks').addClass('sp-active');
                 $('.related-looks .result.items').addClass('sp-active');
 
-                $('.product-list').css('transform', 'translate3d(-100%, 0, 0)');
+                $('.product-selection').css('transform', 'translate3d(-100%, 0, 0)');
                 $('.model-cont').css('transform', 'translate3d(100%, 0, 0)');
                 break;
             case 'model':
                 $('.model-cont').addClass('sp-active');
-                $('.product-list').css('transform', 'translate3d(-200%, 0, 0)');
+                $('.product-selection').css('transform', 'translate3d(-200%, 0, 0)');
                 $('.related-looks').css('transform', 'translate3d(-100%, 0, 0)');
                 if (!that.hintShown && that.mode !== 'client') {
                     setTimeout(function () {
@@ -1808,17 +1808,17 @@ function LookEditor(settings) {
     }
 
     that.addTags = function () {
-        var $selectedProduct = $('.product-list .selected');
+        var $selectedProduct = $('.product-selection .selected');
         var selectedRef = $selectedProduct.attr('data-ref');
         var product = that.products[selectedRef];
         var label = '';
         if (that.colors[product.color]) label = that.colors[product.color].label;
-        $('.related-looks .tags').append('<div class="tag total-look">Total look ' + label +'</div>');
+        //$('.related-looks .tags').append('<div class="tag total-look">Total look ' + label +'</div>');
     }
 
     that.addSelectionToLooks = function () {
         that.looks.forEach(function (look) {
-            var $selectedProduct = $('.product-list .selected');
+            var $selectedProduct = $('.product-selection .selected');
             var selectedRef = $selectedProduct.attr('data-ref');
             var product = that.products[selectedRef];
             if (product) {
@@ -1937,7 +1937,7 @@ function LookEditor(settings) {
 
     that.popupClothEvents = function ($popup) {
         $popup.find('.product').on('click', function () {
-            $('.product-list .item').removeClass('selected');
+            $('.product-selection .item').removeClass('selected');
             $('.wizard .product').removeClass('selected');
             $popup.find('.product').removeClass('selected');
             $(this).addClass('selected');
@@ -1945,11 +1945,11 @@ function LookEditor(settings) {
     }
 
     that.productEvents = function () {
-        $('.product-list .result.items .item, .wizard .product').off('.productEvents');
-        $('.product-list .result.items .item, .wizard .product').on('click.productEvents', function () {
+        $('.product-selection .result.items .item, .wizard .product').off('.productEvents');
+        $('.product-selection .result.items .item, .wizard .product').on('click.productEvents', function () {
             if (!$('.model-cont').hasClass('loading')) {
                 var category = $(this).attr('data-category');
-                $('.product-list .result.items .item, .wizard .product').removeClass('selected');
+                $('.product-selection .result.items .item, .wizard .product').removeClass('selected');
                 $(this).addClass('selected');
                 that.getLooks(category);
                 if (that.isSP()) {
@@ -2065,7 +2065,7 @@ function LookEditor(settings) {
             var $products = $item.find('.product:not(.selection)');
 
             if (that.tab === 'proposed') {
-                var $selectedProduct = (that.mode === 'assistant') ? $('.wizard .product.selected') : $('.product-list .item.selected');
+                var $selectedProduct = (that.mode === 'assistant') ? $('.wizard .product.selected') : $('.product-selection .item.selected');
                 var selectedRef = $selectedProduct.attr('data-ref');
                 var selectedCat = $selectedProduct.attr('data-category');
             
@@ -2152,7 +2152,7 @@ function LookEditor(settings) {
 
             if (!$(this).hasClass('selected')) {
                 $(this).addClass('selected');
-                var $selectedProduct = $('.product-list .selected');
+                var $selectedProduct = $('.product-selection .selected');
                 var selectedRef = $selectedProduct.attr('data-ref');
                 var product = that.products[selectedRef];
                 var productColor = (that.colors[product.color]) ? that.colors[product.color].name : product.color;

@@ -185,7 +185,7 @@ get_header();
 
     <div class="editor">
 
-        <div class="product-list sp-active">
+        <div class="product-selection sp-active">
             <h2 class="main-title">
                 <span>Sélection du vêtement</span>
                 <div class="toggle-filter" data-filter="category">
@@ -620,69 +620,7 @@ get_header();
                     </div>
                 </h2>
                 <div class="items">
-                    <div class="tags" data-filter="category">
-                        <!--<select class="filter">
-                            <option>Couleur...</option>
-                            <option>Bleu</option>
-                            <option>Jaune</option>
-                            <option>Vert</option>
-                            <option>Rose</option>
-                            <option>Blanc</option>
-                            <option>Noir</option>
-                            <option>Orange</option>
-                            <option>Violet</option>
-                            <option>Beige</option>
-                            <option>Marron</option>
-                        </select>
-                        <select class="filter">
-                            <option>Objectif...</option>
-                            <option>Casual</option>
-                            <option>Marriage</option>
-                            <option>Sortie en boîte</option>
-                            <option>Anniversaire</option>
-                        </select>
-                        <div class="filter size">
-                            <div class="mode">
-                                <div class="tag toggle-size selected">EUR.</div>
-                                <div class="tag toggle-size">AMER.</div>
-                            </div>
-                            <select>
-                                <option>Taille...</option>
-                                <option>34</option>
-                                <option>36</option>
-                                <option>38</option>
-                                <option>40</option>
-                                <option>42</option>
-                                <option>44</option>
-                            </select>
-                        </div>
-
-                        <select>
-                            <option>Coupe...</option>
-                            <option>Regular</option>
-                            <option>Slim</option>
-                            <option>Skinny</option>
-                            <option>Super Skinny</option>
-                        </select>
-             
-                        <select>
-                            <option>Composition...</option>
-                            <option>Cotton</option>
-                            <option>Laine</option>
-                            <option>Polyester</option>
-                            <option>Elastane</option>
-                        </select>
-
-                        <input type="checkbox" id="sale"> 
-                        <label for="sale">En solde</label>
-                        <!--
-                        <div class="tag">Couleur</div>
-                        <div class="tag">Evenement</div>
-                        <div class="tag">Taille</div>
-                        <div class="tag">Promotion</div>
-                        <div class="tag">Composition</div>
-                        <div class="tag">Coupe</div>-->
-                    </div>
+                    <div class="tags"></div>
                     <div class="looks proposed active" data-category="proposed">
                         <span class="no-result" style="display: block">Veuillez sélectionner un produit dans la liste de gauche.</span>
                     </div>
@@ -913,7 +851,7 @@ get_header();
                 Cela me premettra de faire apparaître les produits qui vous correspondent.<br>
                 Remplissez la phrase qui vous définit et cliquez moi quand vous avez fini.<br>
             </p>
-            <p class="step" data-focus=".product-list" data-wait-actions="click{.wizard .categories .category} | click{.wizard .products .product}">
+            <p class="step" data-focus=".product-selection" data-wait-actions="click{.wizard .categories .category} | click{.wizard .products .product}">
                 Choisissez ensuite le type de vêtement que vous recherchez.<br>
                 Vous pouvez également utiliser les filtres pour affiner vos recherche.<br>
                 C'est à vous !
