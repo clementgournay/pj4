@@ -103,6 +103,7 @@ function LookEditor(settings) {
         that.updateLayout();
         that.orientationCheck();
         that.UIEvents();
+        that.wizardEvents();
         that.swipeEvents();
 
         if (that.mode === 'assistant') {
@@ -149,6 +150,96 @@ function LookEditor(settings) {
             that.sceneRules[index] = new Rule(ruleSTR);
         });
         console.log(that.sceneRules);
+    }
+
+    that.wizardEvents = function () {
+        $('.character-wizard').off('.wizardEvents');
+        $('.character-wizard').on('click.wizardEvents', function () {
+            var $wizard = $(this);
+            var $prev = $wizard.find('.step.active');
+            if ($wizard.find('.step').index($prev) === 0) {
+                that.results = {};
+                $('.wizard .view').removeClass('active');
+                $('.wizard .view[data-view="selection"]').addClass('active');
+            }
+            if (!$wizard.hasClass('locked')) {
+                $('.focus').removeClass('focus');
+                var $next = $prev.next();
+                
+                if ($next.length > 0) {
+                    var $focus = $($next.attr('data-focus'));
+                    $next.addClass('active');
+                    $prev.removeClass('active');
+                    $focus.addClass('focus');
+                    $('html, body').animate({
+                        scrollTop: $focus.offset().top - 200
+                    });
+
+                    if ($next.attr('data-wait-actions')) {
+                        var scenario = $next.attr('data-wait-actions');
+                        var stepsSTR = scenario.split('|');
+                        var steps = [];
+                        stepsSTR.forEach(function (stepSTR) {
+                            var parts = stepSTR.split('{');
+                            var action = parts[0];
+                            var target = parts[1].replace('}', '');
+                            steps.push({
+                                action: action,
+                                selector: target
+                            });
+                        });
+                        var index = 0;
+
+                        var executeStep = function() {
+                            $wizard.addClass('locked');
+                            var step = steps[index];
+                            console.log(step);
+                            if (step) {
+
+                                var onLoaded = function () {
+                                    console.log('target found, wait for click')
+                                    var $target = $(step.selector);
+                                    console.log($target)
+                                    $target.off('.wizardEvents');
+                                    $target.on(step.action + '.wizardEvents', function () {
+                                        console.log('CLICK, go next step');
+                                        $target.off('.wizardEvents');
+                                        index++;
+                                        executeStep();
+                                    });
+                                }
+
+
+                                if ($(step.selector).length === 0) {
+                                    var checkPresence = setInterval(function () {
+                                        console.log('Wait for target to appear')
+                                        if ($(step.selector).length > 0) {
+                                            onLoaded();
+                                            clearInterval(checkPresence);
+                                        } 
+                                    }, 100);
+                                } else {
+                                    onLoaded();
+                                }
+
+                                
+                            } else {
+                                console.log('End');
+                                $wizard.removeClass('locked');
+                                $wizard.click();
+                            }
+                        }
+
+                        executeStep();
+                    }
+
+
+                } else {
+                    console.log('end')
+                    $wizard.fadeOut();
+                }
+            }
+        });
     }
 
     that.showSPMode = function () {
@@ -278,7 +369,6 @@ function LookEditor(settings) {
         $('.profiling .size').off('.profilingEvents');
         $('.profiling .size').on('change.profilingEvents', function () {
             var size =　$(this).val();
-            console.log(size);
             that.updateModelSize(size);
         });
     }
@@ -495,29 +585,6 @@ function LookEditor(settings) {
             console.log(color);
         });
 
-        /*that.$el.find('.tabs .tab').off('.filterEvents');
-
-        that.$el.find('.product-list .tabs .tab').on('click.filterEvents', function () {
-            var category = $(this).attr('data-category');
-            var $tabs = $(this).parents('.tabs');
-            $tabs.find('.tab').removeClass('active');
-            $(this).addClass('active');
-            that.$el.find('.product-list > .items .item').hide();
-            if (category === 'all') that.$el.find('.product-list > .items .item').show();
-            else {
-                that.$el.find('.product-list > .items .item[data-category="' + $(this).attr('data-category') + '"]').show();
-            }
-        });
-
-        that.$el.find('.related-looks .tabs .tab').on('click.filterEvents', function () {
-            var category = $(this).attr('data-category');
-            var $tabs = $(this).parents('.tabs');
-            $tabs.find('.tab').removeClass('active');
-            $(this).addClass('active');
-            that.$el.find('.related-looks .looks').removeClass('active');
-            that.$el.find('.related-looks .looks[data-category="' + category + '"]').addClass('active');
-            that.tab = category;
-        });*/
     }
 
     that.UIEvents = function () {

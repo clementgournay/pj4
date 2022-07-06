@@ -84,6 +84,22 @@
     }
 }
 
+.look-editor .focus {
+    position:relative;
+    z-index: 100;
+}
+
+.look-editor .focus:after{
+    content: '';
+    position: absolute;
+    top:0; 
+    left:0;
+    width: 100%; 
+    height: 100%;
+    box-shadow: 0px 0px 0px 9999px rgba(0,0,0,.55);
+    pointer-events: none;
+}
+
 .look-editor .character-wizard {
     position: fixed;
     right: 0;
@@ -93,6 +109,10 @@
     opacity: 0;
     animation: popup 0.3s linear 5s forwards;
     cursor: pointer;
+}
+
+.look-editor .character-wizard.locked {
+    cursor: not-allowed;
 }
 
 .look-editor .character-wizard .description {
@@ -108,11 +128,11 @@
     box-shadow: 5px 5px 10px #535353;
 }
 
-.look-editor .character-wizard .description p {
+.look-editor .character-wizard .description .step {
     display: none;
 }
 
-.look-editor .character-wizard .description p:first-child {
+.look-editor .character-wizard .description .step.active {
     display: block;
 }
 

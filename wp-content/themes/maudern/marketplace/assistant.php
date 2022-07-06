@@ -904,13 +904,47 @@ get_header();
             <img src="<?php echo get_site_url(); ?>/wp-content/plugins/personal-shopper-assistant/images/look-editor/wizard.png" />
         </div>
         <div class="description">
-            <p>
+            <p class="step active">
                 Bonjour, je suis votre assistant.<br>
                 Cliquez sur moi afin que je vous montre par où commencer.
             </p>
-            <p>
-                Voici la section pour définir vos besoins.
-                Cela me premettra de faire apparaître les produits qui vous correspondent.
+            <p class="step" data-focus=".profiling">
+                Voici la section pour définir vos besoins.<br>
+                Cela me premettra de faire apparaître les produits qui vous correspondent.<br>
+                Remplissez la phrase qui vous définit et cliquez moi quand vous avez fini.<br>
+            </p>
+            <p class="step" data-focus=".product-list" data-wait-actions="click{.wizard .categories .category} | click{.wizard .products .product}">
+                Choisissez ensuite le type de vêtement que vous recherchez.<br>
+                Vous pouvez également utiliser les filtres pour affiner vos recherche.<br>
+                C'est à vous !
+            </p>
+            <p class="step" data-focus=".related-looks" data-wait-actions="click{.related-looks .item}">
+                Voici les looks que j'ai crée à partir du vêtement que vous avez sélectionné.<br>
+                Cliquez sur les différents looks pour visualiser l'ensemble dans le mirroir.
+            </p>
+            <p class="step" data-focus=".model-outer" data-wait-actions="mouseenter{.model-outer .cloth}">
+                Voici le look que vous avez choisi.<br>
+                Passez la souris sur un vêtement pour afficher son détail.
+            </p>
+            <p class="step" data-focus="#product-detail" data-wait-actions="click{#product-detail .size}">
+                Ceci est la fiche produits où vous pouvez consulter les caractéristiques du produit, sa disponibilité ou alors sélectionner la taille et le colori.<br>
+                Commencez par modifier la taille du vêtement.
+            </p>
+            <p class="step" data-focus="#product-detail" data-wait-actions="click{#product-detail .related-items .product}">
+                Tout changement dans la fiche produit se traduit dans le mirroir. Pratique n'est-ce pas ?<br>
+                Vous pouvez également modifier une partie du look en cliquant dans les produits associés.<br>
+                Cliquez sur un produit parmis la liste des articles associés.
+            </p>
+            <p class="step" data-focus=".editor">
+                Vous pouvez alors acheter le produit selectionné ou bien le look entier.
+            </p>
+            <p class="step">
+                Voilà tout ce que vous devez savoir pour utiliser Smart Personal Shopper.<br>
+                Vous pouvez revoir ce tutoriel en cliquant sur le bouton ci-dessous.<br>
+                Quant à moi j'apparaîtrait à d'autres endroits pour vou présenter les fonctionnalités avancées.<br>
+                A bientôt !<br>
+                <button type="button">Je veux revoir le tutoriel</button>
+                <button type="button">A bientôt</button>
             </p>
         </div>
     </div>
