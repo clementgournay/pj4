@@ -297,7 +297,6 @@ function get_products_by_category($request) {
 	$wc_products = wc_get_products([
 		'category' => $categories,
 		'limit' => -1,
-		'brand' => 'dika',
 		'ready' => 'true',
 		'proposal' => 'true'
 	]);
