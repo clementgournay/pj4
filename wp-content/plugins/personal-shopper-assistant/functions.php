@@ -7,6 +7,16 @@ if (!is_file(DATA_PATH.'/done.json')) file_put_contents(DATA_PATH.'/done.json', 
 if (!is_file(DATA_PATH.'/look-blacklist.json')) file_put_contents(DATA_PATH.'/look-blacklist.json', '[]');
 define('CALIBRATION_URL', 'http://localhost/gear/cloth-snap');
 
+$main_categories = [
+	"fullbody" => ['dress', 'jumpsuit'],
+    "over" => ['coat', 'vest', 'cardigan'],
+    "torse" => ['top_tshirt', 'shirt'],
+    "legs" => ['pants', 'short', 'skirt'],
+    "accessories" => ['accessory', 'bag', 'shoes']
+];
+define('MAIN_CATEGORIES', $main_categories);
+
+
 add_action( 'rest_api_init', function () {
     add_action( 'rest_pre_serve_request', function () {
         header( 'Access-Control-Allow-Origin: *' );
@@ -17,24 +27,25 @@ add_action( 'rest_api_init', function () {
 }, 15 );
 
 add_action('rest_api_init', function () {
-	register_rest_route('wp/v2', 'products-category',	array(
-		'methods'  => 'GET',
-		'callback' => 'get_products_of_category'
-	));
-	
+
 	register_rest_route('wp/v2', 'products',	array(
 		'methods'  => 'GET',
-		'callback' => 'get_products_by_category'
+		'callback' => 'get_products'
+	));
+
+	register_rest_route('wp/v2', 'products/position',	array(
+		'methods'  => 'GET',
+		'callback' => 'get_products_position'
+	));
+	
+	register_rest_route('wp/v2', 'looks',	array(
+		'methods'  => 'GET',
+		'callback' => 'get_looks'
 	));
 
 	register_rest_route('wp/v2', 'clothes',	array(
 		'methods'  => 'GET',
 		'callback' => 'get_clothes'
-	));
-
-	register_rest_route('wp/v2', 'specific-clothes',	array(
-		'methods'  => 'GET',
-		'callback' => 'get_specific_clothes'
 	));
 
 	register_rest_route('wp/v2', 'clothes/setup',	array(
@@ -46,6 +57,19 @@ add_action('rest_api_init', function () {
 		'methods'  => 'PUT, UPDATE',
 		'callback' => 'clothes_attribute'
 	));
+
+
+	register_rest_route('wp/v2', 'products-category',	array(
+		'methods'  => 'GET',
+		'callback' => 'get_products_of_category'
+	));
+
+	register_rest_route('wp/v2', 'specific-clothes',	array(
+		'methods'  => 'GET',
+		'callback' => 'get_specific_clothes'
+	));
+
+
 
 	register_rest_route('wp/v2', 'user', array(
 		'methods'  => 'POST',
@@ -188,6 +212,7 @@ function create_new_user($request) {
 	return $response;
 }
 
+
 function format_product($wc_product) {
 	$product = new stdClass;
 	$product->id = $wc_product->get_id();
@@ -220,147 +245,25 @@ function format_product($wc_product) {
 	$product->ready = $wc_product->get_attribute('ready');
 	$product->color = $wc_product->get_attribute('color');
 	$product->collection = $wc_product->get_attribute('collection');
+	$product->link = get_site_url().'/wp-admin/post.php?post='.$product->id.'&action=edit';
 
 
 	return $product;
 }
 
-function get_products_of_category($request) {
-	$categories = explode(',', $request['category']);
-	$resp = new stdClass;
-	$products = [];
-
-
-	$args = [
-		'category' => $categories,
-		'limit' => -1,
-		'ready' => 'true'
-	];
-	$wc_products = wc_get_products($args);
-	
-	foreach($wc_products as $wc_product) {
-		$product = format_product($wc_product);
-		array_push($products, $product);
-	}
-
-	$resp->data = $products;
-	$response = new WP_REST_Response($resp);
-	$response->set_status(200);
-	return $response;
-
-}
-
-function get_products_by_category($request) {
-
-	$category = $request['category'];
-	$resp = new stdClass;
-	$categories = [];
-	switch($category) {
-		case 'vest':
-		case 'coat':
-			$categories = ['top_tshirt', 'shirt', 'cardigan', 'skirt', 'pants', 'short', 'accessory'];
-			break;
-		case 'top_tshirt':
-		case 'shirt':
-		case 'cardigan':
-			$categories = ['vest', 'coat', 'skirt', 'pants', 'short', 'accessory'];
-			break;
-		case 'pants':
-		case 'skirt':
-		case 'short':
-			$categories = ['vest', 'coat', 'top_tshirt', 'shirt', 'cardigan', 'accessory'];
-			break;
-		case 'jumpsuit':
-			$categories = ['vest', 'coat', 'accessory'];
-			break;
-		case 'accessory':
-			$categories = ['top_tshirt', 'shirt', 'cardigan', 'skirt', 'pants', 'short', 'vest', 'coat'];
-			break;
-	}
-
-
-	$cat = get_term_by('slug', 'clothes', 'product_cat');
-	$terms = get_terms('product_cat', array('child_of' => $cat->term_id, 'hide_empty' => false));
-
-	$ids = [];
-
-	$found = false; $i = 0;
-
-	foreach($categories as $cat) {
-		while (!$found && $i < count($terms)) {
-			if ($terms[$i]->slug == $cat) $found = true;
-			else $i++;
-		}
-		if ($found) array_push($ids, $terms[$i]->term_id);
-	}
-	 
-	$wc_products = wc_get_products([
-		'category' => $categories,
-		'limit' => -1,
-		'ready' => 'true',
-		'proposal' => 'true'
-	]);
-	
-	$clothes = new stdClass;
-
-	foreach($wc_products as $wc_product) {
-		$product = format_product($wc_product);
-		$cat = $product->category;
-		if (!isset($clothes->$cat)) $clothes->$cat = [];
-		array_push($clothes->$cat, $product);
-	}
-
-	$resp->clothes = $clothes;
-
-	$response = new WP_REST_Response($resp);
-	$response->set_status(200);
-	return $response;
-}
-
-
-function get_clothes($request) {
-
-	$resp = new stdClass;
-
-	$args = [
-		'limit' => -1,
-		'proposal' => 'true',
-		'category'  => array('clothes')
-	];
-
-	if (isset($request['setup'])) $args['setup'] = $request['setup'];
-	if (isset($request['ready'])) $args['ready'] = $request['ready'];
-
-	$resp->args = $args;
-
-	$wc_products = wc_get_products($args);
-	
-	$resp->products = [];
-
-	foreach($wc_products as $wc_product) {
-
-		$terms = get_the_terms($wc_product->id, 'product_cat');
-		$cat = (count($terms) > 0) ? $terms[0]->slug : 'unknown';
-
-		if ($cat !== 'accessory') {
-			$product = format_product($wc_product);
-			array_push($resp->products, $product);
-		}
-	}
-
-	$response = new WP_REST_Response($resp);
-	$response->set_status(200);
-	return $response;
-}
-
-
-function get_specific_clothes($request) {
+function get_products($request) {
 
 	$resp = new stdClass;
 	$args = [
 		'limit' => -1,
 		'proposal' => 'true'
 	];
+
+	if (isset($request['ids'])) {
+		$ids = explode(',', $request['ids']);
+		foreach($ids as $id) $id = intval($id);
+		$args['include'] = $ids;
+	}
 
 	if (isset($request['category'])) {
 		$categories = explode(',', $request['category']);
@@ -381,18 +284,85 @@ function get_specific_clothes($request) {
 
 	$wc_products = wc_get_products($args);
 	
-	$resp->clothes = [];
+	$resp->data = [];
+
+	foreach($wc_products as $wc_product) {
+		$product = format_product($wc_product);
+		array_push($resp->data, $product);
+	}
+
+	$response = new WP_REST_Response($resp);
+	$response->set_status(200);
+	return $response;
+}
+
+function get_looks($request) {
+	$resp = new stdClass;
+
+	$category = $request['category'];
+	$main_categories_keys = array_keys(MAIN_CATEGORIES);
+
+
+	$found = false; $i = 0;
+	while (!$found && $i < count($main_categories_keys)) {
+		$main_category = $main_categories_keys[$i];
+		if (array_search($category, MAIN_CATEGORIES[$main_category]) !== false) {
+			$found = true;
+		} else {
+			$i++;
+		}
+	}
+	if ($found) {
+		$main_category = $main_categories_keys[$i];
+		$looks_raw = file_get_contents(ABSPATH.'/look-data/'.$main_category.'.json');
+		$resp = json_decode($looks_raw);
+		$response = new WP_REST_Response($resp);
+		$response->set_status(200);
+	} else {
+		$response = new WP_REST_Response($resp);
+		$response->message = 'Category not found';
+		$response->set_status(404);
+	}
+	return $response;
+}
+
+function get_products_position($request) {
+	$resp = new stdClass;
+	$raw = file_get_contents(ABSPATH.'/product-data/positions.json');
+	$resp->data = json_decode($raw);
+	$response = new WP_REST_Response($resp);
+	$response->set_status(200);
+	return $response;
+}
+
+function get_clothes($request) {
+
+	$resp = new stdClass;
+
+	$args = [
+		'limit' => -1,
+		'proposal' => 'true',
+		'category'  => array('clothes')
+	];
+
+	if (isset($request['setup'])) $args['setup'] = $request['setup'];	
+	if (isset($request['ready'])) $args['ready'] = $request['ready'];
+
 	$resp->args = $args;
+
+	$wc_products = wc_get_products($args);
+	
+	$resp->products = [];
 
 	foreach($wc_products as $wc_product) {
 
 		$terms = get_the_terms($wc_product->id, 'product_cat');
 		$cat = (count($terms) > 0) ? $terms[0]->slug : 'unknown';
 
-		//if ($cat !== 'accessory') {
+		if ($cat !== 'accessory' && $cat !== 'shoes' && $cat !== 'bag') {
 			$product = format_product($wc_product);
-			array_push($resp->clothes, $product);
-		//}
+			array_push($resp->products, $product);
+		}
 	}
 
 	$response = new WP_REST_Response($resp);
@@ -425,25 +395,37 @@ function clothes_setup($request) {
 	]);
 
 	$wc_product = $products[0];	
-	$url = wp_get_attachment_url($wc_product->get_image_id());
-	$uploads = wp_upload_dir();
-	$file_path = str_replace($uploads['baseurl'], $uploads['basedir'], $url);
+	$file_path = get_attached_file($wc_product->get_image_id(), 'full');
+	$new_path = ABSPATH.'/../S3/normal/'.$wc_product->get_id().'.png';
 
-    $img = new Imagick($file_path);
-    $img->transparentPaintImage('rgb(255,255,255)', 0, 2000, false);
-    $img->trimImage(0);
-    $img->setImageFormat('png');
-    $img->writeImage(ABSPATH.'/../cloth-snap/assets/images/clothes/'.$ref.'.png');
-    $img->destroy();
+	if (extension_loaded('imagick')){
+		$img = new Imagick($file_path);
+		$img->transparentPaintImage('rgb(255,255,255)', 0, 2000, false);
+		$img->trimImage(0);
+		$img->setImageFormat('png');
+		$img->writeImage($new_path);
+		$img->destroy();
 
-	wcproduct_add_attributes($wc_product->get_id(), $attrs);
+		wcproduct_add_attributes($wc_product->get_id(), $attrs);
 
-	$resp->image = ABSPATH.'/../cloth-snap/assets/images/clothes/'.$ref.'.png';
-	$resp->ref = $ref;
-	$resp->message = 'OK';
-	$response = new WP_REST_Response($resp);
-	$response->set_status(200);
+		$resp->image = $new_path;
+		$resp->ref = $ref;
+		$response = new WP_REST_Response($resp);
+		$response->set_status(200);
+	} else {
+		$resp->message = 'Imagick extension not enabled';
+		$response = new WP_REST_Response($resp);
+		$response->set_status(400);
+	}
 	return $response;
+}
+
+function get_products_data($request) {
+	$resp = new stdClass;
+	
+	$body = $request->get_json_params();
+
+
 }
 
 

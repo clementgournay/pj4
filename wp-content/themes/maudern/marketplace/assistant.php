@@ -26,7 +26,6 @@ $shop = (get_query_var('shop') !== '') ? get_query_var('shop') : 'smart-personal
 define('BRAND_ID', $shop);
 define('BRAND_LABEL', $brands[BRAND_ID]);
 
-
 $date = new DateTime();
 
 //if (!isset($_COOKIE['token'])) {
@@ -46,6 +45,7 @@ $date = new DateTime();
 
 get_header();
 
+
 ?>
 
 
@@ -58,15 +58,42 @@ get_header();
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/scene.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/marketplace.js"></script>
 
-<div class="assistant look-editor" id="assistant">
+<?php 
+    $allClass = (BRAND_ID === 'smart-personal-shopper') ? ' all' : ''; 
+    $depth = (BRAND_ID === 'smart-personal-shopper') ? ' 0' : '0.2'; 
+?>
+
+<div class="assistant look-editor <?php echo $allClass; ?>" id="assistant">
+
 
     <div id="lcd" class="lcd">
 
-        <div class="background" data-depth="0.2" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/images/banners/<?php echo BRAND_ID; ?>.jpg)"></div>
+        <div class="background" data-depth="<?php echo $depth; ?>" style="background-image: url(<?php echo get_template_directory_uri() ?>/assets/images/banners/<?php echo BRAND_ID; ?>.jpg)"></div>
 
         <div class="logo" data-depth="0.5">
             <img src="<?php echo get_template_directory_uri() ?>/assets/images/logos/<?php echo BRAND_ID; ?>.png" />
         </div>
+
+        <?php if (BRAND_ID === 'smart-personal-shopper') :?>
+        <div class="screens">
+            <div class="screen">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/images/all/karl.webp" />
+                <div class="title">Karl Laggerfield</div>
+            </div>
+            <div class="screen">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/images/all/jpg.webp" />
+                <div class="title">Jean Paul Gautier</div>
+            </div>
+            <div class="screen">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/images/all/balmain.jpg" />
+                <div class="title">BALMAIN</div>
+            </div>
+            <div class="screen">
+                <img src="<?php echo get_template_directory_uri() ?>/assets/images/all/anna.webp" />
+                <div class="title">Anna Wintour</div>
+            </div>
+        </div>
+        <?php endif;?>
 
         <?php if (BRAND_ID === 'dika') :?>
         <div class="screens">
